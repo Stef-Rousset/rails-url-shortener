@@ -1,0 +1,15 @@
+<div class="urls-container w-8/12 mx-auto mt-12">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-lg my-4">Liste des urls :</h1>
+    <%= link_to "Créer une nouvelle url courte", new_short_url_path, class: "bg-gray-100 rounded font-semibold hover:bg-gray-200" %>
+  </div>
+  <ul>
+    <% @urls.each do |url| %>
+      <li class= "flex justify-between items-center w-10/12 mx-auto mb-4">
+        <p><span class="font-semibold">Url d'origine:</span> <%= url.long_url %></p>
+        <%= link_to "Voir l'url courte", short_url_path(url), class: "bg-gray-100 rounded font-semibold hover:bg-gray-200" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
