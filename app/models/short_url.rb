@@ -14,8 +14,7 @@ class ShortUrl < ApplicationRecord
   end
 
   def self.existing_tiny_url?(url)
-    urls = ShortUrl.all.map(&:tiny_url)
-    urls.include?(url)
+    ShortUrl.where(tiny_url: url).present?
   end
 
   def self.generate_tiny_url
