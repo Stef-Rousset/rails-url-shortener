@@ -9,13 +9,9 @@ class ShortUrlTest < ActiveSupport::TestCase
     @url = short_urls(:one)
   end
 
-  test "should add a tiny_url before validation" do
-    one = ShortUrl.create(long_url: "https://www.ffescrime.fr/je-suis-en-club/competiteurs/reglements/", tiny_url: "", user_id: @user.id)
-    assert one.valid?
-  end
-
   test "should have a tiny_url with length 7" do
     one = ShortUrl.create(long_url: "https://www.ffescrime.fr/je-suis-en-club/competiteurs/reglements/", tiny_url: "", user_id: @user.id)
+    assert one.valid?
     assert 7,  one.tiny_url.length
   end
 

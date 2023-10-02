@@ -9,3 +9,8 @@ two:
   long_url: "https://escrime-iledefrance.fr/pratiquer-et-sengager/devenir-arbitre-escrime/"
   tiny_url: "EFgh789"
   user: user_one
+
+three:
+  long_url: "https://www.escrime-qcm-arbitrage.com/ressources"
+  tiny_url: "ijKL246"
+  user: user_two
