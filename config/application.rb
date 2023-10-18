@@ -11,6 +11,11 @@ module RailsUrlShortener
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # Locales
+    config.i18n.default_locale = :fr
+    config.i18n.available_locales = %i[en fr]
+    config.i18n.fallbacks = true # si pas de trad en en, on ira chercher ds default
+    config.time_zone = 'Paris'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

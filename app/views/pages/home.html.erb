@@ -1,0 +1,18 @@
+<div class="home-container flex flex-col w-8/12 h-3/4 mx-auto mt-16">
+  <h1 class="font-bold"><%= t '.title' %></h1>
+  <p class="mt-8 mb-16"><%= t '.paragraph' %></p>
+  <div class="flex grid grid-cols-3 gap-8 mt-8 w-full h-3/4 items-center">
+    <div class="card border border-beige w-full h-full flex grid grid-rows-2  justify-center items-center bg-beige p-2">
+      <%= image_tag 'url.png', class: "w-full object-fit justify-self-center"%>
+      <p class="font-bold text-center"><%= t '.short-url' %></p>
+    </div>
+    <div class="card border border-beige w-full h-full flex grid grid-rows-2 justify-center items-center bg-beige p-2">
+      <%= image_tag 'rss.png', class: "w-2/3 object-fit justify-self-center"%>
+      <p class="font-bold text-center"><%= t '.news-feed' %></p>
+    </div>
+    <div class="card border border-beige w-full h-full flex grid grid-rows-2 justify-center items-center bg-beige p-2">
+      <%= image_tag 'url.png', class: "w-full object-fit justify-self-center"%>
+      <p class="font-bold text-center"><%= t '.pocket' %></p>
+    </div>
+  </div>
+</div>

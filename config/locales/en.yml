@@ -34,3 +34,17 @@ en:
     login: LOG IN
     logout: LOG OUT
     signup: SIGN UP
+    navbar:
+      title: MY SHARED TOOLS
+    footer:
+      about: À propos de ce site
+  pages:
+    home:
+      title: Welcome to My shared tools !
+      paragraph: Here are the different tools you will be able to use freely ! You just need to create an account.
+      short-url: Urls shortener
+      news-feed: News feed
+      pocket: Pocket
+    about:
+      title: About this web site
+      resources: Resources used

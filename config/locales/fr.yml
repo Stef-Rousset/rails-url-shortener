@@ -3,3 +3,17 @@ fr:
     login: CONNEXION
     logout: DECONNEXION
     signup: S'INSCRIRE
+    navbar:
+      title: MES OUTILS PARTAGÉS
+    footer:
+      about: À propos de ce site
+  pages:
+    home:
+      title: Bienvenue sur Mes outils partagés !
+      paragraph: Voici les différents outils que vous pourrez utiliser gratuitement ! Pour cela, il vous suffit juste de créer un compte.
+      short-url: Générer des urls courtes
+      news-feed: News feed par mail
+      pocket: Pocket
+    about:
+      title: À propos de ce site
+      resources: Ressources utilisées
