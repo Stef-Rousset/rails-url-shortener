@@ -56,6 +56,10 @@ en:
   short_urls:
     index:
       title: My short created urls
-      new_url_link: Créate a new short url
+      new_url_link: Create a new short url
       original_url: Original url
       tiny_url: Tiny url
+    new:
+      title: Create a new short url
+      enter_url: Entrer une url
+      submit: Create

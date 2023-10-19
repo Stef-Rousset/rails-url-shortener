@@ -27,3 +27,7 @@ fr:
       new_url_link: Créer une nouvelle url courte
       original_url: Url d'origine
       tiny_url: Url courte
+    new:
+      title: Créer une nouvelle url courte
+      enter_url: Entrer une url
+      submit: Créer

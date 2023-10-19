@@ -17,8 +17,14 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       height: {
-        'h8': '8%',
-        'h84': '84%',
+        'h10': '10%',
+        'h80': '80%',
+      },
+      gridTemplateRows: {
+        'cards': '2fr 1fr',
+      },
+      scale: {
+        '101': '1.01',
       }
     },
   },

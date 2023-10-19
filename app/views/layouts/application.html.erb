@@ -14,8 +14,10 @@
   <body class="w-screen h-screen">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <main class="main-container w-full h-h84 overflow-y-scroll">
+    <main data-controller="back-to-top" data-action="scroll->back-to-top#showButton" data-back-to-top-target="main" class="main-container w-full h-h80 overflow-y-scroll">
       <%= yield %>
+      <button data-action="click->back-to-top#upToTop" data-back-to-top-target="button" class="bg-beige p-2 sticky bottom-4 left-[95%] hidden">UP</button>
+      <!-- <button class ='btn btn-secondary'><i class="fas fa-chevron-up"></i></button> -->
     </main>
     <%= render 'shared/footer' %>
   </body>
