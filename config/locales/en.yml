@@ -52,3 +52,10 @@ en:
     about:
       title: About this web site
       resources: Resources used
+      back: Back
+  short_urls:
+    index:
+      title: My short created urls
+      new_url_link: Créate a new short url
+      original_url: Original url
+      tiny_url: Tiny url

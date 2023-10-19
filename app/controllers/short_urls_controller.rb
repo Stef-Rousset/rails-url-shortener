@@ -7,7 +7,7 @@ class ShortUrlsController < ApplicationController
 
   def show
     @url = ShortUrl.find(params[:id])
-    @tiny_url = request.host_with_port + '/' + @url.tiny_url
+    @tiny_url = "#{request.host_with_port}/#{@url.tiny_url}"
   end
 
   def new

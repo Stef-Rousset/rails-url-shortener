@@ -20,3 +20,10 @@ fr:
     about:
       title: À propos de ce site
       resources: Ressources utilisées
+      back: Retour
+  short_urls:
+    index:
+      title: Mes urls courtes créees
+      new_url_link: Créer une nouvelle url courte
+      original_url: Url d'origine
+      tiny_url: Url courte
