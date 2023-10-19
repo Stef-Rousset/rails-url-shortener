@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'pages#home'
   get '/about', to: 'pages#about'
-  get '/:url_shortened', to: 'short_urls#url_shortened'
   resources :short_urls, only: %i[index show new create]
+  get '/:url_shortened', to: 'short_urls#url_shortened'
 end

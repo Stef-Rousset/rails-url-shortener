@@ -42,9 +42,13 @@ en:
     home:
       title: Welcome to My shared tools !
       paragraph: Here are the different tools you will be able to use freely ! You just need to create an account.
-      short-url: Urls shortener
-      news-feed: News feed
-      pocket: Pocket
+      paragraph_signed_in: Here are the different tools you can use freely :)
+      short-url-title: Urls shortener
+      short-url-text: Enter you long url and a shorter url that redirect to the original page. Please connect to access this tool !
+      news-feed-title: News feed
+      news-feed-text: Tool under construction, available soon !
+      weather-title: Daily weather forecast
+      weather-text: Tool under construction, available soon !
     about:
       title: About this web site
       resources: Resources used
