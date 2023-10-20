@@ -63,7 +63,6 @@ en:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
-  en:
   activerecord:
     attributes:
       user:
@@ -94,6 +93,12 @@ en:
       user:
         one: User
         other: Users
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Cannot delete record because a dependent %{record} exists
+          has_many: Cannot delete record because dependent %{record} exist
   devise:
     confirmations:
       confirmed: Your email address has been successfully confirmed.
