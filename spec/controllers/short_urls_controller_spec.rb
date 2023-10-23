@@ -75,5 +75,17 @@ RSpec.describe ShortUrlsController, type: :controller do
       get :url_shortened, params: {url_shortened: @url.tiny_url}
       assert_redirected_to @url.long_url
     end
+
+    it 'redirects to index form show if record not found' do
+      get :show, params: { id: 1876254 }
+      assert_redirected_to short_urls_path
+      expect(flash[:alert]).to be_present
+    end
+
+    it 'redirects to index from url_shortened if record not found' do
+      get :url_shortened, params: {url_shortened: "xxxxxxx"}
+      assert_redirected_to short_urls_path
+      expect(flash[:alert]).to be_present
+    end
   end
 end
