@@ -1,15 +1,13 @@
 <div class="urls-container w-8/12 mx-auto mt-12">
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-lg my-4">Liste des urls :</h1>
-    <%= link_to "Créer une nouvelle url courte", new_short_url_path, class: "bg-gray-100 rounded font-semibold hover:bg-gray-200" %>
+    <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
+    <%= link_to t('short_urls.index.new_url_link'), new_short_url_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
-  <ul>
-    <% @urls.each do |url| %>
-      <li class= "flex justify-between items-center w-10/12 mx-auto mb-4">
-        <p><span class="font-semibold">Url d'origine:</span> <%= url.long_url %></p>
-        <%= link_to "Voir l'url courte", short_url_path(url), class: "bg-gray-100 rounded font-semibold hover:bg-gray-200" %>
-      </li>
-    <% end %>
-  </ul>
+  <% @urls.each do |url| %>
+    <div class=" flex flex-col justify-between items-start h-fit bg-beige border rounded p-4 my-8">
+      <p class="mb-4"><span class="font-semibold"><%= t '.original_url' %> : </span><%= link_to "#{url.long_url}", url.long_url, target: "_blank" %></p>
+      <p><span class="font-semibold"><%= t '.tiny_url' %> : </span><%= link_to "#{url.tiny_url}", url.tiny_url, target: "_blank" %></p>
+    </div>
+  <% end %>
 </div>
 

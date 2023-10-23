@@ -1,0 +1,42 @@
+<div class="home-container flex flex-col w-8/12 h-3/4 mx-auto mt-16">
+  <h1 class="font-bold"><%= t '.title' %></h1>
+  <p class="my-8">
+    <% if user_signed_in? %>
+      <%= t '.paragraph_signed_in' %>
+    <% else %>
+      <%= t '.paragraph' %>
+    <% end %>
+  </p>
+  <div data-controller="cards" class="flex grid grid-cols-3 gap-8 mt-8 w-full h-3/4 items-center">
+    <% if user_signed_in? %>
+      <%= link_to short_urls_path, class: "card border border-beige w-full h-5/6 flex grid grid-rows-cards justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+          <%= image_tag 'url.png', class: "w-8/12 justify-self-center"%>
+          <p class="font-bold text-center"><%= t '.short-url-title' %></p>
+      <% end %>
+      <%= link_to '#', class: "card border border-beige w-full h-5/6 flex grid grid-rows-cards justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+        <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
+        <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
+      <% end %>
+      <%= link_to '#', class: "card border border-beige w-full h-5/6 flex grid grid-rows-cards justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+        <%= image_tag 'weather.png', class: "w-1/2 justify-self-center"%>
+        <p class="font-bold text-center"><%= t '.weather-title' %></p>
+      <% end %>
+    <% else %>
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid grid-rows-cards justify-center items-center bg-beige p-2 transition-all">
+        <%= image_tag 'url.png', class: "w-8/12 justify-self-center"%>
+        <p class="font-bold text-center"><%= t '.short-url-title' %></p>
+        <p class="hidden font-bold text-center text-white"><%= t '.short-url-text' %></p>
+      </div>
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid grid-rows-cards justify-center items-center bg-beige p-2 transition-all">
+        <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
+        <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
+        <p class="hidden font-bold text-center text-white"><%= t '.news-feed-text' %></p>
+      </div>
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid grid-rows-cards justify-center items-center bg-beige p-2 transition-all">
+        <%= image_tag 'weather.png', class: "w-1/2 justify-self-center"%>
+        <p class="font-bold text-center"><%= t '.weather-title' %></p>
+        <p class="hidden font-bold text-center text-white"><%= t '.weather-text' %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

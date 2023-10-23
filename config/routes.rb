@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "short_urls#index"
-  get "/:url_shortened", to: "short_urls#url_shortened"
+  root 'pages#home'
+  get '/about', to: 'pages#about'
   resources :short_urls, only: %i[index show new create]
+  get '/:url_shortened', to: 'short_urls#url_shortened'
 end
