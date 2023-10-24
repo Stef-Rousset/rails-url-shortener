@@ -1,0 +1,12 @@
+<div class="sources-container w-8/12 mx-auto mt-12">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
+  </div>
+  <ul class="flex justify-evenly items-center w-full mb-4">
+    <% @sources.each do |source| %>
+      <li class="text-center font-semibold bg-beige w-1/4 border rounded p-4 my-8"><%= display_name(source.name) %></li>
+    <% end %>
+  </ul>
+  <%= link_to t('.add_source'), choose_sources_path, class: 'bg-beige border rounded font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white' %>
+</div>
+

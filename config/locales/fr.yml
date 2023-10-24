@@ -32,6 +32,14 @@ fr:
       title: Créer une nouvelle url courte
       enter_url: Entrer une url
       submit: Créer
+  sources:
+    index:
+      title: Mes sources d'information
+      add_source: Ajouter une nouvelle source
+    choose_sources:
+      title: Les sources d'information disponibles
+      paragraph: Accédez aux informations à la une des sources référencées ci-dessous, envoyées tous les jours dans votre boite mail !
+      title_form: Je souhaite recevoir par mail tous les jours les informations des sources suivantes
   activerecord:
     attributes:
       user:
