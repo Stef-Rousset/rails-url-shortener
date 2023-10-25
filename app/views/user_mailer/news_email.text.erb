@@ -1,0 +1,12 @@
+Hello <%= @user.name %>, here are the news for today !
+<% @news.each do |key, value| %>
+===============================================
+<%= display_name(key) %> :
+  <% value.each do |elem| %>
+    <%= elem[:title] %>
+    <%= elem[:description] %>
+    <%= link_to "see more", elem[:link] %>
+  <% end %>
+<% end %>
+
+That's all for today !
