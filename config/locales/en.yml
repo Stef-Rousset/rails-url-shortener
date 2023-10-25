@@ -67,7 +67,8 @@ en:
   sources:
     index:
       title: My information sources
-      add_source: Add a new source
+      paragraph: You have chosen the information's sources below
+      modify_sources: Modify sources
     choose_sources:
       title: Les sources d'information disponibles
       paragraph: Get the latest news of sources below every day directly in your mailbox !

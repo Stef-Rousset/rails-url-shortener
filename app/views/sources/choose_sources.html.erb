@@ -10,15 +10,7 @@
   </ul>
   <div class='mb-8 border rounded border-beige w-full p-6'>
     <h2 class='italic font-bold mb-6'><%= t '.title_form' %> :</h2>
-    <form action="/add_sources_to_user" method="post" class="flex flex-col items-start w-full">
-      <% @sources.each do |source| %>
-        <div class='flex justify-between w-1/4'>
-          <label for="<%= source.name %>" class='font-semibold'><%= display_name(source.name) %></label>
-          <input id="<%= source.name %>" name="source_ids[]" type="checkbox" value=<%= source.id %> />
-        </div>
-      <%  end %>
-      <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white' />
-    </form>
+    <%= render 'form', sources: @sources, user_sources: nil %>
   </div>
 </div>
 
