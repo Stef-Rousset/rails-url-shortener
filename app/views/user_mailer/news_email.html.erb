@@ -3,9 +3,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hello <%= @user.name %>, here are the news for today</h1><br>
+    <h1><%= t '.hello' %> <%= @user.email %>, <%= t '.intro_string'%></h1><br>
     <% @news.each do |key, value| %>
-        <h2><%= display_name(key) %> :</h2><br>
+        <h2><% case key when "liberation" %>Libération
+            <% when "lemonde" %>Le Monde
+            <% when "lequipe"%>L'Équipe
+            <% end %>
+        :</h2><br>
         <div>
           <% value.each do |elem| %>
             <h3><%= elem[:title]%></h3>
@@ -14,6 +18,6 @@
           <% end %>
         </div><br>
     <% end %>
-    <p>That's all for today !</p>
+    <p><%= t '.end_string' %></p>
   </body>
 </html>

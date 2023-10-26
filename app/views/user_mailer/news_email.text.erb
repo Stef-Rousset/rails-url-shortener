@@ -1,7 +1,10 @@
-Hello <%= @user.name %>, here are the news for today !
+<%= t '.hello' %> <%= @user.email %>, <%= t '.intro_string'%>
 <% @news.each do |key, value| %>
 ===============================================
-<%= display_name(key) %> :
+<% case key when "liberation" %>Libération:
+            <% when "lemonde" %>Le Monde:
+            <% when "lequipe"%>L'Équipe:
+            <% end %>
   <% value.each do |elem| %>
     <%= elem[:title] %>
     <%= elem[:description] %>
@@ -9,4 +12,4 @@ Hello <%= @user.name %>, here are the news for today !
   <% end %>
 <% end %>
 
-That's all for today !
+<%= t '.end_string' %>

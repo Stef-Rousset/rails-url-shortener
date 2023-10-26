@@ -41,6 +41,11 @@ fr:
       title: Les sources d'information disponibles
       paragraph: Accédez aux informations à la une des sources référencées ci-dessous, envoyées tous les jours dans votre boite mail !
       title_form: Je souhaite recevoir par mail tous les jours les informations des sources suivantes
+  user_mailer:
+    news_email:
+      hello: Bonjour
+      intro_string: voici les nouvelles d'aujourd'hui
+      end_string: C'est tout pour aujourd'hui, bonne journée !
   activerecord:
     attributes:
       user:

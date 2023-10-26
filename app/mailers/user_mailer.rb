@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+helper ApplicationHelper
 
   def news_email
     @user = params[:user]
