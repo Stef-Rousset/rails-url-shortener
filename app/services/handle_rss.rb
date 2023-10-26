@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'rss'
-
+# Service to handle recuperation of news via rss
 class HandleRss
   def initialize(url)
     @url = url

@@ -18,6 +18,8 @@ module RailsUrlShortener
     config.time_zone = 'Paris'
     # Configuration for the application, engines, and railties goes here.
     #
+    # Jobs
+    config.active_job.queue_adapter = :sidekiq
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

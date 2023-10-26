@@ -6,8 +6,8 @@
     <h1><%= t '.hello' %> <%= @user.email %>, <%= t '.intro_string'%></h1><br>
     <% @news.each do |key, value| %>
         <h2><% case key when "liberation" %>Libération
-            <% when "lemonde" %>Le Monde
-            <% when "lequipe"%>L'Équipe
+              <% when "lemonde" %>Le Monde
+              <% when "lequipe"%>L'Équipe
             <% end %>
         :</h2><br>
         <div>
