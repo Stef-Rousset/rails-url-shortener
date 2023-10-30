@@ -7,8 +7,8 @@
     <%= link_to t('shared.logout'), destroy_user_session_path, data: { turbo_method: "delete" }, class: "font-bold mr-4 justify-self-end text-white" %>
   <% else %>
     <div class="flex justify-end">
-      <%= link_to t('shared.login'), user_session_path, class: "font-bold text-white mr-4 justify-self-end" %>
-      <%= link_to t('shared.signup'), new_user_session_path,  class: "font-bold text-white mr-4 justify-self-end" %>
+      <%= link_to t('shared.login'), new_user_session_path, class: "font-bold text-white mr-4 justify-self-end" %>
+      <%= link_to t('shared.signup'), new_user_registration_path,  class: "font-bold text-white mr-4 justify-self-end" %>
     </div>
   <% end %>
 </navbar>
