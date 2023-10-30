@@ -1,14 +1,42 @@
-<navbar class="grid grid-cols-3 items-center justify-center w-screen h-h10 bg-darkblue">
-  <%= image_tag 'logo.png', class: "w-12 object-fit m-4 invert" %>
-  <div class="flex justify-center">
+<navbar class="grid grid-cols-3 items-start justify-center w-screen h-h10 bg-darkblue">
+  <div class="flex justify-start items-start">
+    <%= image_tag 'logo.png', class: "w-12 object-fit m-4 invert" %>
+    <% if controller.controller_name != "pages" && controller.action_name != "home"%>
+      <div data-controller="menuburger" class="mt-4">
+        <button data-action="click->menuburger#toggle" data-collapse-toggle="navbar-hamburger" type="button" class="flex flex-col justify-center items-start p-2 ml-3 text-xl text-white hover:text-gray-900" aria-controls="navbar-hamburger" aria-expanded="false">
+          <span data-menuburger-target="spanone" class="block bg-white w-8 h-0.5 sm:h-1 mb-1.5 origin-center"></span>
+          <span data-menuburger-target="spantwo" class="block bg-white w-8 h-0.5 sm:h-1 mb-1.5"></span>
+          <span data-menuburger-target="spanthree" class="block bg-white w-8 h-0.5 sm:h-1 mb-1.5 origin-center"></span>
+        </button>
+        <div data-menuburger-target="menulist" class="w-screen z-10 translate-y-300 mt-2" id="navbar-hamburger">
+          <ul class="flex w-screen font-medium mt-3 ml-3 bg-darkblue">
+            <li>
+              <%= link_to "HOME", root_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
+            </li>
+            <li>
+              <%= link_to 'RACCOURCIR LES URLS', short_urls_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
+            </li>
+            <li>
+              <% if current_user.sources %>
+                <%= link_to 'NEWS PAR MAIL', sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
+              <% else %>
+                <%= link_to 'NEWS PAR MAIL', choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="flex justify-center mt-6">
     <p class="text-white font-bold"><%= t '.title' %></p>
   </div>
   <% if user_signed_in? %>
-    <%= link_to t('shared.logout'), destroy_user_session_path, data: { turbo_method: "delete" }, class: "font-bold mr-4 justify-self-end text-white" %>
+    <%= link_to t('shared.logout'), destroy_user_session_path, data: { turbo_method: "delete" }, class: "font-bold mt-6 mr-4 justify-self-end text-white" %>
   <% else %>
     <div class="flex justify-end">
-      <%= link_to t('shared.login'), new_user_session_path, class: "font-bold text-white mr-4 justify-self-end" %>
-      <%= link_to t('shared.signup'), new_user_registration_path,  class: "font-bold text-white mr-4 justify-self-end" %>
+      <%= link_to t('shared.login'), new_user_session_path, class: "font-bold text-white mt-6 mr-4 justify-self-end" %>
+      <%= link_to t('shared.signup'), new_user_registration_path,  class: "font-bold text-white mt-6 mr-4 justify-self-end" %>
     </div>
   <% end %>
 </navbar>
