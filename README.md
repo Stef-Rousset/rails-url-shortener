@@ -55,7 +55,7 @@ You will also need:
 - Install dependencies =>
 `bundle install`
 - Initialize the database =>
-`rails db:create db:migrate`
+`rails db:create db:migrate db:seed`
 - You can launch the server with `bin/dev`.<br>
 The server should only run on `localhost:3000`.<br>
 You should see the homepage of the application.

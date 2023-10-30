@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :short_urls
+  has_and_belongs_to_many :sources
+
+  def user_news
+    sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
+  end
 end

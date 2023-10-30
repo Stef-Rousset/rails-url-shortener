@@ -64,6 +64,20 @@ en:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
+  sources:
+    index:
+      title: My information sources
+      paragraph: You have chosen the information's sources below
+      modify_sources: Modify sources
+    choose_sources:
+      title: Les sources d'information disponibles
+      paragraph: Get the latest news of sources below every day directly in your mailbox !
+      title_form: I agree to receive by mail every day the news from the sources below
+  user_mailer:
+    news_email:
+      hello: Hello
+      intro_string: here are the news for today
+      end_string: That's all for today, have a nice day !
   activerecord:
     attributes:
       user:

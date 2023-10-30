@@ -1,0 +1,13 @@
+<form action="/add_sources_to_user" method="post" class="flex flex-col items-start w-full">
+  <% sources.each do |source| %>
+    <div class='flex justify-between w-1/4'>
+      <label for="<%= source.name %>" class='font-semibold'><%= display_name(source.name) %></label>
+      <input id="<%= source.name %>" name="source_ids[]" type="checkbox" value=<%= source.id %>
+        <% if user_sources && user_sources.include?(source)%>checked<% end %>
+      />
+    </div>
+  <%  end %>
+  <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white'
+    <% if user_sources %>data-turbo-frame="_top"<% end %>
+   />
+</form>

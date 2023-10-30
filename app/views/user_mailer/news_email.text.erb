@@ -1,0 +1,15 @@
+<%= t '.hello' %> <%= @user.email %>, <%= t '.intro_string'%>
+<% @news.each do |key, value| %>
+===============================================
+<% case key when "liberation" %>Libération:
+            <% when "lemonde" %>Le Monde:
+            <% when "lequipe"%>L'Équipe:
+            <% end %>
+  <% value.each do |elem| %>
+    <%= elem[:title] %>
+    <%= elem[:description] %>
+    <%= link_to "see more", elem[:link] %>
+  <% end %>
+<% end %>
+
+<%= t '.end_string' %>

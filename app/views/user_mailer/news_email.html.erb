@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t '.hello' %> <%= @user.email %>, <%= t '.intro_string'%></h1><br>
+    <% @news.each do |key, value| %>
+        <h2><% case key when "liberation" %>Libération
+              <% when "lemonde" %>Le Monde
+              <% when "lequipe"%>L'Équipe
+            <% end %>
+        :</h2><br>
+        <div>
+          <% value.each do |elem| %>
+            <h3><%= elem[:title]%></h3>
+            <p><%= elem[:description]%></p>
+            <%= link_to "see more", elem[:link] %>
+          <% end %>
+        </div><br>
+    <% end %>
+    <p><%= t '.end_string' %></p>
+  </body>
+</html>
