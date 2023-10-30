@@ -13,9 +13,10 @@ fr:
       title: Bienvenue sur Mes outils partagés !
       paragraph: Voici les différents outils que vous pourrez utiliser gratuitement ! Pour cela, il vous suffit juste de créer un compte.
       paragraph_signed_in: Voici les différents outils que vous pouvez utiliser gratuitement :)
+      short-url-title: Raccourcir des urls
       short-url-text: Renseignez votre url longue et obtenez une url plus courte qui redirige sur la page d'origine. Connectez-vous pour accéder à cet outil !
       news-feed-title: News feed par mail
-      news-feed-text: Obtenez dans votre mail tous les matins les dernières nouvelles de 3 quotidiens français. Connectez-vous pour accéder à cet outil !
+      news-feed-text: Recevez par mail tous les matins les dernières nouvelles de 3 quotidiens français. Connectez-vous pour accéder à cet outil !
       weather-title: Prévisions méteo quotidiennes
       weather-text: Outil en construction, bientôt disponible !
     about:

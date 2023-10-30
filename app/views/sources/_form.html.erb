@@ -7,7 +7,10 @@
       />
     </div>
   <%  end %>
-  <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white'
-    <% if user_sources %>data-turbo-frame="_top"<% end %>
-   />
+  <div class="flex justify-between items-center w-1/4">
+    <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white'
+      <% if user_sources %>data-turbo-frame="_top"<% end %>
+    /><!-- turbo-frame=_top to reload the page -->
+      <%= link_to 'Annuler', sources_path, class: 'bg-beige border rounded font-semibold w-fit h-fit mt-4 p-2 hover:bg-darkblue hover:text-white'%>
+   </div>
 </form>

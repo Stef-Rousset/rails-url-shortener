@@ -1,4 +1,4 @@
-<div class="urls-container w-8/12 mx-auto mt-12">
+<section class="urls-container w-8/12 mx-auto mt-12">
   <h1 class="font-bold text-lg my-4"><%= t '.title'%></h1>
   <%= form_with model: @short_url, class: "flex flex-col mt-8" do |f| %>
     <%= f.label :long_url, t('.enter_url'), class: "font-semibold my-2" %>
@@ -6,4 +6,4 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit t('.submit'), class: "self-center bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   <% end %>
-</div>
+</section>
