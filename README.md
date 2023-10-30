@@ -77,7 +77,11 @@ GET `/short_urls/:id`<br>
 GET `/:url_shortened`<br>
 
 For the news feed and current_user:
-*under construction* <br>
+- First selection of sources <br>
+GET `/choose_sources`
+- Modify selection of sources <br>
+GET `/edit_sources_for_user`
+
 For the weather forecast and current_user:
 *under construction* <br>
 
