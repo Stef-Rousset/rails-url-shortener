@@ -1,7 +1,7 @@
 <navbar class="grid grid-cols-3 items-start justify-center w-screen h-h10 bg-darkblue">
   <div class="flex justify-start items-start">
     <%= image_tag 'logo.png', class: "w-12 object-fit m-4 invert" %>
-    <% if controller.controller_name != "pages" && controller.action_name != "home"%>
+    <% if controller.controller_name != "sessions" && controller.controller_name != "registrations" && user_signed_in? %>
       <div data-controller="menuburger" class="mt-4">
         <button data-action="click->menuburger#toggle" data-collapse-toggle="navbar-hamburger" type="button" class="flex flex-col justify-center items-start p-2 ml-3 text-xl text-white hover:text-gray-900" aria-controls="navbar-hamburger" aria-expanded="false">
           <span data-menuburger-target="spanone" class="block bg-white w-8 h-0.5 sm:h-1 mb-1.5 origin-center"></span>
@@ -17,7 +17,7 @@
               <%= link_to 'RACCOURCIR LES URLS', short_urls_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
             </li>
             <li>
-              <% if current_user.sources %>
+              <% if current_user && current_user.sources %>
                 <%= link_to 'NEWS PAR MAIL', sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
               <% else %>
                 <%= link_to 'NEWS PAR MAIL', choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
