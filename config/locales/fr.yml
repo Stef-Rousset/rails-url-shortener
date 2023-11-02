@@ -22,7 +22,7 @@ fr:
     about:
       title: À propos de ce site
       resources: Ressources utilisées
-      back: Retour
+      stack: Stack utilisée
   short_urls:
     index:
       title: Mes urls courtes créees

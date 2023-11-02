@@ -53,7 +53,7 @@ en:
     about:
       title: About this web site
       resources: Resources used
-      back: Back
+      stack: Stack used
   short_urls:
     index:
       title: My short created urls
