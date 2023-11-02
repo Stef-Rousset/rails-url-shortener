@@ -17,7 +17,7 @@
               <%= link_to 'RACCOURCIR LES URLS', short_urls_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
             </li>
             <li>
-              <% if current_user && current_user.sources %>
+              <% if current_user && current_user.sources.present? %>
                 <%= link_to 'NEWS PAR MAIL', sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
               <% else %>
                 <%= link_to 'NEWS PAR MAIL', choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
