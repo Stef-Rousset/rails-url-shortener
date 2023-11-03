@@ -1,8 +1,5 @@
-require 'sidekiq-scheduler'
-
 # Job to send news mail to user
 class SendMail < ApplicationJob
-  include Sidekiq::Worker
   queue_as :default
 
   def perform
