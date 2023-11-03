@@ -11,5 +11,5 @@
 :scheduler:
   :schedule:
     send_mail:
-      cron: '0 9 * * *'   # Runs every day at 9 am
+      cron: '10 9 * * *'   # Runs every day at 9h10 am
       class: SendMail
