@@ -1,3 +1,4 @@
+# controller for ShortUrls
 class ShortUrlsController < ApplicationController
   before_action :authenticate_user!
   rescue_from ActiveRecord::RecordNotFound, with: :not_found

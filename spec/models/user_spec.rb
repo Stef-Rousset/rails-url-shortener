@@ -11,5 +11,11 @@ RSpec.describe User, type: :model do
     hash = @user.user_news
     expect(hash.class).to eq(Hash)
     expect(hash.keys).to eq(['lemonde'])
+    expect(hash.values.flatten.size).to eq(5)
+  end
+
+  it 'normalizes email' do
+    user = User.create(email: 'BLA@gmail.com', password: 'blabla')
+    expect(user.email).to eq('bla@gmail.com')
   end
 end

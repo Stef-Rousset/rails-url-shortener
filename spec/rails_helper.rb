@@ -63,4 +63,7 @@ RSpec.configure do |config|
 
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  # for testing job
+  ActiveJob::Base.queue_adapter = :test
 end

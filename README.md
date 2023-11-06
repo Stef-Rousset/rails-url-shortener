@@ -27,7 +27,7 @@ Things you may want to cover:
 
 ### Introduction ###
 
-The purpose of this application is to allow users to access different tools .
+The purpose of this application is to allow users to access different tools.
 
 With this application, you will mainly be able to:
 - generate shorter urls,
@@ -60,7 +60,7 @@ You will also need:
 The server should only run on `localhost:3000`.<br>
 You should see the homepage of the application.
 If you want to stop the server, use Ctrl + C.<br>
-- If you want to get access to the different tools, you will need to signin with your email and password
+- If you want to get access to the different tools, you will need to sign in with your email and password
 
 ### Application endpoints ###
 
@@ -93,4 +93,9 @@ Testing is performed with Rspec, using FactoryBot.
 `rspec spec/models`
 - testing the controllers =>
 `rspec spec/controllers`
-
+- testing mailers =>
+`rspec spec/mailers`
+- testing jobs =>
+`rspec spec/jobs`
+- testing services =>
+`rspec spec/services`
