@@ -1,3 +1,18 @@
+# frozen_string_literal: true
+
+# == Schema Information
+#
+# Table name: short_urls
+#  id                    :bigint           not null, primary key
+#  long_url              :string           null: false
+#  tiny_url              :string           null: false
+
+# Indexes
+#  unique_tiny_urls             (tiny_url) unique: true
+#  index_short_urls_on_user_id  (user_id)
+
+# Foreign Keys
+#  user_id               :bigint           null: false
 class ShortUrl < ApplicationRecord
   belongs_to :user
 
@@ -17,9 +32,9 @@ class ShortUrl < ApplicationRecord
     array.sample(7).join('')
   end
   # define class methods as private
-  #class << self
+  # class << self
   #  private :existing_tiny_url?
-  #end
+  # end
 
   private
 

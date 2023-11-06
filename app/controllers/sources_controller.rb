@@ -1,3 +1,4 @@
+# controller for Sources
 class SourcesController < ApplicationController
   before_action :authenticate_user!
 
