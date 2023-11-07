@@ -26,7 +26,13 @@ class User < ApplicationRecord
   has_and_belongs_to_many :sources
 
   def user_news
-    sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
+    hash = sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
+    if hash.keys.include?('lequipe')
+      hash.each do |key, value|
+        value.map { |item| item[:description] = item[:description].gsub!(/<.*>/, '') } if key == 'lequipe'
+      end
+    end
+    hash
   end
 
   private
