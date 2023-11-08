@@ -83,7 +83,8 @@ GET `/choose_sources`
 GET `/edit_sources_for_user`
 
 For the weather forecast and current_user:
-*under construction* <br>
+- Get the weather forecast for a city <br>
+GET `/weather`
 
 ### Testing ###
 
