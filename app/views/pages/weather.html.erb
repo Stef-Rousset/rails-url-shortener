@@ -1,0 +1,42 @@
+<section data-controller="weather" class="weather-container flex flex-col w-8/12 h-3/4 mx-auto mt-12">
+  <h1 class="font-bold"><%= t '.title' %></h1>
+  <h2 class="mt-4 mb-14 italic"><%= t '.subtitle' %></h2>
+  <form data-weather-target="form" data-action="submit->weather#insertResult" class="flex flex-col items-start w-full">
+    <div class='flex flex-col items-start w-full mb-4'>
+      <label for="search" class='font-semibold mb-2'>Entrez le nom d'une ville</label>
+      <input data-weather-target="input" name="search" type="text" placeholder="Paris" class="w-1/2">
+    </div>
+    <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
+  </form>
+  <table data-locale=<%= I18n.locale%> class="border border-solid w-full mt-20">
+    <tr class="border border-solid bg-beige">
+      <th class="border border-solid"></th>
+      <th class="border border-solid p-2">Tendance</th>
+      <th class="border border-solid p-2">Températures (°C)</th>
+      <th class="border border-solid p-2">Probabilité de précipitations (%)</th>
+      <th class="border border-solid p-2">Vent (km/h)</th>
+    </tr>
+    <tr class="border border-solid">
+      <td class="font-semibold border border-solid p-2 bg-beige">8h</td>
+      <td data-weather-target="tend8" class="border border-solid text-center"></td>
+      <td data-weather-target="temp8" class="border border-solid text-center"></td>
+      <td data-weather-target="prev8" class="border border-solid p-2 text-center"></td>
+      <td data-weather-target="wind8"class="border border-solid p-2 text-center"></td>
+    </tr>
+    <tr class="border border-solid">
+      <td class="font-semibold border border-solid p-2 bg-beige">14h</td>
+      <td data-weather-target="tend14" class="border border-solid text-center"></td>
+      <td data-weather-target="temp14" class="border border-solid text-center"></td>
+      <td data-weather-target="prev14" class="border border-solid text-center"></td>
+      <td data-weather-target="wind14" class="border border-solid text-center"></td>
+    </tr>
+    <tr class="border border-solid">
+      <td class="font-semibold border border-solid p-2 bg-beige">20h</td>
+      <td data-weather-target="tend20" class="border border-solid text-center"></td>
+      <td data-weather-target="temp20" class="border border-solid text-center"></td>
+      <td data-weather-target="prev20" class="border border-solid text-center"></td>
+      <td data-weather-target="wind20" class="border border-solid text-center"></td>
+    </tr>
+  </table>
+</section>
+
