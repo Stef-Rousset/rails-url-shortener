@@ -18,11 +18,15 @@ fr:
       news-feed-title: News feed par mail
       news-feed-text: Recevez par mail tous les matins les dernières nouvelles de 3 quotidiens français. Connectez-vous pour accéder à cet outil !
       weather-title: Prévisions méteo quotidiennes
-      weather-text: Outil en construction, bientôt disponible !
+      weather-text: Choisissez votre ville et visualisez les prévisions méteo pour la journée. Connectez-vous pour accéder à cet outil !
     about:
       title: À propos de ce site
       resources: Ressources utilisées
       stack: Stack utilisée
+      back: Retour à l'accueil
+    weather:
+      title: Prévisions méteo
+      subtitle: Renseignez votre ville et obtenez les prévisions du jour !
   short_urls:
     index:
       title: Mes urls courtes créees

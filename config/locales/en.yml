@@ -49,11 +49,15 @@ en:
       news-feed-title: News feed
       news-feed-text: Receive by mail every morning the latest news of 3 french newspapers. Please connect to access this tool !
       weather-title: Daily weather forecast
-      weather-text: Tool under construction, available soon !
+      weather-text: Choose your city and see the forecast for the day. Please connect to access this tool !
     about:
       title: About this web site
       resources: Resources used
       stack: Stack used
+      back: Back to home
+    weather:
+      title: Weather forecast
+      subtitle: Enter a city name et get the forecast for today !
   short_urls:
     index:
       title: My short created urls
