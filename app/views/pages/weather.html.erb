@@ -10,7 +10,8 @@
   </form>
   <table data-locale=<%= I18n.locale%> class="border border-solid w-full mt-20">
     <tr class="border border-solid bg-beige">
-      <th class="border border-solid"></th>
+      <th id="no_text" class="border border-solid"></th>
+      <!-- id for system test-->
       <th class="border border-solid p-2">Tendance</th>
       <th class="border border-solid p-2">Températures (°C)</th>
       <th class="border border-solid p-2">Probabilité de précipitations (%)</th>
@@ -18,7 +19,8 @@
     </tr>
     <tr class="border border-solid">
       <td class="font-semibold border border-solid p-2 bg-beige">8h</td>
-      <td data-weather-target="tend8" class="border border-solid text-center"></td>
+      <td id="td_test" data-weather-target="tend8" class="border border-solid text-center"></td>
+      <!-- id for system test-->
       <td data-weather-target="temp8" class="border border-solid text-center"></td>
       <td data-weather-target="prev8" class="border border-solid p-2 text-center"></td>
       <td data-weather-target="wind8"class="border border-solid p-2 text-center"></td>
