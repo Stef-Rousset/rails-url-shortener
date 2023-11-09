@@ -12,18 +12,21 @@
         <div data-menuburger-target="menulist" class="w-screen z-10 translate-y-300 mt-2" id="navbar-hamburger">
           <ul class="flex w-screen font-medium mt-3 ml-3 bg-darkblue">
             <li>
-              <%= link_to "HOME", root_path, id: "link_test", class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
+              <%= link_to t('shared.navbar.home_link'), root_path, id: "link_test", class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
               <!-- id for system test-->
             </li>
             <li>
-              <%= link_to 'RACCOURCIR LES URLS', short_urls_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
+              <%= link_to t('shared.navbar.url_link'), short_urls_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold" %>
             </li>
             <li>
               <% if current_user && current_user.sources.present? %>
-                <%= link_to 'NEWS PAR MAIL', sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
+                <%= link_to t('shared.navbar.news_link'), sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
               <% else %>
-                <%= link_to 'NEWS PAR MAIL', choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
+                <%= link_to t('shared.navbar.news_link'), choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
               <% end %>
+            </li>
+            <li>
+              <%= link_to t('shared.navbar.weather_link'), weather_path, class: "block py-2 pl-3 pr-4 italic text-lg text-white hover:text-beige hover:font-semibold"%>
             </li>
           </ul>
         </div>
