@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # MY SHARED TOOLS
 
 ### Introduction ###
@@ -32,7 +9,7 @@ The purpose of this application is to allow users to access different tools.
 With this application, you will mainly be able to:
 - generate shorter urls,
 - get selected news feed in your mail every day,
-- get the weather forecast in youy mail every day for your city.
+- get the weather forecast for any city.
 
 
 ### Prerequisites ###
