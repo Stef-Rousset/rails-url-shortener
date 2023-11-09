@@ -63,7 +63,13 @@ RSpec.configure do |config|
 
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :system
 
   # for testing job
   ActiveJob::Base.queue_adapter = :test
+
+  # rspec config for system tests
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome_headless # selenium when we need javascript
+  end
 end

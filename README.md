@@ -100,3 +100,5 @@ Testing is performed with Rspec, using FactoryBot.
 `rspec spec/jobs`
 - testing services =>
 `rspec spec/services`
+- testing system =>
+`rspec spec/system`

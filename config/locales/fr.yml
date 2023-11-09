@@ -6,6 +6,10 @@ fr:
     signup: S'INSCRIRE
     navbar:
       title: MES OUTILS PARTAGÉS
+      home_link: ACCUEIL
+      url_link: RACCOURCIR LES URLS
+      news_link: NEWS PAR MAIL
+      weather_link: PRÉVISIONS MÉTEO
     footer:
       about: À propos de ce site
   pages:
@@ -27,6 +31,14 @@ fr:
     weather:
       title: Prévisions méteo
       subtitle: Renseignez votre ville et obtenez les prévisions du jour !
+      label: Entrez le nom d'une ville (en anglais)
+      tendency: Tendance
+      temperature: Températures (°C)
+      probablity: Probabilité de précipitations (%)
+      wind: Vent (km/h)
+      eight: 8h
+      fourteen: 14h
+      twenty: 20h
   short_urls:
     index:
       title: Mes urls courtes créees
