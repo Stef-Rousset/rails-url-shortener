@@ -28,7 +28,9 @@ fr:
       resources: Ressources utilisées
       stack: Stack utilisée
       back: Retour à l'accueil
+      github_link: Voir le repository
     weather:
+      meta_description: Renseignez le nom d'une ville et obtenez directement la météo du jour
       title: Prévisions méteo
       subtitle: Renseignez votre ville et obtenez les prévisions du jour !
       label: Entrez le nom d'une ville (en anglais)
@@ -41,6 +43,7 @@ fr:
       twenty: 20h
   short_urls:
     index:
+      meta_description: Renseignez votre url longue et obtenez immédiatement une url plus courte
       title: Mes urls courtes créees
       new_url_link: Créer une nouvelle url courte
       original_url: Url d'origine
@@ -51,6 +54,7 @@ fr:
       submit: Créer
   sources:
     index:
+      meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
       title: Mes sources d'information
       paragraph: Vous avez choisi les sources d'information ci-dessous
       modify_sources: Modifier les sources

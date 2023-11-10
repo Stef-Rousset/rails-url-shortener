@@ -59,7 +59,9 @@ en:
       resources: Resources used
       stack: Stack used
       back: Back to home
+      github_link: See the repository
     weather:
+      meta_description: Enter a city name and get innmediately the weather forecast for the day !
       title: Weather forecast
       subtitle: Enter a city name et get the forecast for today !
       label: Enter a city name
@@ -72,6 +74,7 @@ en:
       twenty: 8pm
   short_urls:
     index:
+      meta_description: Enter a long url and get immediately a shorter one
       title: My short created urls
       new_url_link: Create a new short url
       original_url: Original url
@@ -82,10 +85,12 @@ en:
       submit: Create
   sources:
     index:
+      meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
       title: My information sources
       paragraph: You have chosen the information's sources below
       modify_sources: Modify sources
     choose_sources:
+      meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
       title: Les sources d'information disponibles
       paragraph: Get the latest news of sources below every day directly in your mailbox !
       title_form: I agree to receive by mail every day the news from the sources below
