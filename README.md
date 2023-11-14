@@ -10,6 +10,7 @@ With this application, you will mainly be able to:
 - generate shorter urls,
 - get selected news feed in your mail every day,
 - get the weather forecast for any city.
+- check the spell of a word.
 
 
 ### Prerequisites ###
@@ -62,6 +63,10 @@ GET `/edit_sources_for_user`
 For the weather forecast and current_user:
 - Get the weather forecast for a city <br>
 GET `/weather`
+
+For the spell checker and current_user:
+- Get the correct spell for a word <br>
+GET `/spell_checker`
 
 ### Testing ###
 
