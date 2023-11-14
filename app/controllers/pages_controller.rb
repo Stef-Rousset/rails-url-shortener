@@ -16,10 +16,19 @@ class PagesController < ApplicationController
   end
 
   def spell_checked
-    @word = params[:search]
-    @response = HandleOpenai.new(@word).get_word_checked
-    respond_to do |format|
-      format.turbo_stream
+    if current_user.spell_count >= 5
+      flash.now[:alert] = t(:five_limit)
+      render :spell_checker, status: :unprocessable_entity
+    else
+      @word = params[:search].split(' ')[0] # only get the first word if multiple words are entered
+      @response = HandleOpenai.new(@word).get_word_checked
+      if !@response.include?("Une erreur s'est produite") || !@response.include?('An error occured')
+        current_user.spell_count += 1
+        current_user.save
+      end
+      respond_to do |format|
+        format.turbo_stream
+      end
     end
   end
 end

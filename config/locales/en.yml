@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  an_error_occured: "An error occured: %{my_object}"
+  five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
   shared:
     login: LOG IN
@@ -41,6 +43,7 @@ en:
       url_link: SHORTEN URLS
       news_link: NEWS BY MAIL
       weather_link: WEATHER FORECAST
+      spell_link: VÉRIFICATEUR D'ORTOGRAPHE
     footer:
       about: À propos de ce site
   pages:
@@ -77,8 +80,10 @@ en:
     spell_checker:
       meta_description: Enter a word to check and get the right spelling
       title: Spell checker
-      subtitle: Enter a word to check and get the right spelling thanks to Artificial Intelligence !
+      subtitle: Enter a word to check and get the right spelling thanks to Artificial Intelligence (limited to 5 spell checks per user).
       label: Enter your word (in english)
+    openai_response:
+      chat_gpt_response: "ChatGPT response:"
   short_urls:
     index:
       meta_description: Enter a long url and get immediately a shorter one

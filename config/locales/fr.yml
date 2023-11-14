@@ -1,4 +1,6 @@
 fr:
+  an_error_occured: "Une erreur s'est produite: %{my_object}"
+  five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
   shared:
     login: CONNEXION
@@ -10,6 +12,7 @@ fr:
       url_link: RACCOURCIR LES URLS
       news_link: NEWS PAR MAIL
       weather_link: PRÉVISIONS MÉTEO
+      spell_link: VÉRIFICATEUR D'ORTOGRAPHE
     footer:
       about: À propos de ce site
   pages:
@@ -47,8 +50,10 @@ fr:
     spell_checker:
       meta_description: Renseignez le mot à vérifier et obtenez la bonne orthographe
       title: Vérificateur d'ortographe
-      subtitle: Renseignez un mot à corriger et obtenez la bonne orthographe grâce à l'Intelligence Artificielle !
+      subtitle: Renseignez un mot à corriger et obtenez la bonne orthographe grâce à l'Intelligence Artificielle (limité à 5 vérifications par utilisateur).
       label: Entrez votre mot (en français)
+    openai_response:
+      chat_gpt_response: " Réponse de ChatGPT:"
   short_urls:
     index:
       meta_description: Renseignez votre url longue et obtenez immédiatement une url plus courte
