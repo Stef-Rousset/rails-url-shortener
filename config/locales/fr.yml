@@ -36,6 +36,7 @@ fr:
       title: Prévisions méteo
       subtitle: Renseignez votre ville et obtenez les prévisions du jour !
       label: Entrez le nom d'une ville (en anglais)
+      not_found: Ville non trouvée
       tendency: Tendance
       temperature: Températures (°C)
       probablity: Probabilité de précipitations (%)

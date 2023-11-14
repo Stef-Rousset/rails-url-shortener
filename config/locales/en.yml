@@ -66,6 +66,7 @@ en:
       title: Weather forecast
       subtitle: Enter a city name et get the forecast for today !
       label: Enter a city name
+      not_found: City not found
       tendency: Tendency
       temperature: Temperature (°C)
       probablity: Chance of precipitation (%)
