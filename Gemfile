@@ -51,13 +51,15 @@ gem "bootsnap", require: false
 # deal with rss feeds [https://github.com/ruby/rss]
 gem 'rss'
 
-#deal with jobs [https://github.com/sidekiq/sidekiq]
+# deal with jobs [https://github.com/sidekiq/sidekiq]
 gem 'sidekiq', "< 7"
-#see errors in jobs [https://github.com/mhfs/sidekiq-failures]
+# see errors in jobs [https://github.com/mhfs/sidekiq-failures]
 gem "sidekiq-failures", "~> 1.0"
 # schedule jobs [https://github.com/sidekiq-scheduler/sidekiq-scheduler]
 gem 'sidekiq-scheduler'
 
+# deal with ChatGPT [https://github.com/alexrudall/ruby-openai]
+gem "ruby-openai"
 # Use Sass to process CSS
 # gem "sassc-rails"
 

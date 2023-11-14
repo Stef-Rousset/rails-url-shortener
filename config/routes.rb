@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/about', to: 'pages#about'
   get '/weather', to: 'pages#weather'
+  get '/spell_checker', to: 'pages#spell_checker'
+  post '/spell_checked', to: 'pages#spell_checked'
   resources :short_urls, only: %i[index show new create]
   resources :sources, only: %i[index]
   get '/choose_sources', to: 'sources#choose_sources'

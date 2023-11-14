@@ -1,4 +1,6 @@
 fr:
+  an_error_occured: "Une erreur s'est produite: %{my_object}"
+  five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
   shared:
     login: CONNEXION
@@ -10,6 +12,7 @@ fr:
       url_link: RACCOURCIR LES URLS
       news_link: NEWS PAR MAIL
       weather_link: PRÉVISIONS MÉTEO
+      spell_link: VÉRIFICATEUR D'ORTOGRAPHE
     footer:
       about: À propos de ce site
   pages:
@@ -18,11 +21,13 @@ fr:
       paragraph: Voici les différents outils que vous pourrez utiliser gratuitement ! Pour cela, il vous suffit juste de créer un compte.
       paragraph_signed_in: Voici les différents outils que vous pouvez utiliser gratuitement :)
       short-url-title: Raccourcir des urls
-      short-url-text: Renseignez votre url longue et obtenez une url plus courte qui redirige sur la page d'origine. Connectez-vous pour accéder à cet outil !
+      short-url-text: Obtenez une url plus courte qui redirige sur la page d'origine. Connectez-vous pour accéder à cet outil !
       news-feed-title: News feed par mail
-      news-feed-text: Recevez par mail tous les matins les dernières nouvelles de 3 quotidiens français. Connectez-vous pour accéder à cet outil !
+      news-feed-text: Recevez par mail tous les matins les nouvelles de 3 quotidiens. Connectez-vous pour accéder à cet outil !
       weather-title: Prévisions méteo quotidiennes
-      weather-text: Choisissez votre ville et visualisez les prévisions méteo pour la journée. Connectez-vous pour accéder à cet outil !
+      weather-text: Visualisez les prévisions méteo de la journée pour votre ville. Connectez-vous pour accéder à cet outil !
+      checker-title: Vérifiez l'ortographe d'un mot
+      checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot. Connectez-vous pour accéder à cet outil !
     about:
       title: À propos de ce site
       resources: Ressources utilisées
@@ -34,6 +39,7 @@ fr:
       title: Prévisions méteo
       subtitle: Renseignez votre ville et obtenez les prévisions du jour !
       label: Entrez le nom d'une ville (en anglais)
+      not_found: Ville non trouvée
       tendency: Tendance
       temperature: Températures (°C)
       probablity: Probabilité de précipitations (%)
@@ -41,6 +47,13 @@ fr:
       eight: 8h
       fourteen: 14h
       twenty: 20h
+    spell_checker:
+      meta_description: Renseignez le mot à vérifier et obtenez la bonne orthographe
+      title: Vérificateur d'ortographe
+      subtitle: Renseignez un mot à corriger et obtenez la bonne orthographe grâce à l'Intelligence Artificielle (limité à 5 vérifications par utilisateur).
+      label: Entrez votre mot (en français)
+    openai_response:
+      chat_gpt_response: " Réponse de ChatGPT:"
   short_urls:
     index:
       meta_description: Renseignez votre url longue et obtenez immédiatement une url plus courte

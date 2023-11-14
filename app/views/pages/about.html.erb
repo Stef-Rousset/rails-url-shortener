@@ -1,4 +1,5 @@
-<section class="about-container flex flex-col w-8/12 h-3/4 mx-auto mt-10">
+<section class="about-container flex justify-between items-start w-8/12 h-3/4 mx-auto mt-10">
+  <div class="flex flex-col">
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="my-4 underline"><%= t '.resources' %></h2>
   <ul class="list-disc list-inside p-2">
@@ -7,7 +8,9 @@
   <li><a href="https://www.flaticon.com/fr/icones-gratuites/maintenance" title="maintenance icônes">Maintenance icônes créées par Freepik - Flaticon</a></li>
   <li><a href="https://www.flaticon.com/fr/icones-gratuites/rss" title="rss icônes">Rss icônes créées par Freepik - Flaticon</a></li>
   <li><a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by Good Ware - Flaticon</a></li>
+  <li><a href="https://www.flaticon.com/fr/icones-gratuites/preuve" title="preuve icônes">Preuve icônes créées par juicy_fish - Flaticon</a></li>
   <li><a href="https://open-meteo.com/">Open-meteo.com API</a></li>
+  <li><a href="https://openai.com/product" >OpenAI API</a>
   </ul>
   <h2 class="my-4 underline"><%= t '.stack' %></h2>
   <ul class="list-disc list-inside p-2">
@@ -18,12 +21,15 @@
     <li>Rspec</li>
     <li>Factory Bot</li>
     <li>Stimulus</li>
+    <li>Turbo frames and Turbo streams</li>
     <li>Tailwind</li>
     <li>Github (<a href="https://github.com/Stef-Rousset/rails-url-shortener" class="hover:text-gray-500"><%= t '.github_link' %></a>)</li>
     <li>Heroku</li>
   </ul>
+  </div>
   <% if !user_signed_in? %>
-    <%= link_to t('pages.about.back'), root_path, class:"bg-beige border border-beige font-semibold w-fit mt-6 mb-2 p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('pages.about.back'), root_path, class:"bg-beige border border-beige font-semibold w-fit mb-2 p-2 hover:bg-darkblue hover:text-white" %>
   <% end %>
+
 </section>
 

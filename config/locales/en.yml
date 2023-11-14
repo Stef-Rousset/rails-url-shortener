@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  an_error_occured: "An error occured: %{my_object}"
+  five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
   shared:
     login: LOG IN
@@ -41,6 +43,7 @@ en:
       url_link: SHORTEN URLS
       news_link: NEWS BY MAIL
       weather_link: WEATHER FORECAST
+      spell_link: VÉRIFICATEUR D'ORTOGRAPHE
     footer:
       about: À propos de ce site
   pages:
@@ -49,12 +52,13 @@ en:
       paragraph: Here are the different tools you will be able to use freely ! You just need to create an account.
       paragraph_signed_in: Here are the different tools you can use freely :)
       short-url-title: Urls shortener
-      short-url-text: Enter you long url and a shorter url that redirect to the original page. Please connect to access this tool !
+      short-url-text: Get a shorter url that redirect to the original page. Please connect to access this tool !
       news-feed-title: News feed
-      news-feed-text: Receive by mail every morning the latest news of 3 french newspapers. Please connect to access this tool !
+      news-feed-text: Receive by mail every morning the news from 3 newspapers. Please connect to access this tool !
       weather-title: Daily weather forecast
-      weather-text: Choose your city and see the forecast for the day. Please connect to access this tool !
-    about:
+      weather-text: See the daily forecast for your city. Please connect to access this tool !
+      checker-title: Check spelling of your word
+      checker-text: Thanks to AI, get the right spelling for your word. Please connect to access this tool !
       title: About this web site
       resources: Resources used
       stack: Stack used
@@ -65,6 +69,7 @@ en:
       title: Weather forecast
       subtitle: Enter a city name et get the forecast for today !
       label: Enter a city name
+      not_found: City not found
       tendency: Tendency
       temperature: Temperature (°C)
       probablity: Chance of precipitation (%)
@@ -72,6 +77,13 @@ en:
       eight: 8am
       fourteen: 2pm
       twenty: 8pm
+    spell_checker:
+      meta_description: Enter a word to check and get the right spelling
+      title: Spell checker
+      subtitle: Enter a word to check and get the right spelling thanks to Artificial Intelligence (limited to 5 spell checks per user).
+      label: Enter your word (in english)
+    openai_response:
+      chat_gpt_response: "ChatGPT response:"
   short_urls:
     index:
       meta_description: Enter a long url and get immediately a shorter one

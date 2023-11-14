@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="weather"
 export default class extends Controller {
-  static targets = ["form", "input", "temp8", "temp14", "temp20", "prev8", "prev14",
+  static targets = ["form", "input", "error", "temp8", "temp14", "temp20", "prev8", "prev14",
                     "prev20", "wind8", "wind14", "wind20", "tend8", "tend14", "tend20"]
   connect() {
     //console.log(this.element)
@@ -20,7 +20,15 @@ export default class extends Controller {
       fetch(url, options)
       .then(response => response.json())
       .then((data)=> {
+        if(!data["results"]){
+          console.log(this.btnTarget)
+          this.errorTarget.classList.remove('hidden')
+        }else{
+          if (this.errorTarget){
+            this.errorTarget.classList.add('hidden')
+          }
           this.findWeather(data)
+        }
       })
   }
   findWeather(data){
