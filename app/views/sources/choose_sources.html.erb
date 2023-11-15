@@ -1,14 +1,14 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<section class="sources-container w-8/12 mx-auto mt-12">
+<section class="sources-container w-10/12 lg:w-8/12 mx-auto mt-12">
   <div class="flex flex-col justify-between items-start">
     <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
     <p><%= t '.paragraph' %></p>
   </div>
-  <ul class="flex justify-between items-center w-full mb-4">
+  <ul class="flex flex-col sm:flex-row justify-between items-center w-full mb-4">
     <% @sources.each do |source| %>
-        <li class="text-center font-semibold bg-beige w-1/4 border rounded p-4 my-8"><%= display_name(source.name) %></li>
+        <li class="text-center font-semibold bg-beige w-3/4 sm:w-1/4 border rounded p-4 my-8"><%= display_name(source.name) %></li>
     <% end %>
   </ul>
   <div class='mb-8 border rounded border-beige w-full p-6'>
