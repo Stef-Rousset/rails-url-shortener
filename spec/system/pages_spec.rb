@@ -21,7 +21,7 @@ RSpec.describe "Pages", type: :system do
 
   context 'signed in' do
     before do
-       sign_in @user
+      sign_in @user
     end
 
     it 'shows home page' do
@@ -41,8 +41,8 @@ RSpec.describe "Pages", type: :system do
       find('button#button').click
       # wrap capybara finders inside of a within block for test to wait
       # until it finds that within selector FIRST before trying to run the code inside of it.
-      within "#navbar-hamburger" do
-          find('#link_test').click #link to home page
+      within '#navbar-hamburger' do
+        find('#link_test').click # link to home page
       end
       expect(page).to have_content('Bienvenue sur Mes outils partagés !')
     end
@@ -51,9 +51,17 @@ RSpec.describe "Pages", type: :system do
       visit weather_path
       expect(page).to have_content('Prévisions méteo')
       fill_in 'search', with: 'paris'
-      click_on "Valider"
-      expect(find('#td_test')).to have_text(/\w/) #presence of text added in JS
-      expect(find('#no_text')).not_to have_text(/\w/) #element always without text
+      click_on 'Valider'
+      expect(find('#td_test')).to have_text(/\w/) # presence of text added in JS
+      expect(find('#no_text')).not_to have_text(/\w/) # element always without text
+    end
+
+    it 'shows the spell_checker page and give the correct word after submitting form' do
+      visit spell_checker_path
+      expect(page).to have_content("Vérificateur d'ortographe")
+      fill_in 'search', with: 'bouteile'
+      click_on 'Valider'
+      expect(find('#gpt_response')).to have_text('bouteille', wait: 15)
     end
   end
 end

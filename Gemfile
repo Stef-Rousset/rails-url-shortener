@@ -90,5 +90,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
+  # use asseet_template [https://github.com/rails/rails-controller-testing]
+  gem 'rails-controller-testing'
 end
