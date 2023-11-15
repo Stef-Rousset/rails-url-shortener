@@ -34,7 +34,7 @@
       <% end %>
 
     <% else %>
-      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid grid-rows-cards justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseenter->cards#toggleText mouseleave->cards#toggleText" class="card border border-beige w-full h-full flex grid grid-rows-cards justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'url.png', class: "w-8/12 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.short-url-title' %></p>
         <p class="hidden font-bold text-center text-white"><%= t '.short-url-text' %></p>
