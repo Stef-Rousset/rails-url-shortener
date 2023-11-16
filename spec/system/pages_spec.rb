@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Pages", type: :system do
   before(:each) do
     @user = create(:user1)
+    @user2 = create(:user2)
   end
 
   context 'not signed in' do
@@ -19,7 +20,7 @@ RSpec.describe "Pages", type: :system do
     end
   end
 
-  context 'signed in' do
+  context 'signed in with @user' do
     before do
       sign_in @user
     end
@@ -55,13 +56,29 @@ RSpec.describe "Pages", type: :system do
       expect(find('#td_test')).to have_text(/\w/) # presence of text added in JS
       expect(find('#no_text')).not_to have_text(/\w/) # element always without text
     end
+  end
+
+  context 'signed in with @user2' do
+    before do
+      sign_in @user2 # it has spell_count = 0
+    end
 
     it 'shows the spell_checker page and give the correct word after submitting form' do
       visit spell_checker_path
       expect(page).to have_content("Vérificateur d'ortographe")
       fill_in 'search', with: 'bouteile'
+      choose('french') # choose a radio button with a name, id, or label text matching french
       click_on 'Valider'
-      expect(find('#gpt_response')).to have_text('bouteille', wait: 15)
+      expect(page).to have_text('bouteille', wait: 15)
+    end
+
+    it 'answers in english in english language is selected' do
+      visit spell_checker_path
+      expect(page).to have_content("Vérificateur d'ortographe")
+      fill_in 'search', with: 'botle'
+      choose('english')
+      click_on 'Valider'
+      expect(page).to have_text('bottle', wait: 15)
     end
   end
 end
