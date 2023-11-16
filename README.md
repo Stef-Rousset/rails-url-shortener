@@ -21,6 +21,7 @@ Make sure these tools are installed on your machine:
 
 You will also need:
 - a relational database => the project uses postgreSQL [https://www.postgresql.org/], but you can use another relational database (see below).
+- an account in OpenAI with an api key, to be able to use the spell checker tool.
 
 ### Installation ###
 
@@ -38,7 +39,9 @@ You will also need:
 The server should only run on `localhost:3000`.<br>
 You should see the homepage of the application.
 If you want to stop the server, use Ctrl + C.<br>
+- Add your OpenAI api key in Rails credentials with a key named `openai_api_key`
 - If you want to get access to the different tools, you will need to sign in with your email and password
+
 
 ### Application endpoints ###
 
