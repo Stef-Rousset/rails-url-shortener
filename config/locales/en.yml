@@ -95,6 +95,7 @@ en:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
+      cancel: Cancel
   sources:
     index:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day

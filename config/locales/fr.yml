@@ -65,6 +65,7 @@ fr:
       title: Créer une nouvelle url courte
       enter_url: Entrer une url
       submit: Créer
+      cancel: Annuler
   sources:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
