@@ -48,10 +48,13 @@ fr:
       fourteen: 14h
       twenty: 20h
     spell_checker:
-      meta_description: Renseignez le mot à vérifier et obtenez la bonne orthographe
+      meta_description: Renseignez un mot français ou anglais à vérifier, et obtenez la bonne orthographe
       title: Vérificateur d'ortographe
-      subtitle: Renseignez un mot à corriger et obtenez la bonne orthographe grâce à l'Intelligence Artificielle (limité à 5 vérifications par utilisateur).
-      label: Entrez votre mot (en français)
+      subtitle: Renseignez un mot français ou anglais à corriger, et obtenez la bonne orthographe grâce à l'Intelligence Artificielle (limité à 5 vérifications par utilisateur).
+      search_label: Entrez votre mot
+      legend: "La langue du mot renseigné est le :"
+      french_label: français
+      english_label: anglais
     openai_response:
       chat_gpt_response: " Réponse de ChatGPT:"
   short_urls:
@@ -65,6 +68,7 @@ fr:
       title: Créer une nouvelle url courte
       enter_url: Entrer une url
       submit: Créer
+      cancel: Annuler
   sources:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours

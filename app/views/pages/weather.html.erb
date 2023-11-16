@@ -1,13 +1,13 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<section data-controller="weather" class="weather-container flex flex-col w-8/12 h-3/4 mx-auto mt-12">
+<section data-controller="weather" class="weather-container flex flex-col w-10/12 lg:w-8/12 lg:h-3/4 mx-auto mb-8 mt-12">
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="mt-4 mb-14 italic"><%= t '.subtitle' %></h2>
   <form data-weather-target="form" data-action="submit->weather#insertResult" class="flex flex-col items-start w-full">
     <div class='flex flex-col items-start w-full mb-4'>
       <label for="search" class='font-semibold mb-2'><%= t '.label' %></label>
-      <input data-weather-target="input" name="search" type="text" placeholder="Paris" class="w-1/2">
+      <input data-weather-target="input" name="search" id="search" type="text" placeholder="Paris" class="w-full md:w-1/2" />
     </div>
     <input  type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
     <p data-weather-target="error" class='text-red-500 mt-4 italic hidden'><%= t '.not_found' %></p>

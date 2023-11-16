@@ -21,6 +21,8 @@ module.exports = {
       },
       height: {
         'h10': '10%',
+        'h20': '20%',
+        'h60': '60%',
         'h80': '80%',
       },
       gridTemplateRows: {

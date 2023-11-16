@@ -78,10 +78,13 @@ en:
       fourteen: 2pm
       twenty: 8pm
     spell_checker:
-      meta_description: Enter a word to check and get the right spelling
+      meta_description: Enter an english or a french word to check, and get the right spelling
       title: Spell checker
-      subtitle: Enter a word to check and get the right spelling thanks to Artificial Intelligence (limited to 5 spell checks per user).
-      label: Enter your word (in english)
+      subtitle: Enter an english or a french word to check, and get the right spelling thanks to Artificial Intelligence (limited to 5 spell checks per user).
+      search_label: Enter your word
+      legend: "The language of the word you entered is :"
+      french_label: french
+      english_label: english
     openai_response:
       chat_gpt_response: "ChatGPT response:"
   short_urls:
@@ -95,6 +98,7 @@ en:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
+      cancel: Cancel
   sources:
     index:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day

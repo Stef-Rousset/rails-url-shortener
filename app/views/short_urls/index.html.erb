@@ -1,14 +1,14 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<section class="urls-container w-8/12 mx-auto mt-12">
+<section class="urls-container w-10/12 lg:w-8/12 mx-auto mt-12">
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
     <%= link_to t('short_urls.index.new_url_link'), new_short_url_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
   <% @urls.each do |url| %>
     <div class=" flex flex-col justify-between items-start h-fit bg-beige border rounded p-4 my-8">
-      <p class="mb-4"><span class="font-semibold"><%= t '.original_url' %> : </span><%= link_to "#{url.long_url}", url.long_url, target: "_blank" %></p>
+      <p class="mb-4"><span class="font-semibold"><%= t '.original_url' %> : </span><%= link_to "#{url.long_url}", url.long_url, target: "_blank", class: "break-all" %></p>
       <p><span class="font-semibold"><%= t '.tiny_url' %> : </span><%= link_to "#{url.tiny_url}", url.tiny_url, target: "_blank" %></p>
     </div>
   <% end %>
