@@ -6,8 +6,19 @@
   <h2 class="mt-4 mb-14 italic"><%= t '.subtitle' %></h2>
   <form action="/spell_checked" method="post" class="flex flex-col items-start w-full">
     <div class='flex flex-col items-start w-full mb-4'>
-      <label for="search" class='font-semibold mb-2'><%= t '.label' %></label>
-      <input data-weather-target="input" name="search" type="text" placeholder="acueille" class="w-full md:w-1/2">
+      <label for="search" class='font-semibold mb-2'><%= t '.search_label' %></label>
+      <input name="search" id="search" type="text" placeholder="acueille" class="w-full md:w-1/2" />
+      <fieldset class="w-full md:w-1/2 mt-8">
+        <legend class="font-semibold mb-2"><%= t'.legend' %></legend>
+        <div class="flex justify-between items-center -full">
+          <label for="french" class="mb-2"><%= t '.french_label' %></label>
+          <input name="language" id="french" type="radio" value="fr" />
+        </div>
+        <div class="flex justify-between items-center -full">
+          <label for="english" class="mb-2"><%= t '.english_label' %></label>
+          <input name="language" id="english" type="radio" value="en" />
+        </div>
+      </fieldset>
     </div>
     <input type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
   </form>

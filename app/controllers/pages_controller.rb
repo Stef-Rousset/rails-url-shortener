@@ -21,7 +21,8 @@ class PagesController < ApplicationController
       render :spell_checker, status: :unprocessable_entity
     else
       @word = params[:search].split(' ')[0] # only get the first word if multiple words are entered
-      @response = HandleOpenai.new(@word).get_word_checked
+      @language = params[:language]
+      @response = HandleOpenai.new(@word, @language).get_word_checked
       if !@response.include?("Une erreur s'est produite") || !@response.include?('An error occured')
         current_user.spell_count += 1
         current_user.save

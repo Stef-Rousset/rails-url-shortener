@@ -1,15 +1,23 @@
 require 'openai'
 # Service to handle spell_checker with openai
 class HandleOpenai
-  def initialize(word)
+  def initialize(word, language)
     @word = word
+    @language = language
   end
 
   def get_word_checked
+    @content =
+      if @language == 'fr'
+        "Peux-tu me donner la bonne ortographe du mot français: #{@word}"
+      else
+        "Can you give me the correct spelling for the english word: #{@word}"
+      end
+
     begin
       response = client.chat(
         parameters: { model: 'gpt-3.5-turbo',
-                      messages: [{ role: 'user', content: "Peux-tu me donner la bonne ortographe du mot français suivant: #{@word}"}],
+                      messages: [{ role: 'user', content: @content }],
                       temperature: 0.7 }
       )
       response.dig('choices', 0, 'message', 'content')
@@ -21,8 +29,7 @@ class HandleOpenai
   private
 
   def client
-    @client ||= OpenAI::Client.new(acces_token: Rails.application.credentials.openai_api_key)
+    @client ||= OpenAI::Client.new
   end
 end
-
 
