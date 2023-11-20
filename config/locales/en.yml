@@ -33,6 +33,8 @@ en:
   an_error_occured: "An error occured: %{my_object}"
   five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
+  validate: Validate
+  cancel: Cancel
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -43,12 +45,13 @@ en:
       url_link: SHORTEN URLS
       news_link: NEWS BY MAIL
       weather_link: WEATHER FORECAST
-      spell_link: VÉRIFICATEUR D'ORTOGRAPHE
+      spell_link: SPELL CHECKER
     footer:
-      about: À propos de ce site
+      about: About this website
+      choose_language: "Choice of language :"
   pages:
     home:
-      title: Welcome to My shared tools !
+      title_home: Welcome to My shared tools !
       paragraph: Here are the different tools you will be able to use freely ! You just need to create an account.
       paragraph_signed_in: Here are the different tools you can use freely :)
       short-url-title: Urls shortener
@@ -63,6 +66,12 @@ en:
       resources: Resources used
       stack: Stack used
       back: Back to home
+      github_link: See the repository
+    about:
+      title: About this website
+      resources: Ressources used
+      stack: Stack used
+      back: Back to Home
       github_link: See the repository
     weather:
       meta_description: Enter a city name and get innmediately the weather forecast for the day !
@@ -99,6 +108,8 @@ en:
       enter_url: Entrer une url
       submit: Create
       cancel: Cancel
+    show:
+      back: Retour à la liste
   sources:
     index:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
@@ -107,7 +118,7 @@ en:
       modify_sources: Modify sources
     choose_sources:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
-      title: Les sources d'information disponibles
+      title: The available information's sources
       paragraph: Get the latest news of sources below every day directly in your mailbox !
       title_form: I agree to receive by mail every day the news from the sources below
   user_mailer:

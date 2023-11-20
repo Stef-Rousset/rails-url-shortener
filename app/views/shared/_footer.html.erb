@@ -1,5 +1,10 @@
 <footer class="grid grid-cols-2 md:grid-cols-3 items-center justify-center w-screen h-h10 sm:h-h20 md:h-h10 bg-darkblue">
-  <%= link_to t('shared.footer.about'), about_path, class: "font-bold md:mr-4 text-white text-center" %>
-  <p class="text-white font-bold hidden md:inline"></p>
-  <a href="mailto:contact@shared-tools.online" class="text-white text-center font-bold ">Contact</a>
+  <%= link_to t('shared.footer.about'), about_path, class: "font-bold text-white text-center" %>
+  <a href="mailto:contact@shared-tools.online" class="text-white text-center font-bold hidden md:block">Contact</a>
+  <div class='flex justify-center items-center'>
+    <p class="font-semibold text-white mr-2 hidden sm:block"><%= t '.choose_language' %></p>
+    <%= form_tag '#', data: {controller: "locales"} do %>
+      <%= select_tag 'set_locale', options_for_select(I18n.available_locales, I18n.locale.to_s), data: { locales_target: "select", action: "change->locales#changeLanguage" }, class: 'bg-beige font-semibold' %>
+    <% end %>
+  </div>
 </footer>

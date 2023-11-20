@@ -2,6 +2,8 @@ fr:
   an_error_occured: "Une erreur s'est produite: %{my_object}"
   five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
+  validate: Valider
+  cancel: Annuler
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -15,9 +17,10 @@ fr:
       spell_link: VÉRIFICATEUR D'ORTOGRAPHE
     footer:
       about: À propos de ce site
+      choose_language: "Choix de la langue :"
   pages:
     home:
-      title: Bienvenue sur Mes outils partagés !
+      title_home: Bienvenue sur Mes outils partagés !
       paragraph: Voici les différents outils que vous pourrez utiliser gratuitement ! Pour cela, il vous suffit juste de créer un compte.
       paragraph_signed_in: Voici les différents outils que vous pouvez utiliser gratuitement :)
       short-url-title: Raccourcir des urls
@@ -69,6 +72,8 @@ fr:
       enter_url: Entrer une url
       submit: Créer
       cancel: Annuler
+    show:
+      back: Retour à la liste
   sources:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
