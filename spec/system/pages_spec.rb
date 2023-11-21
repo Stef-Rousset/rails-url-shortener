@@ -15,8 +15,17 @@ RSpec.describe "Pages", type: :system do
     it 'shows about page with back button to homepage and without navbar hamburger' do
       visit about_path
       expect(page).to have_content('À propos de ce site')
-      expect(page).to have_content("Retour à l'accueil") #back button if not signed_in
-      expect(page.has_css?('button#button')).to eq(false)# no hamburger button if not signed_in
+      expect(page).to have_content("Retour à l'accueil") # back button if not signed_in
+      expect(page.has_css?('button#button')).to eq(false) # no hamburger button if not signed_in
+    end
+
+    it 'changes the language of the page' do
+      visit root_path
+      expect(page).to have_content('Bienvenue sur Mes outils partagés !')
+      select 'en', from: :set_locale
+      expect(page).to have_content('Welcome to My shared tools !')
+      select 'fr', from: :set_locale
+      expect(page).to have_content('Bienvenue sur Mes outils partagés !')
     end
   end
 
@@ -72,7 +81,7 @@ RSpec.describe "Pages", type: :system do
       expect(page).to have_text('bouteille', wait: 15)
     end
 
-    it 'answers in english in english language is selected' do
+    it 'answers in english if english language is selected' do
       visit spell_checker_path
       expect(page).to have_content("Vérificateur d'ortographe")
       fill_in 'search', with: 'botle'
