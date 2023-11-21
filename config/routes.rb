@@ -12,15 +12,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'pages#home'
-  get '/about', to: 'pages#about'
-  get '/weather', to: 'pages#weather'
-  get '/spell_checker', to: 'pages#spell_checker'
-  post '/spell_checked', to: 'pages#spell_checked'
-  resources :short_urls, only: %i[index show new create]
-  resources :sources, only: %i[index]
-  get '/choose_sources', to: 'sources#choose_sources'
-  post '/add_sources_to_user', to: 'sources#add_sources_to_user'
-  get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
-  get '/:url_shortened', to: 'short_urls#url_shortened'
+  scope '(:locale)', locale: /fr|en/ do # parentheses means that the use of locals is optional
+    root 'pages#home'
+    get '/about', to: 'pages#about'
+    get '/weather', to: 'pages#weather'
+    get '/spell_checker', to: 'pages#spell_checker'
+    post '/spell_checked', to: 'pages#spell_checked'
+    resources :short_urls, only: %i[index show new create]
+    resources :sources, only: %i[index]
+    get '/choose_sources', to: 'sources#choose_sources'
+    post '/add_sources_to_user', to: 'sources#add_sources_to_user'
+    get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
+    get '/:url_shortened', to: 'short_urls#url_shortened'
+  end
 end

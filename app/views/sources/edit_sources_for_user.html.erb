@@ -1,5 +1,5 @@
 <%= turbo_frame_tag 'edit_sources', class: "mt-8" do %>
   <div class='mb-8 border rounded border-beige w-full p-6'>
-    <%= render 'form', sources: @sources, user_sources: @user_sources %>
+    <%= render 'form', sources: @sources, user_sources: @user_sources, locale: @locale %>
   </div>
 <% end %>

@@ -11,17 +11,17 @@ RSpec.describe ShortUrlsController, type: :controller do
   context "not signed in" do
     it 'accesses index' do
       get :index
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
 
     it 'does not access show' do
       get :show, params: { id: @url }
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
 
     it 'does not access new' do
       get :new
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
   end
 

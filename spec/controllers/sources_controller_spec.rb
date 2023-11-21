@@ -10,12 +10,12 @@ RSpec.describe SourcesController, type: :controller do
   context "not signed in" do
     it "can't access index" do
       get :index
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
 
     it 'does not access choose_sources' do
       get :choose_sources
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
   end
 

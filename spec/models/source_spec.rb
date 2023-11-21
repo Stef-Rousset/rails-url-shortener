@@ -9,7 +9,7 @@ RSpec.describe Source, type: :model do
     expect(one).to_not be_valid
   end
 
-  it 'is invlaid if url is absent' do
+  it 'is invalid if url is absent' do
     one = Source.new(name: 'source', url: nil)
     expect(one).to_not be_valid
   end

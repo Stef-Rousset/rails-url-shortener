@@ -20,12 +20,12 @@ RSpec.describe PagesController, type: :controller do
 
     it "can't access weather" do
       get :weather
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
 
     it "can't access spell_checker" do
       get :spell_checker
-      assert_redirected_to new_user_session_path
+      assert_redirected_to '/users/sign_in'
     end
   end
 

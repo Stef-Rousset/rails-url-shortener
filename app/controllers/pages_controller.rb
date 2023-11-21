@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def spell_checker
+    @locale = params[:locale]
   end
 
   def spell_checked

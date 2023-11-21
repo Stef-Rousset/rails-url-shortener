@@ -9,7 +9,7 @@
       <label for="search" class='font-semibold mb-2'><%= t '.label' %></label>
       <input data-weather-target="input" name="search" id="search" type="text" placeholder="Paris" class="w-full md:w-1/2" />
     </div>
-    <input  type="submit" value="Valider" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
+    <input  type="submit" value="<%= t :validate %>" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
     <p data-weather-target="error" class='text-red-500 mt-4 italic hidden'><%= t '.not_found' %></p>
   </form>
   <table data-locale=<%= I18n.locale%> class="border border-solid w-full mt-20">
