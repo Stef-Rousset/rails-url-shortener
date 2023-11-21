@@ -8,6 +8,7 @@ class SourcesController < ApplicationController
 
   def choose_sources
     @sources = Source.all
+    @locale = params[:locale]
   end
 
   def add_sources_to_user
@@ -24,5 +25,6 @@ class SourcesController < ApplicationController
   def edit_sources_for_user
     @sources = Source.all
     @user_sources = current_user.sources
+    @locale = params[:locale]
   end
 end

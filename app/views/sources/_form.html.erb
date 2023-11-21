@@ -1,4 +1,9 @@
-<form action="/add_sources_to_user" method="post" class="flex flex-col items-start w-full">
+<form <% if locale.nil? %>
+        action="/add_sources_to_user"
+      <% else %>
+        action="/<%= locale %>/add_sources_to_user"
+      <% end %>
+      method="post" class="flex flex-col items-start w-full">
   <% sources.each do |source| %>
     <div class='flex justify-between w-full md:w-1/4'>
       <label for="<%= source.name %>" class='font-semibold'><%= display_name(source.name) %></label>

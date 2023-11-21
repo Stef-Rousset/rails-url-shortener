@@ -4,7 +4,12 @@
 <section class="spell-container flex flex-col w-10/12 lg:w-8/12 h-3/4 mx-auto mt-12">
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="mt-4 mb-14 italic"><%= t '.subtitle' %></h2>
-  <form action="/spell_checked" method="post" class="flex flex-col items-start w-full">
+  <form <% if @locale.nil? %>
+          action="/spell_checked"
+        <% else %>
+          action="/<%= @locale %>/spell_checked"
+        <% end %>
+        method="post" class="flex flex-col items-start w-full">
     <div class='flex flex-col items-start w-full mb-4'>
       <label for="search" class='font-semibold mb-2'><%= t '.search_label' %></label>
       <input name="search" id="search" type="text" placeholder="acueille" class="w-full md:w-1/2" />
