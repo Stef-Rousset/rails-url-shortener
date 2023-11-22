@@ -81,7 +81,7 @@ RSpec.describe 'Pages', type: :system do
       expect(page).to have_text('bouteille', wait: 15)
     end
 
-    it 'answers in english if english language is selected' do
+    it 'returns the correct word in english if english language is selected' do
       visit spell_checker_path
       expect(page).to have_content("Vérificateur d'ortographe")
       fill_in 'search', with: 'botle'
@@ -89,5 +89,28 @@ RSpec.describe 'Pages', type: :system do
       click_on 'Valider'
       expect(page).to have_text('bottle', wait: 15)
     end
+
+    it 'returns a french string with the correct english word if locale is french' do
+      visit spell_checker_path
+      expect(page).to have_content("Vérificateur d'ortographe")
+      fill_in 'search', with: 'botle'
+      choose('english')
+      click_on 'Valider'
+      expect(page).to have_text('La bonne orthographe', wait: 15)
+      expect(page).to have_text('bottle')
+    end
+
+    it 'returns an english string with the correct french word if locale is english' do
+      visit '/fr/spell_checker'
+      expect(page).to have_content("Vérificateur d'ortographe")
+      select 'en', from: :set_locale
+      expect(page).to have_content("Spell checker")
+      fill_in 'search', with: 'bouteile'
+      choose('french')
+      click_on 'Validate'
+      expect(page).to have_text('The correct', wait: 15)
+      expect(page).to have_text('bouteille')
+    end
+
   end
 end
