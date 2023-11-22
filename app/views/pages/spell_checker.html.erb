@@ -5,7 +5,7 @@
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="mt-4 mb-14 italic"><%= t '.subtitle' %></h2>
   <form <% if @locale.nil? %>
-          action="/spell_checked"
+          action="/fr/spell_checked"
         <% else %>
           action="/<%= @locale %>/spell_checked"
         <% end %>

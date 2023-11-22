@@ -54,7 +54,7 @@ RSpec.describe PagesController, type: :controller do
 
   it 'add 1 spell_count to user and respond with turbo_stream' do
     sign_in @user2 # @user2 has 0 spell_count
-    post :spell_checked, params: { search: 'bouteile', language: 'fr' }, as: :turbo_stream
+    post :spell_checked, params: { search: 'bouteile', language: 'fr', locale: 'fr' }, as: :turbo_stream
     # as: :turbo_stream required for test
     expect(response.media_type).to eq Mime[:turbo_stream]
     expect(response).to render_template(layout: false)
