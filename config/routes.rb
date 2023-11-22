@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get '/weather', to: 'pages#weather'
     get '/spell_checker', to: 'pages#spell_checker'
     post '/spell_checked', to: 'pages#spell_checked'
-    resources :short_urls, only: %i[index show new create]
+    resources :short_urls, only: %i[index show new create destroy]
     resources :sources, only: %i[index]
     get '/choose_sources', to: 'sources#choose_sources'
     post '/add_sources_to_user', to: 'sources#add_sources_to_user'
