@@ -33,6 +33,7 @@ en:
   an_error_occured: "An error occured: %{my_object}"
   five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
+  destroyed: Your url has been destroyed
   validate: Validate
   cancel: Cancel
   shared:

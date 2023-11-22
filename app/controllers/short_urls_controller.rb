@@ -30,6 +30,12 @@ class ShortUrlsController < ApplicationController
     redirect_to @url.long_url, allow_other_host: true
   end
 
+  def destroy
+    @url = ShortUrl.find(params[:id])
+    @url.destroy
+    redirect_to short_urls_path, notice: t(:destroyed)
+  end
+
   private
 
   def short_url_params

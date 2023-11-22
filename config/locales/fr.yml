@@ -2,6 +2,7 @@ fr:
   an_error_occured: "Une erreur s'est produite: %{my_object}"
   five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
+  destroyed: Votre url a bien été supprimée
   validate: Valider
   cancel: Annuler
   shared:
