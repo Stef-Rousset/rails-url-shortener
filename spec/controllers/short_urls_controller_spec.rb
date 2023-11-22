@@ -4,8 +4,8 @@ RSpec.describe ShortUrlsController, type: :controller do
   before(:each) do
     @user = create(:user1)
     @user2 = create(:user2)
-    @url = create(:short_url1)
-    @url2 =  create(:short_url2)
+    @url = create(:short_url1, user: @user)
+    @url2 = create(:short_url2, user: @user2)
   end
 
   context "not signed in" do
@@ -55,7 +55,7 @@ RSpec.describe ShortUrlsController, type: :controller do
 
     it 'creates a new short_url' do
       post :create, params: { short_url: {
-                                        long_url: "https://guides.rubyonrails.org/testing.html",
+                                        long_url: 'https://guides.rubyonrails.org/testing.html',
                                         user_id: @user,
                                       }
                                     }
@@ -64,15 +64,15 @@ RSpec.describe ShortUrlsController, type: :controller do
 
     it 'does not create a short_url if attributes invalid' do
       post :create, params: { short_url: {
-                                        long_url: "",
-                                        user_id: @user,
-                                      }
-                                    }
+                                        long_url: '',
+                                        user_id: @user
+                                         }
+                            }
       assert_response :unprocessable_entity
     end
 
     it 'redirects to long_url' do
-      get :url_shortened, params: {url_shortened: @url.tiny_url}
+      get :url_shortened, params: { url_shortened: @url.tiny_url }
       assert_redirected_to @url.long_url
     end
 
@@ -83,9 +83,15 @@ RSpec.describe ShortUrlsController, type: :controller do
     end
 
     it 'redirects to index from url_shortened if record not found' do
-      get :url_shortened, params: {url_shortened: "xxxxxxx"}
+      get :url_shortened, params: {url_shortened: 'xxxxxxx'}
       assert_redirected_to short_urls_path
       expect(flash[:alert]).to be_present
+    end
+
+    it 'deletes url' do
+      delete :destroy, params: { id: @url.id }
+      assert_redirected_to short_urls_path
+      expect(flash[:notice]).to be_present
     end
   end
 end

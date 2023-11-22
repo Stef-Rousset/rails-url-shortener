@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Pages", type: :system do
+RSpec.describe 'Pages', type: :system do
   before(:each) do
     @user = create(:user1)
     @user2 = create(:user2)
