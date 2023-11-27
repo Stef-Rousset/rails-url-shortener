@@ -23,6 +23,7 @@ class User < ApplicationRecord
   before_save :email_normalization
 
   has_many :short_urls
+  has_many :accounts
   has_and_belongs_to_many :sources
 
   def user_news
