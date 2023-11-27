@@ -68,13 +68,16 @@ fr:
       new_url_link: Créer une nouvelle url courte
       original_url: Url d'origine
       tiny_url: Url courte
+    show:
+      title: Votre url courte pour
+      long_url: Url d'origine
+      tiny_url: Url courte
+      back: Retour à la liste
     new:
       title: Créer une nouvelle url courte
       enter_url: Entrer une url
       submit: Créer
       cancel: Annuler
-    show:
-      back: Retour à la liste
   sources:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
@@ -91,6 +94,30 @@ fr:
       hello: Bonjour
       intro_string: voici les nouvelles d'aujourd'hui
       end_string: C'est tout pour aujourd'hui, bonne journée !
+  accounts:
+    index:
+      meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
+      title: Mes comptes
+      new_url_link: Créer un compte
+    account:
+      account_balance: Solde
+      show_url_link: Détails
+    show:
+      title: "Détails du compte %{name}"
+      balance: Solde
+      back: Retour à la liste
+    new:
+      title: Nouveau compte
+    edit:
+      title: "Modifier le compte %{name}"
+      paragraph: Veuillez noter que le solde n'est pas modifiable
+    form:
+      error: erreur
+      error_phrase: empêchant ce compte d'être sauvegardé
+      name: Nom
+      balance: Solde
+      submit: Valider
+      cancel: Annuler
   activerecord:
     attributes:
       user:

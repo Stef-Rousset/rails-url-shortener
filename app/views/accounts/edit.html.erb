@@ -1,0 +1,5 @@
+<section class="account-container w-1/2 mx-auto mt-12">
+  <h1 class="font-bold text-lg my-4"><%= t('.title', name: @account.name)%></h1>
+  <p class='italic'><%= t '.paragraph' %></p>
+  <%= render 'form', account: @account %>
+</section>

@@ -1,0 +1,10 @@
+<div class="flex justify-between items-center h-fit <%= cycle('bg-beige', 'bg-gray-200') %> border rounded p-4 my-8">
+  <div class=" flex flex-col justify-between items-start ">
+    <p class="mb-4 font-semibold"><%= account.name%></p>
+    <p><span class="font-semibold"><%= t '.account_balance' %> : </span><%= number_to_currency(account.balance) %></p>
+    <%= link_to t('accounts.account.show_url_link'), account_path(account), class: "bg-white border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+  </div>
+  <%= link_to account_path(account), data: {turbo_method: :delete, confirm: 'Are you sure ?'} do %>
+    <i class="fa-solid fa-trash-can"></i>
+  <% end %>
+</div>

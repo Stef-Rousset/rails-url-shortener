@@ -11,3 +11,7 @@
 }
 
 */
+/* avoid style change in fields when error in a form */
+.field_with_errors {
+  display: contents;
+}

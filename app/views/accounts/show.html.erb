@@ -1,0 +1,11 @@
+<section class="account-container w-8/12 h-1/2 mx-auto mt-12">
+  <h1 class="font-bold text-lg my-4"><%= t('accounts.show.title', name: @account.name) %></h1>
+  <div class= "flex flex-col justify-between items-start w-full mx-auto">
+    <p class="mb-2"><span class="font-semibold"><%= t '.balance' %> : <%= number_to_currency(@account.balance) %></p>
+    <ul>
+      <%# @account.transactions do |transaction| %>
+      <%# end %>
+    </ul>
+  </div>
+  <%= link_to t('.back'), accounts_path, class: "bg-beige border border-beige font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white" %>
+</section>

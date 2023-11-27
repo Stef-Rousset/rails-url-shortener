@@ -104,13 +104,16 @@ en:
       new_url_link: Create a new short url
       original_url: Original url
       tiny_url: Tiny url
+    show:
+      title: Your tiny url for
+      long_url: Original url
+      tiny_url: Tiny url
+      back: Back to list
     new:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
       cancel: Cancel
-    show:
-      back: Retour à la liste
   sources:
     index:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
@@ -122,6 +125,30 @@ en:
       title: The available information's sources
       paragraph: Get the latest news of sources below every day directly in your mailbox !
       title_form: I agree to receive by mail every day the news from the sources below
+  accounts:
+    index:
+      meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
+      title: My accounts
+      new_url_link: Create an account
+    account:
+      account_balance: Balance
+      show_url_link: Details
+    show:
+      title: "Details of the account %{name}"
+      balance: Balance
+      back: Back to list
+    new:
+      title: New account
+    edit:
+      title: "Edit account %{name}"
+      paragraph: Please be aware that balance is not editable
+    form:
+      error: error
+      error_phrase: prohibited this product from being saved
+      name: Name
+      balance: Balance
+      submit: Validate
+      cancel: Cancel
   user_mailer:
     news_email:
       hello: Hello
