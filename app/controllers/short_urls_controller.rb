@@ -33,7 +33,7 @@ class ShortUrlsController < ApplicationController
   def destroy
     @url = ShortUrl.find(params[:id])
     @url.destroy
-    redirect_to short_urls_path, notice: t(:destroyed)
+    redirect_to short_urls_path, notice: t(:destroyed, name: t(:short_url))
   end
 
   private

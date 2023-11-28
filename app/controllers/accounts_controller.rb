@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     if @account.save
-      redirect_to account_path(@account), notice: 'Compte crée'
+      redirect_to account_path(@account), notice: t(:created, name: t(:account))
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(account_params)
-      redirect_to account_path(@account), notice: 'Compte modifié'
+      redirect_to account_path(@account), notice: t(:modified, name: t(:account))
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
-    redirect_to accounts_path, notice: 'Compte détruit'
+    redirect_to accounts_path, notice: t(:destroyed, name: t(:account))
   end
 
   private

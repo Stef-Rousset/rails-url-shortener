@@ -2,7 +2,12 @@ fr:
   an_error_occured: "Une erreur s'est produite: %{my_object}"
   five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
-  destroyed: Votre url a bien été supprimée
+  short_url: url courte
+  account: compte
+  category: categorie
+  created: "%{name} crée(e) !"
+  updated: "%{name} modifié(e) !"
+  destroyed: "%{name} supprimé(e) !"
   validate: Valider
   cancel: Annuler
   shared:
@@ -106,6 +111,7 @@ fr:
       title: "Détails du compte %{name}"
       balance: Solde
       back: Retour à la liste
+      edit_btn: Modifier
     new:
       title: Nouveau compte
     edit:
@@ -118,6 +124,16 @@ fr:
       balance: Solde
       submit: Valider
       cancel: Annuler
+  categories:
+    index:
+      meta_description: Gérer les catégories d'opérations
+      title: Liste des catégories
+      new_url_link: Créer un catégorie
+    new:
+      title: Nouvelle catégorie
+      cancel: Annuler
+      name: Nom de la catégorie
+      submit: Valider
   activerecord:
     attributes:
       user:

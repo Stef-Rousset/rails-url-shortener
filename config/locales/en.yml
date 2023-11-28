@@ -33,7 +33,12 @@ en:
   an_error_occured: "An error occured: %{my_object}"
   five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
-  destroyed: Your url has been destroyed
+  short_url: short url
+  account: account
+  category: category
+  created: "%{name} created !"
+  updated: "%{name} modified !"
+  destroyed: "%{name} destroyed !"
   validate: Validate
   cancel: Cancel
   shared:
@@ -137,6 +142,7 @@ en:
       title: "Details of the account %{name}"
       balance: Balance
       back: Back to list
+      edit_btn: Edit
     new:
       title: New account
     edit:
@@ -149,6 +155,16 @@ en:
       balance: Balance
       submit: Validate
       cancel: Cancel
+  categories:
+    index:
+      meta_description: Manage the categories for transactions
+      title: List of categories
+      new_url_link: Create a catégory
+    new:
+      title: New category
+      cancel: Cancel
+      name: Name of the category
+      submit: Validate
   user_mailer:
     news_email:
       hello: Hello

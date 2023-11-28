@@ -14,7 +14,8 @@ module.exports = {
       },
       backgroundColor: {
         beige: "#FFF2D8",
-        darkblue: "#113946"
+        darkblue: "#113946",
+        lightblue: '#b7d8e2'
       },
       colors: {
         beige: "#FFF2D8",

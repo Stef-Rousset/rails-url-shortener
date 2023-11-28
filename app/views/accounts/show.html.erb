@@ -7,5 +7,8 @@
       <%# end %>
     </ul>
   </div>
-  <%= link_to t('.back'), accounts_path, class: "bg-beige border border-beige font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white" %>
+  <div class='flex justify-between items-center'>
+    <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "bg-beige border border-beige font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white"%>
+    <%= link_to t('.back'), accounts_path, class: "bg-beige border border-beige font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white" %>
+  </div>
 </section>

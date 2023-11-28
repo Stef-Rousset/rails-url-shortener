@@ -1,0 +1,12 @@
+<section class="category-container w-1/2 mx-auto mt-12">
+  <h1 class="font-bold text-lg my-4"><%= t '.title'%></h1>
+  <%= form_with model: @category, class: "flex flex-col mt-8 w-full" do |f| %>
+    <%= f.label :name, t('.name'), required: true, class: "font-semibold my-2"%>
+    <%= f.text_field :name, class: "bg-beige rounded mb-12" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class='flex justify-evenly items-center'>
+      <%= f.submit t('.submit'), class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+      <%= link_to t('.cancel'), categories_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    </div>
+  <% end %>
+</section>

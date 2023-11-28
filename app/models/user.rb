@@ -24,6 +24,7 @@ class User < ApplicationRecord
 
   has_many :short_urls
   has_many :accounts
+  has_many :categories
   has_and_belongs_to_many :sources
 
   def user_news
