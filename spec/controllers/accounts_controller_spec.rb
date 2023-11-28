@@ -39,7 +39,7 @@ RSpec.describe AccountsController, type: :controller do
     end
 
     it 'creates a new account' do
-      post :create, params: { account: { name: "livret A",
+      post :create, params: { account: { name: 'livret A',
                                          balance: 100,
                                          user_id: @user
                                         }
@@ -49,7 +49,7 @@ RSpec.describe AccountsController, type: :controller do
     end
 
     it 'renders new if create fails' do
-      post :create, params: { account: { name: "",
+      post :create, params: { account: { name: '',
                                          balance: 100,
                                          user_id: @user
                                         }
@@ -72,7 +72,7 @@ RSpec.describe AccountsController, type: :controller do
 
     it 'renders edit if update fails' do
       put :update, params: { id: @account.id,
-                             account: { balance: "string" }
+                             account: { balance: 'string' }
                            }
       assert_response :unprocessable_entity
     end
