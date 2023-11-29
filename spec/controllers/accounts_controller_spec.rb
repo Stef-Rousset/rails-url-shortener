@@ -64,15 +64,16 @@ RSpec.describe AccountsController, type: :controller do
 
     it 'updates an account' do
       put :update, params: { id: @account.id,
-                             account: { balance: 50 }
+                             account: { name: 'Mon nouveau compte' }
                            }
       assert_redirected_to account_path(@account)
       expect(flash[:notice]).to be_present
+      expect(@account.reload.name).to eq('Mon nouveau compte')
     end
 
     it 'renders edit if update fails' do
       put :update, params: { id: @account.id,
-                             account: { balance: 'string' }
+                             account: { name: '' }
                            }
       assert_response :unprocessable_entity
     end

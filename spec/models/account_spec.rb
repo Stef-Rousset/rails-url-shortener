@@ -28,4 +28,22 @@ RSpec.describe Account, type: :model do
     account = Account.new(name: 'bank', balance: -100.15, user_id: @user.id)
     expect(account).to be_valid
   end
+
+  it 'capitalize name account' do
+    account = Account.create(name: 'bank', balance: -100.15, user_id: @user.id)
+    expect(account.name).to eq('Bank')
+  end
+
+  it 'is invalid if name is not unique for a user' do
+    account = create(:account, user: @user)
+    second = Account.new(name: account.name, balance: -100.15, user_id: @user.id)
+    expect(second).not_to be_valid
+  end
+
+  it 'is valid if name is unique for user' do
+    user2 = create(:user2)
+    account = create(:account, user: @user)
+    second = Account.new(name: account.name, balance: -100.15, user_id: user2.id)
+    expect(second).to be_valid
+  end
 end

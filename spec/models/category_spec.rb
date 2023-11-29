@@ -20,7 +20,13 @@ RSpec.describe Category, type: :model do
   end
 
   it 'capitalizes the name' do
-    cate = Category.create!(name: 'travail')
+    cate = Category.create(name: 'travail')
     expect(cate.name).to eq('Travail')
+  end
+
+  it 'is invalid if name not unique for the user' do
+    cate1 = create(:category, user: @user)
+    cate2 = Category.new(name: cate1.name, user_id: @user.id)
+    expect(cate2).not_to be_valid
   end
  end

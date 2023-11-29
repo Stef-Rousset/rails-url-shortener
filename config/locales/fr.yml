@@ -10,6 +10,8 @@ fr:
   destroyed: "%{name} supprimé(e) !"
   validate: Valider
   cancel: Annuler
+  error: erreur
+  error_phrase: "empêchant %{name} d'être sauvegardé(e)"
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -118,8 +120,6 @@ fr:
       title: "Modifier le compte %{name}"
       paragraph: Veuillez noter que le solde n'est pas modifiable
     form:
-      error: erreur
-      error_phrase: empêchant ce compte d'être sauvegardé
       name: Nom
       balance: Solde
       submit: Valider

@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(account_params)
-      redirect_to account_path(@account), notice: t(:modified, name: t(:account))
+      redirect_to account_path(@account), notice: t(:updated, name: t(:account))
     else
       render :edit, status: :unprocessable_entity
     end

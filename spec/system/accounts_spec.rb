@@ -57,4 +57,13 @@ RSpec.describe 'Accounts', type: :system do
       click_on 'Annuler'
       expect(page).to have_content('Mes comptes')
     end
+
+    it 'updates account' do
+      visit "fr/accounts/#{@account.id}/edit"
+      expect(page).to have_content('Modifier le compte')
+      fill_in 'account[name]', with: '' #needed to empty input filled with old value
+      fill_in 'account[name]', with: 'Nouveau nom'
+      click_on 'Valider'
+      expect(page).to have_content('Détails du compte Nouveau nom')
+    end
 end

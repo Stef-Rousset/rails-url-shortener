@@ -41,6 +41,8 @@ en:
   destroyed: "%{name} destroyed !"
   validate: Validate
   cancel: Cancel
+  error: error
+  error_phrase: "preventing %{name} to be saved"
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -149,8 +151,6 @@ en:
       title: "Edit account %{name}"
       paragraph: Please be aware that balance is not editable
     form:
-      error: error
-      error_phrase: prohibited this product from being saved
       name: Name
       balance: Balance
       submit: Validate
