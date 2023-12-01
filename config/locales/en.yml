@@ -36,6 +36,7 @@ en:
   short_url: short url
   account: account
   category: category
+  transaction: transaction
   created: "%{name} created !"
   updated: "%{name} modified !"
   destroyed: "%{name} destroyed !"
@@ -43,6 +44,7 @@ en:
   cancel: Cancel
   error: error
   error_phrase: "preventing %{name} to be saved"
+  none: None
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -145,6 +147,10 @@ en:
       balance: Balance
       back: Back to list
       edit_btn: Edit
+      transactions: Transactions
+      add_transactions_link: Add transaction
+    balance:
+      balance: Balance
     new:
       title: New account
     edit:
@@ -165,6 +171,17 @@ en:
       cancel: Cancel
       name: Name of the category
       submit: Validate
+  transactions:
+    form:
+      payee: Payee
+      transaction_type: Type
+      amount: Amount
+      date: Date
+      description: Description
+      category: Cetégory
+      checked: Checked
+      submit: Validate
+      cancel: Cancel
   user_mailer:
     news_email:
       hello: Hello
@@ -364,3 +381,8 @@ en:
         significant: false
         strip_insignificant_zeros: false
         unit: "$"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"

@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @transactions = @account.transactions.order(date: :desc, created_at: :desc)
   end
 
   def new

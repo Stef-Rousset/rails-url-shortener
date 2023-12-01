@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     get '/choose_sources', to: 'sources#choose_sources'
     post '/add_sources_to_user', to: 'sources#add_sources_to_user'
     get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
-    resources :accounts
+    resources :accounts do
+      resources :transactions
+    end
     resources :categories, only: %i[index new create]
     get '/:url_shortened', to: 'short_urls#url_shortened'
   end

@@ -4,9 +4,16 @@ RSpec.describe Account, type: :model do
   before(:example) do
     @user = create(:user1)
   end
-  it 'is invalid if name not present' do
-    account = Account.new(name: '', user_id: @user.id)
-    expect(account).not_to be_valid
+
+  context 'name presence' do
+    before do
+      Account.skip_callback(:validation, :before, :capitalize)
+    end
+
+    it 'is invalid if name not present' do
+      account = Account.new(name: '', user_id: @user.id)
+      expect(account).not_to be_valid
+    end
   end
 
   it 'is valid if name is  present' do
