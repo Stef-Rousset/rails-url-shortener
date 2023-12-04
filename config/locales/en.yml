@@ -182,6 +182,9 @@ en:
       checked: Checked
       submit: Validate
       cancel: Cancel
+    transaction:
+      show_more: Show more
+      show_less: Show less
   user_mailer:
     news_email:
       hello: Hello

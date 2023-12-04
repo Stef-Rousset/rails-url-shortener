@@ -150,6 +150,9 @@ fr:
       checked: Vérifiée
       submit: Valider
       cancel: Annuler
+    transaction:
+      show_more: Voir plus
+      show_less: Voir moins
   activerecord:
     attributes:
       user:

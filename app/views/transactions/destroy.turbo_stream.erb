@@ -1,0 +1,5 @@
+<%= turbo_stream.remove @transaction %>
+<%= turbo_stream.update dom_id(@account, :balance) do %>
+  <%= render "accounts/balance", account: @account %>
+<% end %>
+<%= turbo_stream.prepend "flash",  partial: "shared/flashes" %>
