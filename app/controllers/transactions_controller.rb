@@ -23,12 +23,14 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
     # update_column to avoid after_save callback
     @transaction.update_column('checked', params[:checked])
+    render json: {}, status: :ok
   end
 
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy
     @account = @transaction.account
+    @transactions = @account.transactions
     @transaction.update_balance_after_destroy
     # logger.debug "balance: #{@account.balance}"
     respond_to do |format|

@@ -7,6 +7,7 @@
   <%= turbo_stream.prepend 'transactions' do %>
     <%= render @transaction, account: @account %>
   <% end %>
+  <%= turbo_stream.update 'no_transaction', "" %>
 <% end %>
 <%= turbo_stream.update dom_id(@account, :balance) do %>
   <%= render "accounts/balance", account: @account %>

@@ -154,6 +154,8 @@ fr:
       show_more: Voir plus
       show_less: Voir moins
       checked: Vérifiée
+    no_transaction:
+      no_transaction: Aucune opération renseignée...
   activerecord:
     attributes:
       user:

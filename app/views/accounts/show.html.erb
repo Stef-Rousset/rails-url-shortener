@@ -10,14 +10,20 @@
       <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "bg-beige border border-beige font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white"%>
       <%= link_to t('.back'), accounts_path, class: "bg-beige border border-beige font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white" %>
     </div>
-      <%= link_to t('accounts.show.add_transactions_link'), new_account_transaction_path(@account), data: { turbo_frame: dom_id(Transaction.new) }, class: "bg-beige border border-beige font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white mt-8 mb-4" %>
-      <%= turbo_frame_tag Transaction.new %>
+    <%= link_to t('accounts.show.add_transactions_link'), new_account_transaction_path(@account), data: { turbo_frame: dom_id(Transaction.new) }, class: "bg-darkblue text-white border font-semibold w-fit block p-2 hover:bg-beige hover:text-black mt-8 mb-4 mx-auto" %>
+    <%= turbo_frame_tag Transaction.new %>
   </div>
   <div class="border mt-12 px-2">
     <h2 class="font-semibold text-lg my-4"><%= t '.transactions' %></h2>
     <div class="flex flex-col justify-between items-start w-full mx-auto mb-4">
       <%= turbo_frame_tag 'transactions', class: "w-full" do %>
-        <%= render @transactions %>
+        <% if @transactions.empty? %>
+          <%= turbo_frame_tag 'no_transaction' do %>
+            <%= render 'transactions/no_transaction' %>
+          <% end %>
+        <% else %>
+          <%= render @transactions %>
+        <% end%>
       <% end %>
     </div>
   </div>

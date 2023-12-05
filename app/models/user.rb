@@ -37,6 +37,10 @@ class User < ApplicationRecord
     hash
   end
 
+  def accounts_total_sum
+    accounts.map(&:balance).sum
+  end
+
   private
 
   def email_normalization

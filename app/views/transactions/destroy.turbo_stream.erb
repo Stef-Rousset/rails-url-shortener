@@ -1,4 +1,7 @@
 <%= turbo_stream.remove @transaction %>
+<% if @transactions.empty? %>
+  <%= turbo_stream.prepend 'no_transaction', partial: "transactions/no_transaction" %>
+<% end %>
 <%= turbo_stream.update dom_id(@account, :balance) do %>
   <%= render "accounts/balance", account: @account %>
 <% end %>
