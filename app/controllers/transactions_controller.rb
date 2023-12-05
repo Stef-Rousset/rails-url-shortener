@@ -19,12 +19,18 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def update_checked
+    @transaction = Transaction.find(params[:id])
+    # update_column to avoid after_save callback
+    @transaction.update_column('checked', params[:checked])
+  end
+
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy
     @account = @transaction.account
     @transaction.update_balance_after_destroy
-    #logger.debug "balance: #{@account.balance}"
+    # logger.debug "balance: #{@account.balance}"
     respond_to do |format|
       format.html { redirect_to account_path(@account), notice: t(:destroyed, name: t(:transaction)) }
       format.turbo_stream { flash.now[:notice] = t(:destroyed, name: t(:transaction)) }

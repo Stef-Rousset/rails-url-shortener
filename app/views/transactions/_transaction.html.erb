@@ -2,7 +2,11 @@
   <div class="flex flex-col h-fit w-full <%= cycle('bg-lightblue', 'bg-beige') %> border rounded p-4 my-1">
     <div class="flex justify-between items-center w-full">
       <h3 class="font-semibold mb-2"><%= l transaction.date %></h3>
-      <% if transaction.checked %><i class="fa-solid fa-square-check"></i><% end %>
+      <%= form_with url: "/update_checked", method: :put, class: 'flex justify-between items-center' do |f| %>
+        <%= f.label :checked, t('transactions.transaction.checked'), class: "mr-2" %>
+        <%= f.check_box :checked, onchange: "this.form.requestSubmit();", checked: transaction.checked  %>
+        <%= f.hidden_field :id, value: transaction.id %>
+      <% end %>
     </div>
     <div class="flex justify-between items-center w-full">
       <h4 class="font-semibold"><%= transaction.payee %></h4>

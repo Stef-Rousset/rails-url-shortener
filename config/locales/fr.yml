@@ -153,6 +153,7 @@ fr:
     transaction:
       show_more: Voir plus
       show_less: Voir moins
+      checked: Vérifiée
   activerecord:
     attributes:
       user:

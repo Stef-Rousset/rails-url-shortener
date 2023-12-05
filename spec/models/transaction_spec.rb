@@ -41,4 +41,14 @@ RSpec.describe Transaction, type: :model do
     @account.reload
     expect(@account.balance).to eq(19.99)
   end
+
+  it 'updates balance account with update_balance_after_destroy' do
+    expect(@account.balance).to eq(9.99)
+    transaction = Transaction.create(payee: 'Paul', date: Date.today, amount: 10, transaction_type: 1, account_id: @account.id)
+    @account.reload
+    expect(@account.balance).to eq(19.99)
+    transaction.update_balance_after_destroy
+    @account.reload
+    expect(@account.balance).to eq(9.99)
+  end
 end

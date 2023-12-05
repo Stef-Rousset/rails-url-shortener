@@ -185,6 +185,7 @@ en:
     transaction:
       show_more: Show more
       show_less: Show less
+      checked: Checked
   user_mailer:
     news_email:
       hello: Hello
