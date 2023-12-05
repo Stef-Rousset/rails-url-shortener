@@ -47,7 +47,7 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
   end
 
-  def not_found(exception)
+  def not_found
     redirect_to accounts_path, alert: t('record_not_found', my_object: Account.model_name.name, params: (params[:id]))
   end
 

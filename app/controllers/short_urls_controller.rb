@@ -42,7 +42,7 @@ class ShortUrlsController < ApplicationController
     params.require(:short_url).permit(:long_url, :user_id)
   end
 
-  def not_found(exception)
+  def not_found
     redirect_to short_urls_path, alert: t('record_not_found', my_object: ShortUrl.model_name.name, params: (params[:id] || params[:url_shortened]).to_s)
   end
 end
