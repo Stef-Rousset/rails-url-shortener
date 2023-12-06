@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_account, only: %i[new create]
+  before_action :set_account, only: %i[new create edit]
+  before_action :set_transaction, only: %i[edit update update_checked destroy]
 
   def new
     @transaction = Transaction.new
@@ -19,15 +20,27 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @transaction.update(transaction_params)
+      @account = @transaction.account
+      respond_to do |format|
+        format.turbo_stream { flash.now[:notice] = t(:updated, name: t(:transaction)) }
+        format.html { redirect_to account_path(@account), notice: t(:updated, t(:transaction)) }
+      end
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def update_checked
-    @transaction = Transaction.find(params[:id])
-    # update_column to avoid after_save callback
-    @transaction.update_column('checked', params[:checked])
+    @transaction.update(checked: params[:checked])
     render json: {}, status: :ok
   end
 
   def destroy
-    @transaction = Transaction.find(params[:id])
     @transaction.destroy
     @account = @transaction.account
     @transactions = @account.transactions
@@ -40,6 +53,10 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
+  end
 
   def set_account
     @account = Account.find(params[:account_id])

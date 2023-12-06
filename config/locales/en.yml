@@ -172,6 +172,10 @@ en:
       name: Name of the category
       submit: Validate
   transactions:
+    new:
+     new_transaction: New transaction
+    edit:
+      transaction_to_edit: Transaction to edit
     form:
       payee: Payee
       transaction_type: Type

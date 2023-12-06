@@ -140,6 +140,10 @@ fr:
       name: Nom de la catégorie
       submit: Valider
   transactions:
+    new:
+     new_transaction: Nouvelle opération
+    edit:
+      transaction_to_edit: Opération à modifier
     form:
       payee: Béneficiaire
       transaction_type: Type

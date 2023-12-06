@@ -21,7 +21,7 @@
           <p class="italic mt-2 text-sm">Catégorie: <%= transaction.category.present? ? transaction.category.name : "pas de catégorie" %></p>
         </div>
         <div class="flex w-1/3 justify-end">
-          <%= link_to edit_account_transaction_path(@account, transaction), class: "mr-4" do %>
+          <%= link_to edit_account_transaction_path(@account, transaction), data: { turbo_frame: 'edit-modal' }, class: "mr-4" do %>
             <i class="fa-solid fa-pen-to-square"></i>
           <% end %>
           <%= link_to account_transaction_path(@account, transaction), data: { turbo_method: 'delete' } do %>

@@ -1,0 +1,7 @@
+<%= turbo_stream.replace @transaction do %>
+  <%= render @transaction, account: @account %>
+<% end %>
+<%= turbo_stream.update dom_id(@account, :balance) do %>
+  <%= render "accounts/balance", account: @account %>
+<% end %>
+<%= turbo_stream.update 'edit-modal', "" %>

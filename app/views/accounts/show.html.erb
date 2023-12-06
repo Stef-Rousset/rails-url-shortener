@@ -1,4 +1,5 @@
 <section class="account-container w-1/2 h-1-2 overflow-y-scroll mx-auto mt-12">
+  <%= turbo_frame_tag "edit-modal" %>
   <div class="border px-2">
     <div class="flex justify-between items-center mt-4 mb-2">
       <h1 class="font-bold text-lg"><%= t('accounts.show.title', name: @account.name) %></h1>
