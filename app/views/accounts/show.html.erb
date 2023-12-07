@@ -1,32 +1,56 @@
-<section class="account-container w-1/2 h-1-2 overflow-y-scroll mx-auto mt-12">
-  <%= turbo_frame_tag "edit-modal" %>
-  <div class="border px-2">
-    <div class="flex justify-between items-center mt-4 mb-2">
-      <h1 class="font-bold text-lg"><%= t('accounts.show.title', name: @account.name) %></h1>
-      <%= turbo_frame_tag dom_id(@account, :balance) do %>
-        <%= render 'balance', account: @account %>
-      <% end %>
+<div class="flex justify-start items-start w-full">
+  <aside class="flex flex-col w-w20 bg-lightblue border mt-12 ml-12 mr-4 p-2 sticky top-12">
+    <h2 class="font-bold text-lg mb-8">Filtrer les opérations :</h2>
+    <%= form_with url: account_path, method: :get, class: 'flex flex-col w-10/12 mx-auto' do |f| %>
+      <div class="flex justify-between items-center w-full mb-4">
+        <%= f.label :checked, t('.checked'), class: "font-semibold mr-2" %>
+        <%= f.check_box :checked, checked: params[:checked] != "0" && params[:checked].present? %>
+      </div>
+      <div class="flex justify-between items-center w-full mb-4">
+        <%= f.label :category_id, t('.category'), class: "font-semibold mb-2" %>
+        <%= f.select :category_id, categories_for_form(@account), {}, class: "bg-beige rounded mb-4" %>
+      </div>
+      <p class="font-semibold mb-2">Dates</p>
+      <div class="flex justify-between items-center w-full mb-1">
+        <%= f.label :begin_date, t('.begin_date'), class: "mb-2" %>
+        <%= f.date_field :begin_date, value: params[:begin_date], class: "bg-beige rounded mb-4" %>
+      </div>
+      <div class="flex justify-between items-center w-full mb-4">
+        <%= f.label :end_date, t('.end_date'), class: "mb-2" %>
+        <%= f.date_field :end_date, value: params[:end_date], class: "bg-beige rounded mb-4" %>
+      </div>
+      <%= f.submit t(:validate), class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white self-center" %>
+    <% end %>
+  </aside>
+  <section class="account-container w-1/2 h-fit mt-12">
+    <%= turbo_frame_tag "edit-modal" %>
+    <div class="border bg-lightblue px-2">
+      <div class="flex justify-between items-center mt-4 mb-2">
+        <h1 class="font-bold text-lg"><%= t('accounts.show.title', name: @account.name) %></h1>
+        <%= turbo_frame_tag dom_id(@account, :balance) do %>
+          <%= render 'balance', account: @account %>
+        <% end %>
+      </div>
+      <div class='flex justify-between items-center mb-4'>
+        <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "bg-beige border border-black font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white"%>
+        <%= link_to t('.back'), accounts_path, class: "bg-beige border border-black font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white" %>
+      </div>
+      <%= link_to t('accounts.show.add_transactions_link'), new_account_transaction_path(@account), data: { turbo_frame: dom_id(Transaction.new) }, class: "bg-darkblue text-white border border-black font-semibold w-fit block p-2 hover:bg-beige hover:text-black mt-8 mb-4 mx-auto" %>
+      <%= turbo_frame_tag Transaction.new %>
     </div>
-    <div class='flex justify-between items-center mb-4'>
-      <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "bg-beige border border-beige font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white"%>
-      <%= link_to t('.back'), accounts_path, class: "bg-beige border border-beige font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white" %>
+    <div class="border mt-12 px-2">
+      <h2 class="font-semibold text-lg my-4"><%= t '.transactions' %></h2>
+      <div class="flex flex-col justify-between items-start w-full mx-auto mb-4">
+        <%= turbo_frame_tag 'transactions', class: "w-full" do %>
+          <% if @transactions.empty? %>
+            <%= turbo_frame_tag 'no_transaction' do %>
+              <%= render 'transactions/no_transaction' %>
+            <% end %>
+          <% else %>
+            <%= render @transactions %>
+          <% end%>
+        <% end %>
+      </div>
     </div>
-    <%= link_to t('accounts.show.add_transactions_link'), new_account_transaction_path(@account), data: { turbo_frame: dom_id(Transaction.new) }, class: "bg-darkblue text-white border font-semibold w-fit block p-2 hover:bg-beige hover:text-black mt-8 mb-4 mx-auto" %>
-    <%= turbo_frame_tag Transaction.new %>
-  </div>
-  <div class="border mt-12 px-2">
-    <h2 class="font-semibold text-lg my-4"><%= t '.transactions' %></h2>
-    <div class="flex flex-col justify-between items-start w-full mx-auto mb-4">
-      <%= turbo_frame_tag 'transactions', class: "w-full" do %>
-        <% if @transactions.empty? %>
-          <%= turbo_frame_tag 'no_transaction' do %>
-            <%= render 'transactions/no_transaction' %>
-          <% end %>
-        <% else %>
-          <%= render @transactions %>
-        <% end%>
-      <% end %>
-    </div>
-  </div>
-</section>
-
+  </section>
+</div>

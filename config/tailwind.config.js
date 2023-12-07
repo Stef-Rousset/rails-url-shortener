@@ -26,6 +26,9 @@ module.exports = {
         'h60': '60%',
         'h80': '80%',
       },
+      width: {
+        'w20': '20%',
+      },
       gridTemplateRows: {
         'cards': '2fr 1fr',
       },

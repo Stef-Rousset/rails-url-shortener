@@ -149,6 +149,10 @@ en:
       edit_btn: Edit
       transactions: Transactions
       add_transactions_link: Add transaction
+      checked: Checked
+      category: Category
+      begin_date: From
+      end_date: To
     balance:
       balance: Balance
     new:
@@ -191,7 +195,7 @@ en:
       show_less: Show less
       checked: Checked
     no_transaction:
-      no_transaction: No transaction yet...
+      no_transaction: No transaction...
   user_mailer:
     news_email:
       hello: Hello

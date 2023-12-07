@@ -10,6 +10,15 @@ class AccountsController < ApplicationController
 
   def show
     @transactions = @account.transactions.order(date: :desc, created_at: :desc)
+    @transactions = @transactions.where(checked: params[:checked]) if params[:checked] != '0' && params[:checked].present?
+    @transactions = @transactions.where(category_id: params[:category_id]) if params[:category_id].present?
+    if params[:begin_date].present? && params[:end_date].present?
+      @transactions = @transactions.where('date >= ?', params[:begin_date]).where('date <= ?', params[:end_date])
+    elsif params[:begin_date].present?
+      @transactions = @transactions.where('date >= ?', params[:begin_date])
+    elsif params[:end_date].present?
+      @transactions = @transactions.where('date <= ?', params[:end_date])
+    end
   end
 
   def new

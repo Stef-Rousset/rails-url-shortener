@@ -7,7 +7,7 @@
       <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
       <h2 class="text-base">Total : <span class="font-semibold"> <%= number_to_currency(@total) %></span></h2>
     </div>
-    <%= link_to t('accounts.index.new_url_link'), new_account_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('accounts.index.new_url_link'), new_account_path, class: "bg-beige border border-black rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
     <%= render @accounts %>
 </section>

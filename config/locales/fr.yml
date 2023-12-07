@@ -117,6 +117,10 @@ fr:
       edit_btn: Modifier
       transactions: Opérations
       add_transactions_link: Ajouter une opération
+      checked: Vérifiées
+      category: Catégorie
+      begin_date: Depuis le
+      end_date: À
     balance:
       balance: Solde
     new:
@@ -159,7 +163,7 @@ fr:
       show_less: Voir moins
       checked: Vérifiée
     no_transaction:
-      no_transaction: Aucune opération renseignée...
+      no_transaction: Aucune opération...
   activerecord:
     attributes:
       user:
