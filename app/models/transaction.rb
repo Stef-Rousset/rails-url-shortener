@@ -3,7 +3,7 @@ class Transaction < ApplicationRecord
   belongs_to :category, optional: true
 
   after_create :update_balance_account
-  after_update :update_balance_if_amount_changes
+  after_update :update_balance_if_changes_on_amount_or_type
 
   enum transaction_type: { debit: 0, credit: 1 }
   scope :ordered, -> { order(date: :desc, created_at: :desc) }
@@ -38,17 +38,36 @@ class Transaction < ApplicationRecord
     account.update(balance: balance)
   end
 
-  def update_balance_if_amount_changes
+  def update_balance_if_changes_on_amount_or_type
+    account = self.account
+    balance = account.balance
     if self.saved_change_to_amount?
       old_amount, new_amount = self.saved_change_to_amount
-      account = self.account
-      balance = account.balance
-      if self.transaction_type == 'credit'
-        balance += (new_amount - old_amount)
+      if self.saved_change_to_transaction_type?
+        # amount and type have changed
+        new_type = self.saved_change_to_transaction_type[1]
+        if new_type == 'credit'
+          balance += (old_amount + new_amount)
+        else
+          balance -= (old_amount + new_amount)
+        end
       else
-        balance -= (new_amount - old_amount)
+        # only amount has changed
+        if self.transaction_type == 'credit'
+          balance += (new_amount - old_amount)
+        else
+          balance -= (new_amount - old_amount)
+        end
       end
-      account.update(balance: balance)
+    elsif self.saved_change_to_transaction_type?
+      # only type has changed
+      new_type = self.saved_change_to_transaction_type[1]
+      if new_type == 'credit'
+        balance += self.amount * 2
+      else
+        balance -= self.amount * 2
+      end
     end
+    account.update(balance: balance)
   end
 end
