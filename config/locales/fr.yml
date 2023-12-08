@@ -14,6 +14,8 @@ fr:
   error: erreur
   error_phrase: "empêchant %{name} d'être sauvegardé(e)"
   none: Aucun
+  no_description: pas de description
+  no_category: pas de catégorie
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -159,6 +161,8 @@ fr:
       submit: Valider
       cancel: Annuler
     transaction:
+      description: Description
+      category: Catégorie
       show_more: Voir plus
       show_less: Voir moins
       checked: Vérifiée

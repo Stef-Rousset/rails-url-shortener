@@ -37,7 +37,8 @@ class TransactionsController < ApplicationController
 
   def update_checked
     @transaction.update(checked: params[:checked])
-    render json: {}, status: :ok
+    @account = @transaction.account
+    redirect_to account_path(@account) # for the transaction.checked to be updated in transaction partial
   end
 
   def destroy
