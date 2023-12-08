@@ -33,11 +33,9 @@ RSpec.describe Transaction, type: :model do
     expect(second.previous_transaction).to eq(nil)
   end
 
-  it 'updates balance account when transaction is saved' do
+  it 'updates balance account when transaction is created' do
     expect(@account.balance).to eq(9.99)
-    transaction = Transaction.new(payee: 'Paul', date: Date.today, amount: 10, transaction_type: 1, account_id: @account.id)
-    expect(@account.balance).to eq(9.99)
-    transaction.save
+    transaction = Transaction.create(payee: 'Paul', date: Date.today, amount: 10, transaction_type: 1, account_id: @account.id)
     @account.reload
     expect(@account.balance).to eq(19.99)
   end
@@ -50,5 +48,20 @@ RSpec.describe Transaction, type: :model do
     transaction.update_balance_after_destroy
     @account.reload
     expect(@account.balance).to eq(9.99)
+  end
+
+  it 'updates balance account with update_balance_if_changes_on_amount_or_type' do
+    expect(@account.balance).to eq(9.99)
+    transaction = create(:transaction2, account: @account)
+    @account.reload
+    expect(@account.balance).to eq(0.0)
+    transaction.update(amount: 19.99)
+    @account.reload
+    expect(@account.balance).to eq(- 10.0)
+    transaction.update(transaction_type: 1)
+    @account.reload
+    expect(@account.balance).to eq(29.98)
+    transaction.update(amount: 15.99, transaction_type: 0)
+    expect(@account.balance).to eq(- 6.0)
   end
 end
