@@ -9,6 +9,7 @@ class Transaction < ApplicationRecord
   scope :ordered, -> { order(date: :desc, created_at: :desc) }
 
   validates :transaction_type, :date, :payee, presence: true
+  validates :amount, numericality: { greater_than: 0.0 }
 
   def previous_transaction
     account.transactions.ordered.where('date > ?', self.date).last

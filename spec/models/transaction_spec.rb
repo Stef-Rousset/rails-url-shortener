@@ -22,7 +22,17 @@ RSpec.describe Transaction, type: :model do
   end
 
   it 'is valid if payee, date and transaction_type are present' do
-    trans = Transaction.new(payee: 'Paul', date: Date.today, amount: 10, transaction_type: 0,account_id: @account.id)
+    trans = Transaction.new(payee: 'Paul', date: Date.today, amount: 10, transaction_type: 0, account_id: @account.id)
+    expect(trans).to be_valid
+  end
+
+  it 'is invalid if amount is not greater than 0.0' do
+    trans = Transaction.new(payee: 'Paul', date: Date.today, amount: - 10, transaction_type: 0, account_id: @account.id)
+    expect(trans).not_to be_valid
+  end
+
+  it 'is valid if amount is greater than 0.0' do
+    trans = Transaction.new(payee: 'Paul', date: Date.today, amount: 0.01, transaction_type: 0, account_id: @account.id)
     expect(trans).to be_valid
   end
 
