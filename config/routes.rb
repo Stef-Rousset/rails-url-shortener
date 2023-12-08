@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       resources :transactions
     end
     put '/update_checked', to: 'transactions#update_checked'
-    resources :categories, only: %i[index new create]
+    resources :categories, only: %i[index new create destroy]
     get '/:url_shortened', to: 'short_urls#url_shortened'
   end
 end

@@ -3,8 +3,11 @@
 <% end %>
 <section class="categories-container w-10/12 lg:w-1/2 mx-auto mt-12">
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
-    <%= link_to t('categories.index.new_url_link'), new_category_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <h1 class="font-bold text-lg"><%= t '.title' %></h1>
+    <div class="flex justify-between items-center">
+      <%= link_to t('categories.index.new_url_link'), new_category_path, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white mr-2" %>
+      <%= link_to t(:back), :back, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white"%>
+    </div>
   </div>
     <%= render @categories %>
 </section>

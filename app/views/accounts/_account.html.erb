@@ -4,7 +4,7 @@
     <p class="mb-4"><span class="font-semibold"><%= t '.account_balance' %> : </span><%= number_to_currency(account.balance) %></p>
     <%= link_to t('accounts.account.show_url_link'), account_path(account), class: "bg-white border rounded border-black font-semibold w-fit p-1 hover:bg-darkblue hover:text-white" %>
   </div>
-  <%= link_to account_path(account), data: {turbo_method: :delete, confirm: 'Are you sure ?'} do %>
+  <%= link_to account_path(account), data: {turbo_method: :delete, turbo_confirm: t(:confirm)} do %>
     <i class="fa-solid fa-trash-can"></i>
   <% end %>
 </div>

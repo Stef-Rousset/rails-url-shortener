@@ -12,7 +12,7 @@
         <p class="mb-4"><span class="font-semibold"><%= t '.original_url' %> : </span><%= link_to "#{url.long_url}", url.long_url, target: "_blank", class: "break-all" %></p>
         <p><span class="font-semibold"><%= t '.tiny_url' %> : </span><%= link_to "#{request.host_with_port}/#{url.tiny_url}", url.tiny_url, target: "_blank" %></p>
       </div>
-      <%= link_to short_url_path(url), data: {turbo_method: :delete, confirm: 'Are you sure ?'} do %>
+      <%= link_to short_url_path(url), data: { turbo_method: :delete, turbo_confirm: t(:confirm) } do %>
         <i class="fa-solid fa-trash-can"></i>
       <% end %>
     </div>

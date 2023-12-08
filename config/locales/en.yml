@@ -47,6 +47,7 @@ en:
   none: None
   no_description: No description
   no_category: No category
+  confirm: Are you sure ?
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -151,10 +152,13 @@ en:
       edit_btn: Edit
       transactions: Transactions
       add_transactions_link: Add transaction
+      filter_transactions: Filter transactions
       checked: Checked
       category: Category
       begin_date: From
       end_date: To
+      create_category: Create new category
+      show_categories: See categories
     balance:
       balance: Balance
     new:

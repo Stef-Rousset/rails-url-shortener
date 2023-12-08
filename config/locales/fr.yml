@@ -16,6 +16,7 @@ fr:
   none: Aucun
   no_description: pas de description
   no_category: pas de catégorie
+  confirm: Êtes-vous sûr(e) ?
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -119,10 +120,13 @@ fr:
       edit_btn: Modifier
       transactions: Opérations
       add_transactions_link: Ajouter une opération
+      filter_transactions: Filtrer les opérations
       checked: Vérifiées
       category: Catégorie
       begin_date: Depuis le
       end_date: À
+      create_category: Créer une nouvelle catégorie
+      show_categories: Voir les catégories
     balance:
       balance: Solde
     new:

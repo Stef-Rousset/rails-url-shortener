@@ -49,5 +49,11 @@ RSpec.describe CategoriesController, type: :controller do
                             }
       assert_response :unprocessable_entity
     end
+
+    it 'destroys category' do
+      cate = Category.create(name: "bla", user: @user)
+      delete :destroy, params: { id: cate.id }
+      assert_redirected_to categories_path
+    end
   end
 end
