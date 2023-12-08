@@ -28,6 +28,7 @@ fr:
       news_link: NEWS PAR MAIL
       weather_link: PRÉVISIONS MÉTEO
       spell_link: VÉRIFICATEUR D'ORTOGRAPHE
+      accounts_link: FINANCES PERSONNELLES
     footer:
       about: À propos de ce site
       choose_language: "Choix de la langue :"
@@ -44,6 +45,8 @@ fr:
       weather-text: Visualisez les prévisions méteo de la journée pour votre ville. Connectez-vous pour accéder à cet outil !
       checker-title: Vérifiez l'ortographe d'un mot
       checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot. Connectez-vous pour accéder à cet outil !
+      budget-title: Gérer ses finances personnelles
+      budget-text: Gérer vos finances en créant vos comptes et en ajoutant vos opérations. Connectez-vous pour accéder à cet outil !
     about:
       title: À propos de ce site
       resources: Ressources utilisées
@@ -109,7 +112,8 @@ fr:
   accounts:
     index:
       meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
-      title: Mes comptes
+      title: Gestionnaire de finances personnelles
+      my_accounts: Mes comptes
       new_url_link: Créer un compte
     account:
       account_balance: Solde

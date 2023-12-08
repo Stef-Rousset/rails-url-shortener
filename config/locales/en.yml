@@ -59,6 +59,7 @@ en:
       news_link: NEWS BY MAIL
       weather_link: WEATHER FORECAST
       spell_link: SPELL CHECKER
+      accounts_link: PERSONAL FINANCE
     footer:
       about: About this website
       choose_language: "Choice of language :"
@@ -75,6 +76,8 @@ en:
       weather-text: See the daily forecast for your city. Please connect to access this tool !
       checker-title: Check spelling of your word
       checker-text: Thanks to AI, get the right spelling for your word. Please connect to access this tool !
+      budget-title: Manage your personal finance
+      budget-text: Manage your finance by creating accounts and transactions. Please connect to access this tool !
       title: About this web site
       resources: Resources used
       stack: Stack used
@@ -140,7 +143,8 @@ en:
   accounts:
     index:
       meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
-      title: My accounts
+      title: Personal finance handler
+      my_accounts: My accounts
       new_url_link: Create an account
     account:
       account_balance: Balance

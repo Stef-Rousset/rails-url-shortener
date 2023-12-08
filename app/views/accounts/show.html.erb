@@ -1,5 +1,5 @@
-<div class="flex justify-start items-start w-full">
-  <div class="w-w20 mt-12 ml-12 mr-4 sticky top-12">
+<div class="flex flex-col md:flex-row justify-center w-full mx-auto">
+  <div class="w-11/12 md:w-w40 lg:w-30 xl:w-w30 mt-12 mx-auto md:mr-4 md:ml-0  md:sticky md:top-12">
     <aside class="flex flex-col w-full bg-lightblue border mb-4 p-2">
       <h2 class="font-bold text-lg mb-8"><%= t '.filter_transactions' %></h2>
       <%= form_with url: account_path, method: :get, class: 'flex flex-col w-10/12 mx-auto' do |f| %>
@@ -29,7 +29,7 @@
       <%= link_to t('accounts.show.show_categories'), categories_path, class: 'text-base hover:underline' %>
     </aside>
   </div>
-  <section class="account-container w-1/2 h-fit mt-12">
+  <section class="account-container w-11/12 md:w-1/2 xl:w-w55 h-fit mt-12 mx-auto md:mx-0">
     <%= turbo_frame_tag "edit-modal" %>
     <div class="border bg-lightblue px-2">
       <div class="flex justify-between items-center mt-4 mb-2">
