@@ -12,7 +12,7 @@
     <input  type="submit" value="<%= t :validate %>" class='bg-beige border rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white'/>
     <p data-weather-target="error" class='text-red-500 mt-4 italic hidden'><%= t '.not_found' %></p>
   </form>
-  <table data-locale=<%= I18n.locale%> class="border border-solid w-full mt-20">
+  <table class="border border-solid w-full mt-20">
     <tr class="border border-solid bg-beige">
       <th id="no_text" class="border border-solid"></th>
       <!-- id for system test-->
@@ -23,7 +23,7 @@
     </tr>
     <tr class="border border-solid">
       <td class="font-semibold border border-solid p-2 bg-beige"><%= t '.eight' %></td>
-      <td id="td_test" data-weather-target="tend8" class="border border-solid text-center"></td>
+      <td id="td_test" data-weather-target="tend8" class="flex justify-center"></td>
       <!-- id for system test-->
       <td data-weather-target="temp8" class="border border-solid text-center"></td>
       <td data-weather-target="prev8" class="border border-solid p-2 text-center"></td>
@@ -31,14 +31,14 @@
     </tr>
     <tr class="border border-solid">
       <td class="font-semibold border border-solid p-2 bg-beige"><%= t '.fourteen' %></td>
-      <td data-weather-target="tend14" class="border border-solid text-center"></td>
+      <td data-weather-target="tend14" class="flex justify-center"></td>
       <td data-weather-target="temp14" class="border border-solid text-center"></td>
       <td data-weather-target="prev14" class="border border-solid text-center"></td>
       <td data-weather-target="wind14" class="border border-solid text-center"></td>
     </tr>
     <tr class="border border-solid">
       <td class="font-semibold border border-solid p-2 bg-beige"><%= t '.twenty' %></td>
-      <td data-weather-target="tend20" class="border border-solid text-center"></td>
+      <td data-weather-target="tend20" class="flex justify-center"></td>
       <td data-weather-target="temp20" class="border border-solid text-center"></td>
       <td data-weather-target="prev20" class="border border-solid text-center"></td>
       <td data-weather-target="wind20" class="border border-solid text-center"></td>
