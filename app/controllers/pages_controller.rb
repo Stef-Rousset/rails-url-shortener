@@ -1,6 +1,6 @@
 # controller for Pages
 class PagesController < ApplicationController
-  before_action :authenticate_user!, only: %i[weather spell_checker]
+  skip_before_action :authenticate_user!, except: %i[weather spell_checker spell_checked]
 
   def home
     @user = current_user if user_signed_in?

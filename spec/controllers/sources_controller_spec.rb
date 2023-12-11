@@ -35,13 +35,13 @@ RSpec.describe SourcesController, type: :controller do
     end
 
     it 'adds a new source' do
-      post :add_sources_to_user, params: { source_ids: [@source.id] }
+      post :update_sources_for_user, params: { source_ids: [@source.id] }
       assert_redirected_to sources_path
       expect(@user.sources).to include @source
     end
 
     it 'redirects to choose_sources if no sources selected' do
-      post :add_sources_to_user, params: { source_ids: [] }
+      post :update_sources_for_user, params: { source_ids: [] }
       assert_redirected_to choose_sources_path
       expect(@user.sources).to be_empty
     end

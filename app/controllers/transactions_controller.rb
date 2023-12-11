@@ -1,14 +1,15 @@
 class TransactionsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_account, only: %i[new create edit]
   before_action :set_transaction, only: %i[edit update update_checked destroy]
 
   def new
     @transaction = Transaction.new
+    authorize @transaction
   end
 
   def create
     @transaction = Transaction.new(transaction_params)
+    authorize @transaction
     @transaction.account = @account
     if @transaction.save
       respond_to do |format|
@@ -57,6 +58,7 @@ class TransactionsController < ApplicationController
 
   def set_transaction
     @transaction = Transaction.find(params[:id])
+    authorize @transaction
   end
 
   def set_account
