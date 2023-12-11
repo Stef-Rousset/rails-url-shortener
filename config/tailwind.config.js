@@ -31,6 +31,7 @@ module.exports = {
         'w30': '30%',
         'w40': '40%',
         'w55': '55%',
+        'w80': '80%',
       },
       gridTemplateRows: {
         'cards': '2fr 1fr',
