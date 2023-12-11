@@ -4,7 +4,7 @@ class ShortUrlsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
-    @urls = ShortUrl.all.where(user_id: current_user.id)
+    @urls = ShortUrl.where(user_id: current_user.id)
   end
 
   def show
@@ -33,7 +33,7 @@ class ShortUrlsController < ApplicationController
   def destroy
     @url = ShortUrl.find(params[:id])
     @url.destroy
-    redirect_to short_urls_path, notice: t(:destroyed)
+    redirect_to short_urls_path, notice: t(:destroyed, name: t(:short_url))
   end
 
   private
@@ -42,7 +42,7 @@ class ShortUrlsController < ApplicationController
     params.require(:short_url).permit(:long_url, :user_id)
   end
 
-  def not_found(exception)
+  def not_found
     redirect_to short_urls_path, alert: t('record_not_found', my_object: ShortUrl.model_name.name, params: (params[:id] || params[:url_shortened]).to_s)
   end
 end

@@ -7,12 +7,12 @@
     <%= link_to t('short_urls.index.new_url_link'), new_short_url_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
   <% @urls.each do |url| %>
-    <div class="flex justify-between items-center h-fit bg-beige border rounded p-4 my-8">
+    <div class="flex justify-between items-center h-fit <%= cycle('bg-lightblue', 'bg-beige') %> border rounded p-4 my-8">
       <div class=" flex flex-col justify-between items-start ">
         <p class="mb-4"><span class="font-semibold"><%= t '.original_url' %> : </span><%= link_to "#{url.long_url}", url.long_url, target: "_blank", class: "break-all" %></p>
         <p><span class="font-semibold"><%= t '.tiny_url' %> : </span><%= link_to "#{request.host_with_port}/#{url.tiny_url}", url.tiny_url, target: "_blank" %></p>
       </div>
-      <%= link_to short_url_path(url), data: {turbo_method: :delete, confirm: 'Are you sure ?'} do %>
+      <%= link_to short_url_path(url), data: { turbo_method: :delete, turbo_confirm: t(:confirm) } do %>
         <i class="fa-solid fa-trash-can"></i>
       <% end %>
     </div>

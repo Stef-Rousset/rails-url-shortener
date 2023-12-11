@@ -33,9 +33,21 @@ en:
   an_error_occured: "An error occured: %{my_object}"
   five_limit: You have reached the limit of 5 spell checks
   record_not_found: "Could not found object %{my_object} with id or short_url %{params}"
-  destroyed: Your url has been destroyed
+  short_url: short url
+  account: account
+  category: category
+  transaction: transaction
+  created: "%{name} created !"
+  updated: "%{name} modified !"
+  destroyed: "%{name} destroyed !"
   validate: Validate
   cancel: Cancel
+  error: error
+  error_phrase: "preventing %{name} to be saved"
+  none: None
+  no_description: No description
+  no_category: No category
+  confirm: Are you sure ?
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -47,6 +59,7 @@ en:
       news_link: NEWS BY MAIL
       weather_link: WEATHER FORECAST
       spell_link: SPELL CHECKER
+      accounts_link: PERSONAL FINANCE
     footer:
       about: About this website
       choose_language: "Choice of language :"
@@ -63,6 +76,8 @@ en:
       weather-text: See the daily forecast for your city. Please connect to access this tool !
       checker-title: Check spelling of your word
       checker-text: Thanks to AI, get the right spelling for your word. Please connect to access this tool !
+      budget-title: Manage your personal finance
+      budget-text: Manage your finance by creating accounts and transactions. Please connect to access this tool !
       title: About this web site
       resources: Resources used
       stack: Stack used
@@ -104,13 +119,16 @@ en:
       new_url_link: Create a new short url
       original_url: Original url
       tiny_url: Tiny url
+    show:
+      title: Your tiny url for
+      long_url: Original url
+      tiny_url: Tiny url
+      back: Back to list
     new:
       title: Create a new short url
       enter_url: Entrer une url
       submit: Create
       cancel: Cancel
-    show:
-      back: Retour à la liste
   sources:
     index:
       meta_description: Choose your sources for news between 3 great frenc newspapers et receive news in your mailbox every day
@@ -122,6 +140,74 @@ en:
       title: The available information's sources
       paragraph: Get the latest news of sources below every day directly in your mailbox !
       title_form: I agree to receive by mail every day the news from the sources below
+  accounts:
+    index:
+      meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
+      title: Personal finance handler
+      my_accounts: My accounts
+      new_url_link: Create an account
+    account:
+      account_balance: Balance
+      show_url_link: Details
+    show:
+      title: "Details of the account %{name}"
+      balance: Balance
+      back: Back to list
+      edit_btn: Edit
+      transactions: Transactions
+      add_transactions_link: Add transaction
+      filter_transactions: Filter transactions
+      checked: Checked
+      category: Category
+      begin_date: From
+      end_date: To
+      create_category: Create new category
+      show_categories: See categories
+    balance:
+      balance: Balance
+    new:
+      title: New account
+    edit:
+      title: "Edit account %{name}"
+      paragraph: Please be aware that balance is not editable
+    form:
+      name: Name
+      balance: Balance
+      submit: Validate
+      cancel: Cancel
+  categories:
+    index:
+      meta_description: Manage the categories for transactions
+      title: List of categories
+      new_url_link: Create a catégory
+    new:
+      title: New category
+      cancel: Cancel
+      name: Name of the category
+      submit: Validate
+  transactions:
+    new:
+     new_transaction: New transaction
+    edit:
+      transaction_to_edit: Transaction to edit
+    form:
+      payee: Payee
+      transaction_type: Type
+      amount: Amount
+      date: Date
+      description: Description
+      category: Cetégory
+      checked: Checked
+      submit: Validate
+      cancel: Cancel
+    transaction:
+      description: Description
+      category: Category
+      show_more: Show more
+      show_less: Show less
+      checked: Checked
+    no_transaction:
+      no_transaction: No transaction...
   user_mailer:
     news_email:
       hello: Hello
@@ -270,6 +356,7 @@ en:
       send_paranoid_instructions: If your account exists, you will receive an email with instructions for how to unlock it in a few minutes.
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
   errors:
+    format: "%{attribute} %{message}"
     messages:
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
@@ -279,3 +366,49 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      in: must be in %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      model_invalid: 'Validation failed: %{errors}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      required: must exist
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is %{count} character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is %{count} character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be %{count} character)
+        other: is the wrong length (should be %{count} characters)
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"

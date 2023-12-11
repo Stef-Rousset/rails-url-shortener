@@ -14,7 +14,8 @@ module.exports = {
       },
       backgroundColor: {
         beige: "#FFF2D8",
-        darkblue: "#113946"
+        darkblue: "#113946",
+        lightblue: '#b7d8e2'
       },
       colors: {
         beige: "#FFF2D8",
@@ -24,6 +25,13 @@ module.exports = {
         'h20': '20%',
         'h60': '60%',
         'h80': '80%',
+      },
+      width: {
+        'w20': '20%',
+        'w30': '30%',
+        'w40': '40%',
+        'w55': '55%',
+        'w80': '80%',
       },
       gridTemplateRows: {
         'cards': '2fr 1fr',

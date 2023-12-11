@@ -2,9 +2,21 @@ fr:
   an_error_occured: "Une erreur s'est produite: %{my_object}"
   five_limit: Vous avez atteint la limite de 5 vérifications
   record_not_found: "L'objet %{my_object} avec l'id ou l'url raccourcie %{params} est introuvable"
-  destroyed: Votre url a bien été supprimée
+  short_url: url courte
+  account: compte
+  category: categorie
+  transaction: opération
+  created: "%{name} crée(e) !"
+  updated: "%{name} modifié(e) !"
+  destroyed: "%{name} supprimé(e) !"
   validate: Valider
   cancel: Annuler
+  error: erreur
+  error_phrase: "empêchant %{name} d'être sauvegardé(e)"
+  none: Aucun
+  no_description: pas de description
+  no_category: pas de catégorie
+  confirm: Êtes-vous sûr(e) ?
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -16,6 +28,7 @@ fr:
       news_link: NEWS PAR MAIL
       weather_link: PRÉVISIONS MÉTEO
       spell_link: VÉRIFICATEUR D'ORTOGRAPHE
+      accounts_link: FINANCES PERSONNELLES
     footer:
       about: À propos de ce site
       choose_language: "Choix de la langue :"
@@ -32,6 +45,8 @@ fr:
       weather-text: Visualisez les prévisions méteo de la journée pour votre ville. Connectez-vous pour accéder à cet outil !
       checker-title: Vérifiez l'ortographe d'un mot
       checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot. Connectez-vous pour accéder à cet outil !
+      budget-title: Gérer ses finances personnelles
+      budget-text: Gérer vos finances en créant vos comptes et en ajoutant vos opérations. Connectez-vous pour accéder à cet outil !
     about:
       title: À propos de ce site
       resources: Ressources utilisées
@@ -68,13 +83,16 @@ fr:
       new_url_link: Créer une nouvelle url courte
       original_url: Url d'origine
       tiny_url: Url courte
+    show:
+      title: Votre url courte pour
+      long_url: Url d'origine
+      tiny_url: Url courte
+      back: Retour à la liste
     new:
       title: Créer une nouvelle url courte
       enter_url: Entrer une url
       submit: Créer
       cancel: Annuler
-    show:
-      back: Retour à la liste
   sources:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
@@ -91,6 +109,73 @@ fr:
       hello: Bonjour
       intro_string: voici les nouvelles d'aujourd'hui
       end_string: C'est tout pour aujourd'hui, bonne journée !
+  accounts:
+    index:
+      meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
+      title: Gestionnaire de finances personnelles
+      my_accounts: Mes comptes
+      new_url_link: Créer un compte
+    account:
+      account_balance: Solde
+      show_url_link: Détails
+    show:
+      title: "Détails du compte %{name}"
+      back: Retour à la liste
+      edit_btn: Modifier
+      transactions: Opérations
+      add_transactions_link: Ajouter une opération
+      filter_transactions: Filtrer les opérations
+      checked: Vérifiées
+      category: Catégorie
+      begin_date: Depuis le
+      end_date: À
+      create_category: Créer une nouvelle catégorie
+      show_categories: Voir les catégories
+    balance:
+      balance: Solde
+    new:
+      title: Nouveau compte
+    edit:
+      title: "Modifier le compte %{name}"
+      paragraph: Veuillez noter que le solde n'est pas modifiable
+    form:
+      name: Nom
+      balance: Solde
+      submit: Valider
+      cancel: Annuler
+  categories:
+    index:
+      meta_description: Gérer les catégories d'opérations
+      title: Liste des catégories
+      new_url_link: Créer un catégorie
+    new:
+      title: Nouvelle catégorie
+      cancel: Annuler
+      name: Nom de la catégorie
+      submit: Valider
+  transactions:
+    new:
+     new_transaction: Nouvelle opération
+    edit:
+      transaction_to_edit: Opération à modifier
+    form:
+      payee: Béneficiaire
+      transaction_type: Type
+      amount: Montant
+      date: Date
+      description: Description
+      category: Catégorie
+      checked: Vérifiée
+      submit: Valider
+      cancel: Annuler
+    transaction:
+      description: Description
+      category: Catégorie
+      show_more: Voir plus
+      show_less: Voir moins
+      checked: Vérifiée
+    no_transaction:
+      no_transaction: Aucune opération...
   activerecord:
     attributes:
       user:
@@ -234,6 +319,7 @@ fr:
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour déverrouiller votre compte.
       unlocked: Votre compte a bien été déverrouillé. Veuillez vous connecter.
   errors:
+    format: "%{attribute} %{message}"
     messages:
       already_confirmed: a déjà été confirmé(e)
       confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
@@ -243,3 +329,49 @@ fr:
       not_saved:
         one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      in: doit être dans l'intervalle %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: est déjà utilisé(e)
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%-d %B %Y"
+      short: "%-d %b"

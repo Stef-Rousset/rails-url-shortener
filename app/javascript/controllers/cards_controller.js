@@ -10,9 +10,10 @@ export default class extends Controller {
     const img = event.currentTarget.children[0]
     const textOn = event.currentTarget.children[1]
     const textOff = event.currentTarget.children[2]
+    img.classList.toggle("hidden")
     textOn.classList.toggle("hidden")
     textOff.classList.toggle("hidden")
-    img.classList.toggle("invert")
+    //img.classList.toggle("invert")
     event.currentTarget.classList.toggle("bg-beige")
     event.currentTarget.classList.toggle("bg-darkblue")
   }

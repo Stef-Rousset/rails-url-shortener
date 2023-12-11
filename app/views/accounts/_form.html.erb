@@ -1,0 +1,24 @@
+<%= form_with model: account, class: "flex flex-col mt-8 w-full" do |f| %>
+  <% if account.errors.any? %>
+    <div data-controller="flashes" data-flashes-target="flash" id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3 flex justify-between items-start">
+      <div>
+        <h2><%= pluralize(account.errors.count, t(:error)) %> <%= t(:error_phrase, name: t(:account)) %> :</h2>
+        <ul>
+          <% account.errors.each do |error| %>
+            <li class="list-disc list-inside"><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <button type="button" data-action="click->flashes#close" class="text-red-600 hover:text-red-900" aria-label="Close">X</button>
+    </div>
+  <% end %>
+  <%= f.label :name, t('.name'), required: true, class: "font-semibold my-2" %>
+  <%= f.text_field :name, class: "bg-beige rounded mb-12" %>
+  <%= f.label :balance, t('.balance'), class: "font-semibold my-2" %>
+  <%= f.number_field :balance, step: 0.01, class: "bg-beige rounded mb-12", value: account.balance != 0.0 ? account.balance : "0.00", readonly: f.object.persisted? %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class='flex justify-evenly items-center'>
+    <%= f.submit t('.submit'), class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('.cancel'), accounts_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+  </div>
+  <% end %>

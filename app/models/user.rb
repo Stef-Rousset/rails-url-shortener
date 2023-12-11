@@ -22,7 +22,9 @@ class User < ApplicationRecord
 
   before_save :email_normalization
 
-  has_many :short_urls
+  has_many :short_urls, dependent: :destroy
+  has_many :accounts, dependent: :destroy
+  has_many :categories, dependent: :destroy
   has_and_belongs_to_many :sources
 
   def user_news
@@ -33,6 +35,10 @@ class User < ApplicationRecord
       end
     end
     hash
+  end
+
+  def accounts_total_sum
+    accounts.map(&:balance).sum
   end
 
   private

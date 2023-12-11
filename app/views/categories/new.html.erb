@@ -1,0 +1,28 @@
+<section class="category-container w-1/2 mx-auto mt-12">
+  <div class="flex justify-between items-center w-full my-4">
+    <h1 class="font-bold text-lg"><%= t '.title'%></h1>
+    <%= link_to t(:back), :back, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+  </div>
+  <%= form_with model: @category, class: "flex flex-col mt-8 w-full" do |f| %>
+    <% if @category.errors.any? %>
+      <div data-controller="flashes" data-flashes-target="flash" id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3 flex justify-between items-start">
+        <div>
+          <h2><%= pluralize(@category.errors.count, t(:error)) %> <%= t(:error_phrase, name: t(:category)) %> :</h2>
+          <ul>
+            <% @category.errors.each do |error| %>
+              <li class="list-disc list-inside"><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <button type="button" data-action="click->flashes#close" class="text-red-600 hover:text-red-900" aria-label="Close">X</button>
+      </div>
+    <% end %>
+    <%= f.label :name, t('.name'), required: true, class: "font-semibold my-2"%>
+    <%= f.text_field :name, class: "bg-beige rounded mb-12" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class='flex justify-evenly items-center'>
+      <%= f.submit t('.submit'), class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+      <%= link_to t('.cancel'), categories_path, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    </div>
+  <% end %>
+</section>

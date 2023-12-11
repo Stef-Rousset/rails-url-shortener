@@ -18,4 +18,10 @@ RSpec.describe User, type: :model do
     user = User.create(email: 'BLA@gmail.com', password: 'blabla')
     expect(user.email).to eq('bla@gmail.com')
   end
+
+  it 'sums the balance of user accounts' do
+    account = create(:account, user: @user)
+    account2 = Account.create(name: 'poste', balance: - 5.0, user_id: @user.id)
+    expect(@user.accounts_total_sum).to eq(account.balance + account2.balance)
+  end
 end
