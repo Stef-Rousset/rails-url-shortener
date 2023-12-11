@@ -62,7 +62,7 @@ RSpec.describe 'Pages', type: :system do
       expect(page).to have_content('Prévisions méteo')
       fill_in 'search', with: 'paris'
       click_on 'Valider'
-      expect(find('#td_test')).to have_text(/\w/) # presence of text added in JS
+      expect(find('#td_test')).to have_css('svg') # presence of svg added in JS
       expect(find('#no_text')).not_to have_text(/\w/) # element always without text
     end
   end

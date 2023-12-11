@@ -49,6 +49,7 @@ RSpec.describe AccountsController, type: :controller do
     end
 
     it 'renders new if create fails' do
+      Account.skip_callback(:validation, :before, :capitalize)
       post :create, params: { account: { name: '',
                                          balance: 100,
                                          user_id: @user

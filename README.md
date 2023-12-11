@@ -11,6 +11,7 @@ With this application, you will mainly be able to:
 - get selected news feed in your mail every day,
 - get the weather forecast for any city.
 - check the spell of a word.
+- manage personal finance
 
 
 ### Prerequisites ###
@@ -70,6 +71,14 @@ GET `/weather`
 For the spell checker and current_user:
 - Get the correct spell for a word <br>
 GET `/spell_checker`
+
+For the personal finance handler and current_user:
+- Get list of accounts <br>
+GET `/accounts`
+- Create a new account <br>
+GET `/accounts/new`
+- Show an account, and handle its transactions<br>
+GET `/accounts/:id`
 
 ### Testing ###
 

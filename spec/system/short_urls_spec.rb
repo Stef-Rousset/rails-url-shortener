@@ -14,6 +14,7 @@ RSpec.describe 'ShortUrls', type: :system do
     expect(page).to have_content('Mes urls courtes créees')
     expect(page).to have_content(@long_url)
     find('.fa-trash-can').click
+    page.driver.browser.switch_to.alert.accept # accept the alert_modal "Are you sure?"
     expect(page).not_to have_content(@long_url)
   end
 
@@ -24,7 +25,7 @@ RSpec.describe 'ShortUrls', type: :system do
     expect(page).to have_content('Créer une nouvelle url courte')
     fill_in 'short_url[long_url]', with: 'https://www.ffescrime.fr/je-suis-en-club/arbitres/commission-nationale/'
     click_on('Créer')
-    expect(page).to have_content('Votre url courte pour:')
+    expect(page).to have_content('Votre url courte pour :')
     expect(page).to have_content('https://www.ffescrime.fr/je-suis-en-club/arbitres/commission-nationale/')
   end
 end

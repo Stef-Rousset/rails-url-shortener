@@ -43,6 +43,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     it 'renders new if create fails' do
+      Category.skip_callback(:validation, :before, :capitalize)
       post :create, params: { category: { name: '',
                                          user_id: @user
                                         }
