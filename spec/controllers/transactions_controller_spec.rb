@@ -30,7 +30,7 @@ RSpec.describe TransactionsController, type: :controller do
       assert_response :success
     end
 
-    it 'creates a new account' do
+    it 'creates a new transaction' do
       post :create, params: { account_id: @account.id,
                               transaction: { payee: "courses", amount: 19.99, date: "2023-11-30", transaction_type: 0, account: @account.id  }
                             }, as: :turbo_stream

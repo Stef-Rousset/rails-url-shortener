@@ -17,7 +17,7 @@ RSpec.describe 'Accounts', type: :system do
       expect(page).to have_content('Mes comptes')
       expect(page).to have_content(@account.name)
       find('.fa-trash-can').click
-      page.driver.browser.switch_to.alert.accept
+      page.driver.browser.switch_to.alert.accept # accept the alert_modal "Are you sure?"
       expect(page).not_to have_content(@account.name)
     end
 
