@@ -8,10 +8,10 @@ The purpose of this application is to allow users to access different tools.
 
 With this application, you will mainly be able to:
 - generate shorter urls,
-- get selected news feed in your mail every day,
-- get the weather forecast for any city.
-- check the spell of a word.
-- manage personal finance
+- get selected news feed in your mailbox every day,
+- get the weather forecast for any city,
+- check the spell of a word,
+- manage personal finance.
 
 
 ### Prerequisites ###
