@@ -1,6 +1,5 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[show edit update destroy]
-  before_action :set_account_policy, except: %i[index]
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
@@ -23,10 +22,12 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new
+    authorize @account
   end
 
   def create
     @account = Account.new(account_params)
+    authorize @account
     if @account.save
       redirect_to account_path(@account), notice: t(:created, name: t(:account))
     else
@@ -54,14 +55,11 @@ class AccountsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:id])
+    authorize @account
   end
 
   def not_found
     redirect_to accounts_path, alert: t('record_not_found', my_object: Account.model_name.name, params: (params[:id]))
-  end
-
-  def set_account_policy
-    authorize @account
   end
 
   def account_params

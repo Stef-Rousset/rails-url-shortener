@@ -48,7 +48,7 @@ If you want to stop the server, use Ctrl + C.<br>
 
 The main endpoints are :
 
-For the url-shortener and current_user:
+For the url-shortener :
 - Get all urls<br>
 GET `/short_urls/index`
 - Create a new short url<br>
@@ -58,21 +58,21 @@ GET `/short_urls/:id`<br>
 - Use of the tiny url, to be redirected to long_url <br>
 GET `/:url_shortened`<br>
 
-For the news feed and current_user:
+For the news feed :
 - First selection of sources <br>
 GET `/choose_sources`
 - Modify selection of sources <br>
 GET `/edit_sources_for_user`
 
-For the weather forecast and current_user:
+For the weather forecast :
 - Get the weather forecast for a city <br>
 GET `/weather`
 
-For the spell checker and current_user:
+For the spell checker :
 - Get the correct spell for a word <br>
 GET `/spell_checker`
 
-For the personal finance handler and current_user:
+For the personal finance handler :
 - Get list of accounts <br>
 GET `/accounts`
 - Create a new account <br>
@@ -88,6 +88,8 @@ Testing is performed with Rspec, using FactoryBot.
 `rspec spec/models`
 - testing the controllers =>
 `rspec spec/controllers`
+- testing policies =>
+`rspec spec/policies`
 - testing mailers =>
 `rspec spec/mailers`
 - testing jobs =>

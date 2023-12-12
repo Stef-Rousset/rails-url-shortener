@@ -25,7 +25,7 @@ class TransactionPolicy < ApplicationPolicy
   end
 
   def destroy?
-    find_user == user
+    find_user == user && !record.checked # can't destroy a checked transaction
   end
 
   private

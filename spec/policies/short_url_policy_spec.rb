@@ -1,27 +1,52 @@
 require 'rails_helper'
 
 RSpec.describe ShortUrlPolicy, type: :policy do
-  let(:user) { User.new }
+  before(:example) do
+    @user = create(:user1)
+    @user2 = create(:user2)
+    @user2.admin = true
+    @url = create(:short_url1, user: @user)
+  end
 
   subject { described_class }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'for scope' do
+    let(:policy_scope) { ShortUrlPolicy::Scope.new(user, ShortUrl).resolve }
+
+    context 'for normal user' do
+      permissions ".scope" do
+        let(:user) { @user }
+
+        it "gives user's urls" do
+          expect(policy_scope).to eq(user.short_urls)
+        end
+      end
+    end
+
+    context 'for admin user' do
+      permissions ".scope" do
+        let(:user) { @user2 }
+
+        it "gives all urls" do
+          expect(policy_scope).to eq(ShortUrl.all)
+        end
+      end
+    end
   end
 
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
+  permissions :show?, :destroy? do
+    it "denies access if short_url doesn't belong to user" do
+      expect(subject).not_to permit(@user2, @url)
+    end
+    it 'grants access if short_url belongs to user' do
+      expect(subject).to permit(@user, @url)
+    end
   end
 
   permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it 'grants access' do
+      url = ShortUrl.new(long_url: 'https://www.ffescrime.fr/je-suis-en-club/competiteurs/reglements/', tiny_url: '', user_id: @user)
+      expect(subject).to permit(@user, url)
+    end
   end
 end

@@ -5,8 +5,8 @@ RSpec.describe AccountsController, type: :controller do
     @user = create(:user1)
     @account = create(:account, user: @user)
   end
-  context 'not signed in' do
 
+  context 'not signed in' do
     it 'cannot access index' do
       get :index
       assert_redirected_to '/users/sign_in'
@@ -41,7 +41,8 @@ RSpec.describe AccountsController, type: :controller do
     it 'creates a new account' do
       post :create, params: { account: { name: 'livret A',
                                          balance: 100,
-                                         user_id: @user
+                                         user_id: @user,
+                                         id: 1
                                         }
                             }
       assert_redirected_to account_path(Account.last)
