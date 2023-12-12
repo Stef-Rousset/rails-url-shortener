@@ -1,10 +1,9 @@
 class AccountsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_account, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
-    @accounts = Account.where(user_id: current_user.id)
+    @accounts = policy_scope(Account)
     @total = current_user.accounts_total_sum
   end
 
@@ -23,10 +22,12 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new
+    authorize @account
   end
 
   def create
     @account = Account.new(account_params)
+    authorize @account
     if @account.save
       redirect_to account_path(@account), notice: t(:created, name: t(:account))
     else
@@ -54,6 +55,7 @@ class AccountsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:id])
+    authorize @account
   end
 
   def not_found

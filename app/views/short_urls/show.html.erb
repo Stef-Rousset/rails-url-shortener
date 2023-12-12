@@ -1,8 +1,8 @@
-<section class="show-url-container w-8/12 h-1/2 mx-auto mt-12">
-  <h1 class="font-bold text-lg my-4"><%= t '.title' %> :</h1>
+<section class="show-url-container w-8/12 h-fit mx-auto mt-12 p-4 bg-lightblue border border-gray rounded">
+  <h1 class="font-bold text-lg mb-4"><%= t '.title' %> :</h1>
   <div class= "flex flex-col justify-between items-start w-full mx-auto">
-    <p class="mb-2"><span class="font-semibold"><%= t '.long_url' %> :</span> <%= @url.long_url %></p>
-    <p><span class="font-semibold"><%= t '.tiny_url' %> :</span> <%= @tiny_url %></p>
+    <p class="ml-6 mb-2"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.long_url' %> :</span> <%= @url.long_url %></p>
+    <p class="ml-6"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.tiny_url' %> :</span> <%= @tiny_url %></p>
   </div>
-  <%= link_to t('.back'), short_urls_path, class: "bg-beige border border-beige font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white" %>
+  <%= link_to t('.back'), short_urls_path, class: "bg-beige border border-black rounded font-semibold w-fit block mt-12 p-2 hover:bg-darkblue hover:text-white" %>
 </section>

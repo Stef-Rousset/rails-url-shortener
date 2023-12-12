@@ -17,6 +17,7 @@ fr:
   no_description: pas de description
   no_category: pas de catégorie
   confirm: Êtes-vous sûr(e) ?
+  user_not_authorized: Vous n'êtes pas autorisé à réaliser cette action
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -97,7 +98,7 @@ fr:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
       title: Mes sources d'information
-      paragraph: Vous avez choisi les sources d'information ci-dessous
+      paragraph: Vos sources d'informations sont les suivantes
       modify_sources: Modifier les sources
     choose_sources:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours

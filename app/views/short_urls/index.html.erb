@@ -4,7 +4,7 @@
 <section class="urls-container w-10/12 lg:w-8/12 mx-auto mt-12">
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
-    <%= link_to t('short_urls.index.new_url_link'), new_short_url_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('short_urls.index.new_url_link'), new_short_url_path, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
   <% @urls.each do |url| %>
     <div class="flex justify-between items-center h-fit <%= cycle('bg-lightblue', 'bg-beige') %> border rounded p-4 my-8">

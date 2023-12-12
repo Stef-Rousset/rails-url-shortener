@@ -1,23 +1,27 @@
 # controller for ShortUrls
 class ShortUrlsController < ApplicationController
-  before_action :authenticate_user!, except: %i[url_shortened]
+  skip_before_action :authenticate_user!, only: %i[url_shortened]
+  before_action :skip_authorization, only: %i[url_shortened]
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
-    @urls = ShortUrl.where(user_id: current_user.id)
+    @urls = policy_scope(ShortUrl)
   end
 
   def show
     @url = ShortUrl.find(params[:id])
+    authorize @url
     @tiny_url = "#{request.host_with_port}/#{@url.tiny_url}"
   end
 
   def new
     @short_url = ShortUrl.new
+    authorize @short_url
   end
 
   def create
     @url = ShortUrl.new(short_url_params)
+    authorize @url
     if @url.save
       redirect_to short_url_path(@url)
     else
@@ -32,6 +36,7 @@ class ShortUrlsController < ApplicationController
 
   def destroy
     @url = ShortUrl.find(params[:id])
+    authorize @url
     @url.destroy
     redirect_to short_urls_path, notice: t(:destroyed, name: t(:short_url))
   end

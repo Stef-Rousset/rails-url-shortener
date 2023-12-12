@@ -1,8 +1,10 @@
 <div class="flex justify-between items-center h-fit <%= cycle('bg-beige', 'bg-lightblue') %> border rounded p-4 my-8">
   <div class=" flex justify-between items-center w-full">
     <p class="font-semibold"><%= category.name%></p>
-    <%= link_to category_path(category), data: { turbo_method: 'delete', turbo_confirm: t(:confirm) } do %>
-      <i class="fa-solid fa-trash-can"></i>
+    <% if policy(category).destroy? %>
+      <%= link_to category_path(category), data: { turbo_method: 'delete', turbo_confirm: t(:confirm) } do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
     <% end %>
   </div>
 </div>
