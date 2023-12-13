@@ -1,4 +1,4 @@
-<section class="about-container flex justify-between items-start w-10/12 lg:w-8/12 lg:h-3/4 mx-auto mt-10">
+<section class="about-container flex justify-between items-start w-10/12 lg:w-8/12 lg:h-3/4 mx-auto py-10">
   <div class="flex flex-col">
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="my-4 underline"><%= t '.resources' %></h2>
@@ -29,7 +29,7 @@
   </ul>
   </div>
   <% if !user_signed_in? %>
-    <%= link_to t('pages.about.back'), root_path, class:"bg-beige border border-beige font-semibold w-fit mb-2 p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('pages.about.back'), root_path, class:"btn-beige mb-2" %>
   <% end %>
 
 </section>
