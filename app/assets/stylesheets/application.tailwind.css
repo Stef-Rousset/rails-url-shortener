@@ -16,9 +16,11 @@
 .field_with_errors {
   display: contents;
 }
+/* main button style */
 .btn-beige {
   @apply bg-beige border border-black rounded font-semibold text-center w-fit p-2 hover:bg-darkblue hover:text-white;
 }
+/* center the svg images in the weather view table */
 td > svg {
   @apply block mx-auto;
 }
