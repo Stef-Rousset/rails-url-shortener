@@ -98,7 +98,7 @@ fr:
     index:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
       title: Mes sources d'information
-      paragraph: Vos sources d'informations sont les suivantes
+      paragraph: Vous recevez par mail tous les matins les informations à la une des sources suivantes
       modify_sources: Modifier les sources
     choose_sources:
       meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours

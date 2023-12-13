@@ -5,8 +5,8 @@
     <%= f.text_field :long_url, class: "bg-beige rounded mb-12" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <div class='flex justify-evenly items-center'>
-      <%= f.submit t('.submit'), class: "self-center bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
-      <%= link_to t('.cancel'), short_urls_path, class: "self-center bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+      <%= f.submit t('.submit'), class: "btn-beige" %>
+      <%= link_to t('.cancel'), short_urls_path, class: "btn-beige" %>
     </div>
   <% end %>
 </section>

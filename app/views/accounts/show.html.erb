@@ -1,7 +1,7 @@
 <div class="flex flex-col md:flex-row justify-center w-full mx-auto">
-  <div class="w-11/12 md:w-w40 lg:w-30 xl:w-w30 mt-12 mx-auto md:mr-4 md:ml-0  md:sticky md:top-12">
+  <aside class="w-11/12 md:w-w40 lg:w-30 xl:w-w30 pt-12 mx-auto md:mr-4 md:ml-0">
     <!-- filters -->
-    <aside class="flex flex-col w-full bg-lightblue border mb-4 p-2">
+    <div class="flex flex-col w-full bg-lightblue border mb-4 p-2">
       <h2 class="font-bold text-lg mb-8"><%= t '.filter_transactions' %></h2>
       <%= form_with url: account_path, method: :get, class: 'flex flex-col w-10/12 mx-auto' do |f| %>
         <div class="flex justify-between items-center w-full mb-4">
@@ -21,17 +21,17 @@
           <%= f.label :end_date, t('.end_date'), class: "mb-2" %>
           <%= f.date_field :end_date, value: params[:end_date], class: "bg-beige rounded mb-4" %>
         </div>
-        <%= f.submit t(:validate), class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white self-center" %>
+        <%= f.submit t(:validate), class: "btn-beige self-center" %>
       <% end %>
-    </aside>
+    </div>
     <!-- categories -->
-    <aside class="flex flex-col w-full bg-lightblue border p-2">
+    <div class="flex flex-col w-full bg-lightblue border p-2">
     <h2 class="font-bold text-lg mb-4">Catégories</h2>
       <%= link_to t('accounts.show.create_category'), new_category_path, class: 'text-base mb-2 hover:underline' %>
       <%= link_to t('accounts.show.show_categories'), categories_path, class: 'text-base hover:underline' %>
-    </aside>
-  </div>
-  <section class="account-container w-11/12 md:w-1/2 xl:w-w55 h-fit mt-12 mx-auto md:mx-0">
+    </div>
+  </aside>
+  <section class="account-container w-11/12 md:w-1/2 xl:w-w55 h-fit pt-12 mx-auto md:mx-0">
     <%= turbo_frame_tag "edit-modal" %>
     <!-- account -->
     <div class="border bg-lightblue px-2">
@@ -42,8 +42,8 @@
         <% end %>
       </div>
       <div class='flex justify-between items-center mb-4'>
-        <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "bg-beige border border-black font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white"%>
-        <%= link_to t('.back'), accounts_path, class: "bg-beige border border-black font-semibold w-fit block p-2 hover:bg-darkblue hover:text-white" %>
+        <%= link_to t('accounts.show.edit_btn'), edit_account_path(@account), class: "btn-beige block"%>
+        <%= link_to t('.back'), accounts_path, class: "btn-beige block" %>
       </div>
       <%= link_to t('accounts.show.add_transactions_link'), new_account_transaction_path(@account), data: { turbo_frame: dom_id(Transaction.new) }, class: "bg-darkblue text-white border border-black font-semibold w-fit block p-2 hover:bg-beige hover:text-black mt-8 mb-4 mx-auto" %>
       <%= turbo_frame_tag Transaction.new %>
