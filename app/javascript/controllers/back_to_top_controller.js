@@ -2,25 +2,25 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="back-to-top"
 export default class extends Controller {
-  static targets = ["button", "main"]
+  static targets = ["button", "body"]
   connect() {
     //console.log(this.element)
     //console.log(this.buttonTarget)
-    //console.log(this.mainTarget)
+    //console.log(this.bodyTarget)
   }
 
   showButton(){
-    const main = this.mainTarget
+    const body = this.bodyTarget
     const button = this.buttonTarget
-    if (main.scrollTop >= 150){  //scrollTop renvoit le nb de px dont l'élement est scrollé
+    if (body.scrollTop >= 150){  //scrollTop renvoit le nb de px dont l'élement est scrollé
       button.classList.remove('hidden')
-    } else if (main.scrollTop <= 150){
+    } else if (body.scrollTop <= 150){
       button.classList.add('hidden')
     }
   }
   upToTop(){
-    const main = this.mainTarget
-    main.scrollTo({
+    const body = this.bodyTarget
+    body.scrollTo({
       top: 0,
       behavior: "smooth",
     });

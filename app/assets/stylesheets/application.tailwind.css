@@ -11,7 +11,12 @@
 }
 
 */
+
 /* avoid style change in fields when error in a form */
 .field_with_errors {
   display: contents;
 }
+.btn-beige {
+  @apply bg-beige border border-black rounded font-semibold w-fit p-2 hover:bg-darkblue hover:text-white;
+}
+
