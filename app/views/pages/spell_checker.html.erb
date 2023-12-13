@@ -1,7 +1,7 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<section class="spell-container flex flex-col w-10/12 lg:w-8/12 h-3/4 mx-auto pt-12">
+<section class="spell-container flex flex-col w-10/12 lg:w-8/12 h-3/4 mx-auto py-12">
   <h1 class="font-bold"><%= t '.title' %></h1>
   <h2 class="mt-6 mb-14 italic"><%= t '.subtitle' %></h2>
   <form <% if @locale.nil? %>
@@ -9,24 +9,27 @@
         <% else %>
           action="/<%= @locale %>/spell_checked"
         <% end %>
-        method="post" class="flex flex-col items-start w-full bg-lightblue p-4">
-    <div class='flex flex-col items-start w-full mb-4'>
-      <label for="search" class='font-semibold mb-2'><%= t '.search_label' %></label>
-      <input name="search" id="search" type="text" placeholder="acueille" class="w-full md:w-1/2" />
-      <fieldset class="w-full md:w-1/2 mt-8">
+        method="post" class="flex flex-col bg-lightblue w-full p-4">
+    <div class="flex justify-between items-start">
+      <div class='flex flex-col items-start w-full'>
+        <label for="search" class='font-semibold mb-2'><%= t '.search_label' %></label>
+        <input name="search" id="search" type="text" placeholder="acueille" class="w-3/4" />
+      </div>
+      <fieldset class="flex flex-col items-start w-3/4">
         <legend class="font-semibold mb-2"><%= t'.legend' %></legend>
-        <div class="flex justify-between items-center -full">
+        <div class="flex justify-between items-center w-full">
           <label for="french" class="mb-2"><%= t '.french_label' %></label>
           <input name="language" id="french" type="radio" value="fr" />
         </div>
-        <div class="flex justify-between items-center -full">
+        <div class="flex justify-between items-center w-full">
           <label for="english" class="mb-2"><%= t '.english_label' %></label>
           <input name="language" id="english" type="radio" value="en" />
         </div>
       </fieldset>
     </div>
-    <input type="submit" value="<%= t :validate %>" class='btn-beige'/>
-    <div id= "response" class="mt-4"></div>
+    <input type="submit" value="<%= t :validate %>" class='btn-beige self-center mt-10 mb-4'/>
+    <%= turbo_frame_tag "response", class: "my-2" %>
   </form>
+  <%= image_tag 'checker.png', class: "max-h-32 md:max-h-40 mx-auto opacity-30 pt-4" %>
 </section>
 

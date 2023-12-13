@@ -1,7 +1,7 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<section class="sources-container w-10/12 lg:w-8/12 mx-auto pt-12">
+<section class="sources-container w-10/12 lg:w-8/12 mx-auto py-12">
   <div class="flex flex-col justify-between items-start">
     <h1 class="font-bold text-lg my-4"><%= t '.title' %></h1>
     <p><%= t '.paragraph' %></p>
@@ -15,5 +15,6 @@
     <h2 class='italic font-bold mb-6'><%= t '.title_form' %> :</h2>
     <%= render 'form', sources: @sources, user_sources: nil, locale: @locale %>
   </div>
+  <%= image_tag 'rss.png', class: "max-h-24 md:max-h-32 mx-auto opacity-30" %>
 </section>
 
