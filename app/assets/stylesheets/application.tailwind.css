@@ -19,4 +19,6 @@
 .btn-beige {
   @apply bg-beige border border-black rounded font-semibold text-center w-fit p-2 hover:bg-darkblue hover:text-white;
 }
-
+td > svg {
+  @apply block mx-auto;
+}
