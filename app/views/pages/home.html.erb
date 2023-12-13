@@ -1,4 +1,4 @@
-<section class="home-container flex flex-col w-11/12 md:w-10/12 md:h-3/4 mx-auto mt-16">
+<section class="home-container flex flex-col w-11/12 md:w-10/12  h-full mx-auto py-8">
   <h1 class="font-bold"><%= t '.title_home' %></h1>
   <p class="my-8">
     <% if user_signed_in? %>
@@ -7,57 +7,57 @@
       <%= t '.paragraph' %>
     <% end %>
   </p>
-  <div data-controller="cards" class="flex grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 mt-8 w-full h-3/4 items-center">
+  <div data-controller="cards" class="grid grid-cols-1 sm:grid-cols-3 gap-12 mt-8 w-full h-full items-center">
     <% if user_signed_in? %>
-      <%= link_to short_urls_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+      <%= link_to short_urls_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
           <%= image_tag 'url.png', class: "w-8/12 justify-self-center"%>
           <p class="font-bold text-center"><%= t '.short-url-title' %></p>
       <% end %>
       <% if @user.sources.present? %>
-        <%= link_to sources_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+        <%= link_to sources_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
           <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
           <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
         <% end %>
       <% else %>
-        <%= link_to choose_sources_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+        <%= link_to choose_sources_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
           <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
           <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
         <% end %>
       <% end %>
-      <%= link_to weather_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+      <%= link_to weather_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
         <%= image_tag 'weather.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.weather-title' %></p>
       <% end %>
-      <%= link_to spell_checker_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+      <%= link_to spell_checker_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
         <%= image_tag 'checker.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.checker-title' %></p>
       <% end %>
-      <%= link_to accounts_path, class: "card border border-beige w-full h-5/6 flex grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
+      <%= link_to accounts_path, class: "card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 hover:scale-101 hover:brightness-95 transition-all" do %>
         <%= image_tag 'budget.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.budget-title' %></p>
       <% end %>
     <% else %>
-      <div data-action="mouseenter->cards#toggleText mouseleave->cards#toggleText" class="card border border-beige w-full h-full flex grid justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseenter->cards#toggleText mouseleave->cards#toggleText" class="card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'url.png', class: "w-8/12 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.short-url-title' %></p>
         <p class="hidden font-bold text-center text-white p-10 sm:p-0"><%= t '.short-url-text' %></p>
       </div>
-      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
         <p class="hidden font-bold text-center text-white p-10 sm:p-0"><%= t '.news-feed-text' %></p>
       </div>
-      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'weather.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.weather-title' %></p>
         <p class="hidden font-bold text-center text-white p-10 sm:p-0"><%= t '.weather-text' %></p>
       </div>
-      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'checker.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.checker-title' %></p>
         <p class="hidden font-bold text-center text-white p-10 sm:p-0"><%= t '.checker-text' %></p>
       </div>
-      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full flex grid justify-center items-center bg-beige p-2 transition-all">
+      <div data-action="mouseover->cards#toggleText mouseout->cards#toggleText" class="card border border-beige w-full h-full grid justify-center items-center bg-beige p-2 transition-all">
         <%= image_tag 'budget.png', class: "w-1/2 justify-self-center"%>
         <p class="font-bold text-center"><%= t '.budget-title' %></p>
         <p class="hidden font-bold text-center text-white p-10 sm:p-0"><%= t '.budget-text' %></p>
