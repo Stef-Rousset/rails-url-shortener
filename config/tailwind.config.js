@@ -19,6 +19,7 @@ module.exports = {
       },
       colors: {
         beige: "#FFF2D8",
+        lightgray: "#F5F5F5",
       },
       height: {
         'h10': '10%',
