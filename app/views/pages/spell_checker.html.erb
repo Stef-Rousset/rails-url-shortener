@@ -10,12 +10,12 @@
           action="/<%= @locale %>/spell_checked"
         <% end %>
         method="post" class="flex flex-col bg-lightblue w-full p-4">
-    <div class="flex justify-between items-start">
-      <div class='flex flex-col items-start w-full'>
+    <div class="flex flex-col justify-start items-center sm:flex-row sm:justify-between sm:items-start w-full">
+      <div class='flex flex-col items-start w-11/12 sm:w-5/12 mb-4 sm:mb-0'>
         <label for="search" class='font-semibold mb-2'><%= t '.search_label' %></label>
-        <input name="search" id="search" type="text" placeholder="acueille" class="w-3/4" />
+        <input name="search" id="search" type="text" placeholder="acueille" class="w-full" />
       </div>
-      <fieldset class="flex flex-col items-start w-3/4">
+      <fieldset class="flex flex-col items-start w-11/12 sm:w-5/12">
         <legend class="font-semibold mb-2"><%= t'.legend' %></legend>
         <div class="flex justify-between items-center w-full">
           <label for="french" class="mb-2"><%= t '.french_label' %></label>

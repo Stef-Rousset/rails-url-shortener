@@ -21,16 +21,30 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data)=> {
         if(!data["results"]){
-          console.log(this.btnTarget)
+          // show error message
           this.errorTarget.classList.remove('hidden')
+          // empty the table if it is filled
+          if (this.temp8Target.innerHTML != ""){
+            const targets = [this.tend8Target, this.tend14Target, this.tend20Target,
+                             this.temp8Target, this.temp14Target, this.temp20Target,
+                             this.prev8Target, this.prev14Target, this.prev20Target,
+                             this.wind8Target, this.wind14Target, this.wind20Target]
+            this.emptyTarget(targets)
+          }
         }else{
+          // hide error message
           if (this.errorTarget){
             this.errorTarget.classList.add('hidden')
           }
+          // show weather results
           this.findWeather(data)
         }
       })
   }
+  emptyTarget(targets){
+    targets.forEach(target => target.innerHTML = "")
+  }
+  // call open meteo API
   findWeather(data){
       let long = data["results"][0]["longitude"]
       let lat = data["results"][0]["latitude"]
@@ -56,6 +70,7 @@ export default class extends Controller {
               this.wind20Target.innerHTML = data["hourly"]["wind_speed_10m"][20]
           })
   }
+  // convert weather code in weather image
   convertWeatherCode(code){
       switch (code) {
           case 0:
