@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TransactionsController, type: :controller do
   render_views # required to access response.body
   before(:example) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @account = create(:account, user: @user)
     @transaction = create(:transaction1, account: @account)
   end

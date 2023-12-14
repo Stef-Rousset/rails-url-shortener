@@ -3,7 +3,7 @@ require 'debug'
 
 RSpec.describe 'Categories', type: :system do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @category = create(:category)
     sign_in @user
   end

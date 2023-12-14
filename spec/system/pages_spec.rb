@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Pages', type: :system do
   before(:each) do
-    @user = create(:user1)
-    @user2 = create(:user2)
+    @user = create(:user, :full_spell_count)
+    @user2 = create(:user, :normal)
   end
 
   context 'not signed in' do

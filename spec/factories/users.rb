@@ -4,14 +4,14 @@ FactoryBot.define do
   end
 
   factory :user do
-    factory :user1 do
-      email { generate(:email) }
+    email { generate(:email) }
+
+    trait :full_spell_count do
       password { 'password' }
       spell_count { 5 }
     end
 
-    factory :user2 do
-      email { generate(:email) }
+    trait :normal do
       password { 'motdepasse' }
     end
   end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Transaction, type: :model do
   before(:example) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @account = create(:account, user: @user)
   end
 

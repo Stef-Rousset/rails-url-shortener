@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ShortUrl, type: :model do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
   end
 
   it 'is invalid without long_url' do

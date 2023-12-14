@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @source = create(:source_one)
     @user.sources << @source
   end

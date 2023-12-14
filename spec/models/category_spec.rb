@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before(:example) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
   end
 
   context 'name presence' do

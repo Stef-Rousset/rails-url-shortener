@@ -3,7 +3,7 @@ require 'debug'
 
 RSpec.describe 'Sources', type: :system do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @source = create(:source_one)
     sign_in @user
   end

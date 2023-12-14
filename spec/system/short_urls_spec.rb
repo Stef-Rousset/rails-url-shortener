@@ -3,8 +3,8 @@ require 'debug'
 
 RSpec.describe 'ShortUrls', type: :system do
   before(:each) do
-    @user = create(:user1)
-    @short_url = create(:short_url1, user: @user)
+    @user = create(:user, :normal)
+    @short_url = create(:short_url, :with_tiny_url, user: @user)
     @long_url = @short_url.long_url
     sign_in @user
   end

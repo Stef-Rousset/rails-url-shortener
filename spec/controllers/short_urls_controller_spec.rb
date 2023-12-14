@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe ShortUrlsController, type: :controller do
   before(:each) do
-    @user = create(:user1)
-    @user2 = create(:user2)
-    @url = create(:short_url1, user: @user)
-    @url2 = create(:short_url2, user: @user2)
+    @user = create(:user, :full_spell_count)
+    @user2 = create(:user, :normal)
+    @url = create(:short_url, :with_tiny_url, user: @user)
+    @url2 = create(:short_url, :without_tiny_url, user: @user2)
   end
 
   context "not signed in" do

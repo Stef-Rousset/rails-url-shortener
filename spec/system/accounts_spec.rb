@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Accounts', type: :system do
   before(:example) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @account = create(:account, user: @user)
     sign_in @user
   end

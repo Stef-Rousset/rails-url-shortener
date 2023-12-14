@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Account, type: :model do
   before(:example) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
   end
 
   context 'name presence' do
@@ -48,7 +48,7 @@ RSpec.describe Account, type: :model do
   end
 
   it 'is valid if name is unique for user' do
-    user2 = create(:user2)
+    user2 = create(:user, :full_spell_count)
     account = create(:account, user: @user)
     second = Account.new(name: account.name, balance: -100.15, user_id: user2.id)
     expect(second).to be_valid
