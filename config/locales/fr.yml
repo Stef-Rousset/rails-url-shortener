@@ -148,7 +148,7 @@ fr:
     index:
       meta_description: Gérer les catégories d'opérations
       title: Liste des catégories
-      new_url_link: Créer un catégorie
+      new_url_link: Créer une catégorie
     new:
       title: Nouvelle catégorie
       cancel: Annuler
