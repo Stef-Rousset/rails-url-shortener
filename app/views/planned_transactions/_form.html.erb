@@ -1,0 +1,59 @@
+<%= form_with model: planned_transaction, class: "flex flex-col bg-lightblue mt-8 p-4 w-full" do |f| %>
+  <% if planned_transaction.errors.any? %>
+    <div data-controller="flashes" data-flashes-target="flash" id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3 flex justify-between items-start">
+      <div>
+        <h2><%= pluralize(planned_transaction.errors.count, t(:error)) %> <%= t(:error_phrase, name: t(:planned_transaction)) %> :</h2>
+        <ul>
+          <% planned_transaction.errors.each do |error| %>
+            <li class="list-disc list-inside"><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <button type="button" data-action="click->flashes#close" class="text-red-600 hover:text-red-900" aria-label="Close">X</button>
+    </div>
+  <% end %>
+  <div class="flex justify-between items-start">
+    <div class="flex flex-col w-5/12">
+      <%= f.label :start_date, t('.start_date'), required: true, class: "font-semibold mb-2" %>
+      <%= f.date_field :start_date, class: "bg-beige rounded mb-4" %>
+    </div>
+    <div class="flex flex-col w-5/12">
+      <%= f.label :every, t('.every'), class: "font-semibold mb-2" %>
+      <%= f.select :every, PlannedTransaction.everies.keys , {}, class: "bg-beige rounded mb-4" %>
+    </div>
+  </div>
+  <div class="flex justify-between items-start">
+    <div class="flex flex-col w-5/12">
+      <%= f.label :payee, t('.payee'), required: true, class: "font-semibold mb-2" %>
+      <%= f.text_field :payee, class: "bg-beige rounded mb-4" %>
+    </div>
+    <div class="flex flex-col w-5/12">
+      <%= f.label :account_id, t('.account'), required: true, class: "font-semibold mb-2" %>
+      <%= f.select :account_id, current_user.accounts.map{|account| [account.name, account.id] }, {}, class: "bg-beige rounded mb-4" %>
+    </div>
+  </div>
+  <div class="flex justify-between items-start">
+    <div class="flex flex-col w-5/12">
+      <%= f.label :transaction_type, t('.transaction_type'), required: true, class: "font-semibold mb-2" %>
+      <%= f.select :transaction_type, PlannedTransaction.transaction_types.keys, {}, class: "bg-beige rounded mb-4" %>
+    </div>
+    <div class="flex flex-col w-5/12">
+      <%= f.label :amount, t('.amount'), required: true, class: "font-semibold mb-2"%>
+      <%= f.number_field :amount, step: 0.01, class: "bg-beige rounded mb-6", value: @planned_transaction.amount  %>
+    </div>
+  </div>
+  <div class="flex justify-between items-start">
+    <div class="flex flex-col w-5/12">
+      <%= f.label :description, t('.description'), class: "font-semibold my-2" %>
+      <%= f.text_field :description, class: "bg-beige rounded mb-6" %>
+    </div>
+    <div class="flex flex-col w-5/12">
+      <%= f.label :category_id, t('.category'), class: "font-semibold mb-2" %>
+      <%= f.select :category_id, categories_for_form(current_user.accounts.last), {}, class: "bg-beige rounded mb-4" %>
+    </div>
+  </div>
+  <div class='flex justify-evenly items-center mb-4'>
+    <%= f.submit t('.submit'), class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <%= link_to t('.cancel'), accounts_path, class: "btn-beige" %>
+  </div>
+<% end %>

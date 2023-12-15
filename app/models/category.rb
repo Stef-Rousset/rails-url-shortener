@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
   belongs_to :user, optional: true
   has_many :transactions
+  has_many :planned_transactions
 
   before_validation :capitalize
   before_destroy :update_transactions

@@ -24,8 +24,9 @@ Rails.application.routes.draw do
     post '/update_sources_for_user', to: 'sources#update_sources_for_user'
     get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
     resources :accounts do
-      resources :transactions
+      resources :transactions, except: %i[show]
     end
+    resources :planned_transactions, except: %i[show]
     put '/update_checked', to: 'transactions#update_checked'
     resources :categories, only: %i[index new create destroy]
     get '/:url_shortened', to: 'short_urls#url_shortened'

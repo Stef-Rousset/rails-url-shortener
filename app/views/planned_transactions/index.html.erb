@@ -1,0 +1,14 @@
+<% content_for :meta_description do %>
+  <%= t '.meta_description' %>
+<% end %>
+<section class="planned-container w-10/12 lg:w-1/2 mx-auto py-12">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="font-bold text-lg"><%= t '.title' %></h1>
+    <div class="flex justify-between items-center">
+      <%= link_to t('planned_transactions.index.new_planned_transaction_link'), new_planned_transaction_path, class: "btn-beige mr-4"%>
+      <%= link_to t(:back), :back, class: "btn-beige"%>
+    </div>
+  </div>
+  <%= render @planned_transactions %>
+  <%= image_tag 'budget.png', class: "max-h-36 mx-auto mt-12 opacity-30" %>
+</section>

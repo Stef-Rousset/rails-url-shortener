@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_08_084505) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_15_100617) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_084505) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "planned_transactions", force: :cascade do |t|
+    t.string "payee", null: false
+    t.decimal "amount", precision: 11, scale: 2, default: "0.0"
+    t.date "start_date", null: false
+    t.text "description"
+    t.integer "transaction_type", null: false
+    t.integer "every", null: false
+    t.bigint "account_id", null: false
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_planned_transactions_on_account_id"
+    t.index ["category_id"], name: "index_planned_transactions_on_category_id"
   end
 
   create_table "short_urls", force: :cascade do |t|
@@ -87,6 +102,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_084505) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "categories", "users"
+  add_foreign_key "planned_transactions", "accounts"
+  add_foreign_key "planned_transactions", "categories"
   add_foreign_key "short_urls", "users"
   add_foreign_key "transactions", "accounts"
   add_foreign_key "transactions", "categories"

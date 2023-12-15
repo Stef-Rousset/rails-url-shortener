@@ -1,6 +1,7 @@
 class Account < ApplicationRecord
   belongs_to :user
   has_many :transactions, dependent: :destroy
+  has_many :planned_transactions, dependent: :destroy
 
   before_validation :capitalize
 
