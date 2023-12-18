@@ -1,5 +1,9 @@
+<%= turbo_frame_tag planned_transaction do %>
   <div class="flex flex-col h-fit w-full <%= cycle 'bg-lightblue', 'bg-beige' %> border rounded p-4 my-2">
-    <h3 class="font-semibold mb-2"><%= l planned_transaction.start_date %></h3>
+    <div class='flex justify-between items-start mb-4'>
+      <h3 class="font-semibold"><%= l planned_transaction.start_date %></h3>
+      <p class="font_semibold italic"><%= t '.every' %> <%= every_translation(planned_transaction.every) %></p>
+    </div>
     <div class="flex justify-between items-center w-full">
       <h4 class="font-semibold"><%= planned_transaction.payee %></h4>
       <p class="font-semibold"><%= planned_transaction.transaction_type == "credit" ? "+ " : "- " %><%= number_to_currency(planned_transaction.amount) %></p>
@@ -29,5 +33,5 @@
       </div>
     </div>
   </div>
-
+<% end %>
 

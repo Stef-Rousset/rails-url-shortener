@@ -1,0 +1,4 @@
+<%= turbo_stream.remove @planned_transaction %>
+<% if @planned_transactions.empty? %>
+  <%= turbo_stream.prepend 'no_transaction', partial: "transactions/no_transaction" %>
+<% end %>

@@ -6,9 +6,12 @@
     <h1 class="font-bold text-lg"><%= t '.title' %></h1>
     <div class="flex justify-between items-center">
       <%= link_to t('planned_transactions.index.new_planned_transaction_link'), new_planned_transaction_path, class: "btn-beige mr-4"%>
-      <%= link_to t(:back), :back, class: "btn-beige"%>
+      <%= link_to t('planned_transactions.index.back'), :back, class: "btn-beige"%>
     </div>
   </div>
+  <%= turbo_frame_tag 'no_transaction' do %>
+      <%= render 'transactions/no_transaction' if @planned_transactions.empty? %>
+  <% end %>
   <%= render @planned_transactions %>
   <%= image_tag 'budget.png', class: "max-h-36 mx-auto mt-12 opacity-30" %>
 </section>

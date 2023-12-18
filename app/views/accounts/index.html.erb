@@ -1,10 +1,10 @@
 <% content_for :meta_description do %>
   <%= t '.meta_description' %>
 <% end %>
-<div class="accounts-container w-9/12 mx-auto pt-12">
+<div class="accounts-container w-8/12 mx-auto pt-12">
   <h1 class="font-bold text-lg mb-4"><%= t '.title' %></h1>
   <div class="flex flex-col-reverse md:flex-row justify-center md:justify-between w-full">
-    <aside class="w-11/12 md:w-w40 lg:w-30 xl:w-1/4 pt-12 mx-auto md:mr-8 md:ml-0">
+    <aside class="w-11/12 md:w-w40 lg:w-30 xl:w-1/4 h-fit mt-12 mx-auto md:mr-8 md:ml-0">
       <!-- planned transactions -->
       <div class="flex flex-col bg-lightblue border h-fit p-4 mb-4">
         <h2 class="font-bold text-lg mb-4"><%= t '.planned_transactions' %></h2>
@@ -19,7 +19,7 @@
       </div>
     </aside>
     <!-- accounts -->
-    <section class="w-11/12 md:w-1/2 lg:w-2/3 h-fit pt-12 mx-auto md:mx-0">
+    <section class="w-11/12 md:w-1/2 lg:w-2/3 h-fit mt-12 mx-auto md:mx-0">
       <div class="flex justify-between items-start bg-lightblue border p-4">
         <div class="flex flex-col">
           <h2 class="font-bold text-lg mb-4"><%= t '.my_accounts' %></h2>
@@ -28,7 +28,9 @@
         </div>
         <%= link_to t('accounts.index.new_url_link'), new_account_path, class: "btn-beige" %>
       </div>
-      <%= render @accounts %>
+      <div class="grid grid-cols-2 gap-4 border mt-4 p-4">
+        <%= render @accounts %>
+      </div>
     </section>
   </div>
   <%= image_tag 'budget.png', class: "max-h-36 mx-auto mt-12 opacity-30" %>

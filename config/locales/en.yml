@@ -233,11 +233,13 @@ en:
       meta_description: Plan your transactions so they can repeat themselves automatically.
       title: Planned transactions
       new_planned_transaction_link: Plan a transaction
+      back: Back
     planned_transaction:
       description: Description
       category: Category
       show_more: Show more
       show_less: Show less
+      every: Every
   user_mailer:
     news_email:
       hello: Hello

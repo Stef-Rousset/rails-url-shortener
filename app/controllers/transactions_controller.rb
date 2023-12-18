@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
   def destroy
     @transaction.destroy
     @account = @transaction.account
-    @transactions = @account.transactions
+    @transactions = @account.transactions # needed in destroy.turbo_stream.erb
     @transaction.update_balance_after_destroy
     # logger.debug "balance: #{@account.balance}"
     respond_to do |format|

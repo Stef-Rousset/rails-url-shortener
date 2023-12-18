@@ -201,11 +201,13 @@ fr:
       meta_description: Planifiez des opérations afin qu'elles se répètent automatiquement.
       title: Opérations planifiées
       new_planned_transaction_link: Planifier une opération
+      back: Retour
     planned_transaction:
       description: Description
       category: Catégorie
       show_more: Voir plus
       show_less: Voir moins
+      every: Chaque
   activerecord:
     attributes:
       user:

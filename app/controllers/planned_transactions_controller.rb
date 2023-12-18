@@ -27,6 +27,12 @@ class PlannedTransactionsController < ApplicationController
   end
 
   def destroy
+    @planned_transaction.destroy
+    @planned_transactions = current_user.accounts.map(&:planned_transactions).flatten.compact # needed in destroy.turbo_stream.erb
+    respond_to do |format|
+      format.html { redirect_to planned_transactions_path, notice: t(:destroyed, name: t(:planned_transaction)) }
+      format.turbo_stream { flash.now[:notice] = t(:destroyed, name: t(:planned_transaction)) }
+    end
   end
 
   private
