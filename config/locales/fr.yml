@@ -208,6 +208,9 @@ fr:
       show_more: Voir plus
       show_less: Voir moins
       every: Chaque
+    edit:
+      planned_transaction_to_edit: Opération planifiée à modifier
+      planned_transaction_edit_paragraph: Veuillez noter que la modification s'appliquera à la prochaine répétition de l'opération
   activerecord:
     attributes:
       user:

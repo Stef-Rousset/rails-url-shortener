@@ -240,6 +240,9 @@ en:
       show_more: Show more
       show_less: Show less
       every: Every
+    edit:
+      planned_transaction_to_edit: Planned transaction to edit
+      planned_transaction_edit_paragraph: Please note that the modification(s) will apply to the next repetition of the transaction
   user_mailer:
     news_email:
       hello: Hello

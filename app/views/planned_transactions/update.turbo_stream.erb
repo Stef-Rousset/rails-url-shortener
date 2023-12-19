@@ -1,0 +1,4 @@
+<%= turbo_stream.replace @planned_transaction do %>
+  <%= render 'planned_transaction', planned_transaction: @planned_transaction%>
+<% end %>
+<%= turbo_stream.update 'edit-planned-modal', "" %>

@@ -24,6 +24,14 @@ class PlannedTransactionsController < ApplicationController
   end
 
   def update
+    if @planned_transaction.update(planned_transaction_params)
+      respond_to do |format|
+        format.html { redirect_to planned_transactions_path, notice: t(:updated, name: t(:planned_transaction)) }
+        format.turbo_stream { flash.now[:notice] = t(:updated, name: t(:planned_transaction)) }
+      end
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

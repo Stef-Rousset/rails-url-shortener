@@ -9,6 +9,7 @@
       <%= link_to t('planned_transactions.index.back'), :back, class: "btn-beige"%>
     </div>
   </div>
+  <%= turbo_frame_tag "edit-planned-modal" %>
   <%= turbo_frame_tag 'no_transaction' do %>
       <%= render 'transactions/no_transaction' if @planned_transactions.empty? %>
   <% end %>
