@@ -1,10 +1,12 @@
-<div class="flex justify-between items-center h-fit bg-beige border rounded p-4">
-  <div class=" flex flex-col justify-between items-start ">
+<div class="flex flex-col justify-between items-start w-full h-fit bg-beige border rounded p-4">
+  <div class=" flex flex-col justify-between items-start">
     <p class="mb-4 font-semibold"><%= account.name%></p>
     <p class="mb-4"><span class="font-semibold"><%= t '.account_balance' %> : </span><%= number_to_currency(account.balance) %></p>
-    <%= link_to t('accounts.account.show_url_link'), account_path(account), class: "bg-white border rounded border-black font-semibold w-fit p-1 hover:bg-darkblue hover:text-white" %>
   </div>
-  <%= link_to account_path(account), data: {turbo_method: :delete, turbo_confirm: t(:confirm)} do %>
-    <i class="fa-solid fa-trash-can"></i>
-  <% end %>
+  <div class="flex justify-between items-center w-full">
+    <%= link_to t('accounts.account.show_url_link'), account_path(account), class: "bg-white border rounded border-black font-semibold w-fit p-1 hover:bg-darkblue hover:text-white" %>
+    <%= link_to account_path(account), data: {turbo_method: :delete, turbo_confirm: t(:confirm)} do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+  </div>
 </div>
