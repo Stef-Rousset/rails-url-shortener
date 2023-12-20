@@ -3,7 +3,7 @@ require 'sidekiq/testing'
 
 RSpec.describe SendMail, type: :job do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @source = create(:source_one)
     @user.sources << @source
   end

@@ -2,7 +2,7 @@ class EveryDayJob < ApplicationJob
   queue_as :default
 
   def perform
-    PlannedTransaction.where(every: "day").in_batches do |elements|
+    PlannedTransaction.where(every: 'day').in_batches do |elements|
       if elements.present?
         elements.each do |element|
           Transaction.create!(payee: element.payee, amount: element.amount, date: Date.today,

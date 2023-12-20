@@ -5,7 +5,7 @@ RSpec.describe 'PlannedTransactions', type: :system do
   before(:each) do
     @user = create(:user, :normal)
     @account = create(:account, user: @user)
-    @planned = create(:planned_transaction, account: @account)
+    @planned = create(:planned_transaction, :every_month, account: @account)
     sign_in @user
   end
 

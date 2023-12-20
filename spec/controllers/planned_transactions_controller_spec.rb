@@ -5,7 +5,7 @@ RSpec.describe PlannedTransactionsController, type: :controller do
   before(:example) do
     @user = create(:user, :normal)
     @account = create(:account, user: @user)
-    @planned = create(:planned_transaction, account: @account)
+    @planned = create(:planned_transaction, :every_month, account: @account)
   end
 
   context 'not signed in' do
