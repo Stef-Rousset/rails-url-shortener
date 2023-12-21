@@ -146,6 +146,8 @@ en:
     index:
       meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
       title: Personal finance handler
+      paragraph: Create your accounts, add transactions that you can then check with your bank statement. Track your overall balance, and by account.
+                  Plan transactions by choosing their repetition frequency (every day, month, etc.).
       my_accounts: My accounts
       accounts_number: Accounts number
       total_balance: Total balance

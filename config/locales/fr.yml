@@ -115,6 +115,8 @@ fr:
     index:
       meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
       title: Gestionnaire de finances personnelles
+      paragraph: Créez vos comptes, ajoutez-y des opérations que vous pourrez ensuite pointer avec votre relevé bancaire. Suivez votre solde global, et par compte.
+                 Planifiez des opérations en choisissant leur féquence de répétition (tous les jours, mois..).
       my_accounts: Mes comptes
       accounts_number: Nombre de comptes
       total_balance: Solde Total
