@@ -418,7 +418,7 @@ fr:
         precision: 2
         separator: ","
         significant: false
-        strip_insignificant_zeros: false
+        strip_insignificant_zeros: true
         unit: "€"
   date:
     formats:
