@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe ShortUrlPolicy, type: :policy do
   before(:example) do
-    @user = create(:user1)
-    @user2 = create(:user2)
+    @user = create(:user, :full_spell_count)
+    @user2 = create(:user, :normal)
     @user2.admin = true
-    @url = create(:short_url1, user: @user)
+    @url = create(:short_url, :with_tiny_url, user: @user)
   end
 
   subject { described_class }

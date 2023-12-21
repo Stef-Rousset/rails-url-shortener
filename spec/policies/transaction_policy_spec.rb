@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe TransactionPolicy, type: :policy do
   before(:example) do
-    @user = create(:user1)
-    @user2 = create(:user2)
+    @user = create(:user, :full_spell_count)
+    @user2 = create(:user, :normal)
     @account = create(:account, user: @user)
     @transaction = create(:transaction1, account: @account)
     @trans2 = create(:transaction2, account: @account)

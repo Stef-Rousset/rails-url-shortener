@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe AccountPolicy, type: :policy do
   before(:example) do
-    @user = create(:user1)
-    @user2 = create(:user2)
+    @user = create(:user, :full_spell_count)
+    @user2 = create(:user, :normal)
     @user2.admin = true
     @account = create(:account, user: @user)
   end
