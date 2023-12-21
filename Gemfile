@@ -39,6 +39,10 @@ gem "devise"
 # authorization [https://github.com/varvet/pundit]
 gem "pundit"
 
+# excel files [https://github.com/caxlsx/caxlsx]
+gem 'caxlsx'
+gem 'caxlsx_rails'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
