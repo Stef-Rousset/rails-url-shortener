@@ -1,0 +1,25 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+title = s.add_style bg_color: "FFF2D8", b: true, alignment: { horizontal: :center }, sz: 13
+header = s.add_style bg_color: "eaeaea", b: true, alignment: { horizontal: :center }, border: { style: :thin, color: '000000', edges: [:left, :right, :top, :bottom] }
+normal = s.add_style alignment: { horizontal: :left }
+date_cell = s.add_style format_code: "dd/mm/yyyy", alignment: { horizontal: :left}
+
+
+wb.add_worksheet(name: "Transactions") do |sheet|
+  sheet.add_row ["#{@account.name} au #{Date.today.strftime('%d/%m/%Y')}"], style: [title]
+  sheet.add_row ['Date', 'Bénéficiaire', 'Montant', 'Description', 'Catégorie', 'Vérifiée'], style: [header, header, header, header, header, header]
+  @transactions.each do |transaction|
+    category = transaction.category.present? ? transaction.category.name : 'aucune'
+    description = transaction.description.present? ? transaction.description : 'aucune'
+    sign = transaction.transaction_type == 'debit' ? '- ' : '+ '
+    amount = sign + transaction.amount.to_s
+    checked = transaction.checked? ? 'oui' : 'non'
+    sheet.add_row [transaction.date, transaction.payee, amount, description, category, checked], style: [date_cell, normal, normal, normal, normal, normal]
+  end
+
+  sheet.merge_cells('A1:F1')
+end
+
+

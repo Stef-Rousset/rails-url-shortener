@@ -18,6 +18,10 @@ class AccountsController < ApplicationController
     elsif params[:end_date].present?
       @transactions = @transactions.where('date <= ?', params[:end_date])
     end
+    respond_to do |format|
+      format.html
+      format.xlsx { response.headers['Content-Disposition'] = 'attachment; filename="transactions.xlsx"'}
+    end
   end
 
   def new

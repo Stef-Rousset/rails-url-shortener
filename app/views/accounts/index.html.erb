@@ -9,7 +9,9 @@
       <!-- planned transactions -->
       <div class="flex flex-col bg-lightblue border h-fit p-4 mb-4">
         <h2 class="font-bold text-lg mb-4"><%= t '.planned_transactions' %></h2>
-        <%= link_to t('accounts.index.new_planned_transaction_link'), new_planned_transaction_path, class: 'text-base hover:underline mb-2' %>
+        <% if @accounts.present? %>
+          <%= link_to t('accounts.index.new_planned_transaction_link'), new_planned_transaction_path, class: 'text-base hover:underline mb-2' %>
+        <% end %>
         <%= link_to t('accounts.index.show_planned_transactions'), planned_transactions_path, class: 'text-base hover:underline' %>
       </div>
       <!-- categories -->

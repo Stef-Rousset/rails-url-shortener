@@ -170,8 +170,11 @@ en:
       category: Category
       begin_date: From
       end_date: To
+      categories: Categories
       create_category: Create new category
       show_categories: See categories
+      load: Load
+      load_transactions: Load transactions for this account
     balance:
       balance: Balance
     new:
