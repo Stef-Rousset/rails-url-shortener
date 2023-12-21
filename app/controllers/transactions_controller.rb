@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :set_account, only: %i[new create edit]
   before_action :set_transaction, only: %i[edit update update_checked destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def new
     @transaction = Transaction.new
@@ -45,7 +46,7 @@ class TransactionsController < ApplicationController
   def destroy
     @transaction.destroy
     @account = @transaction.account
-    @transactions = @account.transactions
+    @transactions = @account.transactions # needed in destroy.turbo_stream.erb
     @transaction.update_balance_after_destroy
     # logger.debug "balance: #{@account.balance}"
     respond_to do |format|
@@ -63,6 +64,10 @@ class TransactionsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:account_id])
+  end
+
+  def not_found
+    redirect_to short_urls_path, alert: t('record_not_found', my_object: Transaction.model_name.name, params: params[:id])
   end
 
   def transaction_params

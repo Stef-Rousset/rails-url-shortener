@@ -37,6 +37,7 @@ en:
   account: account
   category: category
   transaction: transaction
+  planned_transaction: planned transaction
   created: "%{name} created !"
   updated: "%{name} modified !"
   destroyed: "%{name} destroyed !"
@@ -145,8 +146,15 @@ en:
     index:
       meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
       title: Personal finance handler
+      paragraph: Create your accounts, add transactions that you can then check with your bank statement. Track your overall balance, and by account.
+                  Plan transactions by choosing their repetition frequency (every day, month, etc.).
       my_accounts: My accounts
+      accounts_number: Accounts number
+      total_balance: Total balance
       new_url_link: Create an account
+      planned_transactions: Planned transactions
+      new_planned_transaction_link: Plan a transaction
+      show_planned_transactions: See planned transactions
     account:
       account_balance: Balance
       show_url_link: Details
@@ -197,7 +205,7 @@ en:
       amount: Amount
       date: Date
       description: Description
-      category: Cetégory
+      category: Category
       checked: Checked
       submit: Validate
       cancel: Cancel
@@ -209,6 +217,34 @@ en:
       checked: Checked
     no_transaction:
       no_transaction: No transaction...
+  planned_transactions:
+    new:
+      new_planned_transaction: New planned transaction
+    form:
+      payee: Payee
+      account: Account
+      transaction_type: Type
+      amount: Amount
+      start_date: Beginning date for the repetition
+      description: Description
+      category: Category
+      every: Repeat every
+      submit: Validate
+      cancel: Cancel
+    index:
+      meta_description: Plan your transactions so they can repeat themselves automatically.
+      title: Planned transactions
+      new_planned_transaction_link: Plan a transaction
+      back: Back
+    planned_transaction:
+      description: Description
+      category: Category
+      show_more: Show more
+      show_less: Show less
+      every: Every
+    edit:
+      planned_transaction_to_edit: Planned transaction to edit
+      planned_transaction_edit_paragraph: Please note that the modification(s) will apply to the next repetition of the transaction
   user_mailer:
     news_email:
       hello: Hello
@@ -244,12 +280,20 @@ en:
       user:
         one: User
         other: Users
+      planned_transaction:
+        one: Planned transaction
+        other: Planned transactions
     errors:
       messages:
         record_invalid: 'Validation failed: %{errors}'
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
+      models:
+        planned_transaction:
+          attributes:
+            start_date:
+              invalid_start_date: La date de début doit être supérieure à aujourd'hui
   devise:
     confirmations:
       confirmed: Your email address has been successfully confirmed.
