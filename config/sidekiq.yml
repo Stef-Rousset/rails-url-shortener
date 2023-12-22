@@ -14,14 +14,14 @@
       cron: '10 9 * * *'   # Runs every day at 9h10 am
       class: SendMail
     every_month_job:
-      cron: '0 1 * * *'    # Runs every day at 1h am
+      cron: '0 2 * * *'    # Runs every day at 2h am
       class: EveryMonthJob
     every_year_job:
-      cron: '0 2 * * *'    # Runs every day at 2h am
+      cron: '05 2 * * *'    # Runs every day at 2h05 am
       class: EveryYearJob
     every_day_job:
-      cron: '0 3 * * *'    # Runs every day at 3h am
+      cron: '10 2 * * *'    # Runs every day at 2h10 am
       class: EveryDayJob
     every_week_job:
-      cron: '0 4 * * *'    # Runs every day at 4h am
+      cron: '15 2 * * *'    # Runs every day at 2h15 am
       class: EveryWeekJob
