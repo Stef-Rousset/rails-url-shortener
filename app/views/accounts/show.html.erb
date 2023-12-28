@@ -64,7 +64,15 @@
             <% end %>
           <% else %>
             <%= render @transactions %>
-          <% end%>
+          <% end %>
+        <% end %>
+        <%= form_with url: account_path, method: :get do |f| %>
+          <%= f.hidden_field  'count', value: @count %>
+          <%= f.hidden_field  'checked', value: params[:checked] %>
+          <%= f.hidden_field  'category_id', value: params[:category_id] %>
+          <%= f.hidden_field  'begin_date', value: params[:begin_date] %>
+          <%= f.hidden_field  'end_date', value: params[:end_date] %>
+          <%= f.submit 'Load more' %>
         <% end %>
       </div>
     </div>
