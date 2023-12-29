@@ -37,18 +37,18 @@ fr:
   pages:
     home:
       title_home: Bienvenue sur Mes outils partagés !
-      paragraph: Voici les différents outils que vous pourrez utiliser gratuitement ! Pour cela, il vous suffit juste de créer un compte.
+      paragraph_html: "Voici les différents outils que vous pourrez utiliser gratuitement ! <span class='font-semibold italic'>Pour cela, il vous suffit juste de créer un compte.</span>"
       paragraph_signed_in: Voici les différents outils que vous pouvez utiliser gratuitement :)
       short-url-title: Raccourcir des urls
-      short-url-text: Obtenez une url plus courte qui redirige sur la page d'origine. Connectez-vous pour accéder à cet outil !
+      short-url-text: Obtenez une url plus courte qui redirige sur la page d'origine.
       news-feed-title: News feed par mail
-      news-feed-text: Recevez par mail tous les matins les nouvelles de 3 quotidiens. Connectez-vous pour accéder à cet outil !
+      news-feed-text: Recevez par mail tous les matins les nouvelles de 3 quotidiens.
       weather-title: Prévisions méteo quotidiennes
-      weather-text: Visualisez les prévisions méteo de la journée pour votre ville. Connectez-vous pour accéder à cet outil !
+      weather-text: Visualisez les prévisions méteo de la journée pour votre ville.
       checker-title: Vérifiez l'ortographe d'un mot
-      checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot. Connectez-vous pour accéder à cet outil !
+      checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot.
       budget-title: Gérer ses finances personnelles
-      budget-text: Gérer vos finances en créant vos comptes et en ajoutant vos opérations. Connectez-vous pour accéder à cet outil !
+      budget-text: Gérer vos finances en créant vos comptes et en ajoutant vos opérations.
     about:
       title: À propos de ce site
       resources: Ressources utilisées
