@@ -1,8 +1,12 @@
-<section class="show-url-container w-8/12 h-fit mx-auto mt-12 p-4 bg-lightblue border border-gray rounded">
-  <h1 class="font-bold text-lg mb-4"><%= t '.title' %> :</h1>
-  <div class= "flex flex-col justify-between items-start w-full mx-auto">
-    <p class="ml-6 mb-2"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.long_url' %> :</span> <%= @url.long_url %></p>
-    <p class="ml-6"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.tiny_url' %> :</span> <%= @tiny_url %></p>
-  </div>
-  <%= link_to t('.back'), short_urls_path, class: "btn-beige block mt-12 " %>
+<section class="show-url-container w-8/12 h-fit mx-auto mt-12">
+  <div class="p-4 bg-lightblue border border-gray rounded">
+    <h1 class="font-bold text-lg mb-4"><%= t '.title' %> :</h1>
+    <div class= "flex flex-col justify-between items-start w-full mx-auto">
+      <p class="ml-6 mb-2"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.long_url' %> :</span> <%= @url.long_url %></p>
+      <p class="ml-6"><i class="fa-solid fa-check mr-1"></i><span class="font-semibold"><%= t '.tiny_url' %> :</span> <%= @tiny_url %></p>
+    </div>
+    <%= link_to t('.back'), short_urls_path, class: "btn-beige block mt-12" %>
+    </div>
+  <%= image_tag 'url.png', class: "max-w-sm mx-auto opacity-30" %>
 </section>
+
