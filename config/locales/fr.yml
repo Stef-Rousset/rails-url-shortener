@@ -42,13 +42,13 @@ fr:
       short-url-title: Raccourcir des urls
       short-url-text: Obtenez une url plus courte qui redirige sur la page d'origine.
       news-feed-title: News feed par mail
-      news-feed-text: Recevez par mail tous les matins les nouvelles de 3 quotidiens.
+      news-feed-text: "Recevez par mail tous les matins les nouvelles de 3 quotidiens français : Le Monde, Libération et/ou l'Équipe."
       weather-title: Prévisions méteo quotidiennes
-      weather-text: Visualisez les prévisions méteo de la journée pour votre ville.
+      weather-text: Visualisez les prévisions méteo de la journée pour la ville de votre choix.
       checker-title: Vérifiez l'ortographe d'un mot
-      checker-text: Grâce à l'IA, obtenez la bonne ortographe pour votre mot.
+      checker-text: Grâce à l'IA, obtenez la bonne ortographe du mot français ou anglais que vous renseignez.
       budget-title: Gérer ses finances personnelles
-      budget-text: Gérer vos finances en créant vos comptes et en ajoutant vos opérations.
+      budget-text: Gérer vos finances en créant vos comptes, en ajoutant vos opérations quotidiennes ou répétées.
     about:
       title: À propos de ce site
       resources: Ressources utilisées

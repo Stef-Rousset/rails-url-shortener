@@ -73,13 +73,13 @@ en:
       short-url-title: Urls shortener
       short-url-text: Get a shorter url that redirect to the original page.
       news-feed-title: News feed
-      news-feed-text: Receive by mail every morning the news from 3 newspapers.
+      news-feed-text: "Receive by mail every morning the news from 3 french newspapers : Le Monde, Libération and/or l'Équipe."
       weather-title: Daily weather forecast
-      weather-text: See the daily forecast for your city.
+      weather-text: See the daily forecast for your chosen city.
       checker-title: Check spelling of your word
-      checker-text: Thanks to AI, get the right spelling for your word.
+      checker-text: Thanks to AI, get the right spelling for the french or english word you provide.
       budget-title: Manage your personal finance
-      budget-text: Manage your finance by creating accounts and transactions.
+      budget-text: Manage your finance by creating accounts, and adding daily or planned transactions.
       title: About this web site
       resources: Resources used
       stack: Stack used
