@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe CategoriesController, type: :controller do
   before(:example) do
     @user = create(:user, :normal)
-    @category = create(:category, user: @user)
+    @category = create(:category1, user: @user)
   end
 
   context 'not signed in' do

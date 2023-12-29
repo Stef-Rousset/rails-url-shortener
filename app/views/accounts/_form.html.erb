@@ -18,7 +18,7 @@
   <%= f.number_field :balance, step: 0.01, class: "bg-beige rounded mb-12", value: account.balance != 0.0 ? account.balance : "0.00", readonly: f.object.persisted? %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class='flex justify-evenly items-center'>
-    <%= f.submit t('.submit'), class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+    <%= f.submit t('.submit'), data: { turbo: false }, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
     <%= link_to t('.cancel'), accounts_path, class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
   </div>
   <% end %>

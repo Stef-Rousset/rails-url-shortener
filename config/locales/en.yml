@@ -68,18 +68,18 @@ en:
   pages:
     home:
       title_home: Welcome to My shared tools !
-      paragraph: Here are the different tools you will be able to use freely ! You just need to create an account.
+      paragraph_html: "Here are the different tools you will be able to use freely ! <span class='font-semibold italic'>You just need to create an account.</span>"
       paragraph_signed_in: Here are the different tools you can use freely :)
       short-url-title: Urls shortener
-      short-url-text: Get a shorter url that redirect to the original page. Please connect to access this tool !
+      short-url-text: Get a shorter url that redirect to the original page.
       news-feed-title: News feed
-      news-feed-text: Receive by mail every morning the news from 3 newspapers. Please connect to access this tool !
+      news-feed-text: Receive by mail every morning the news from 3 newspapers.
       weather-title: Daily weather forecast
-      weather-text: See the daily forecast for your city. Please connect to access this tool !
+      weather-text: See the daily forecast for your city.
       checker-title: Check spelling of your word
-      checker-text: Thanks to AI, get the right spelling for your word. Please connect to access this tool !
+      checker-text: Thanks to AI, get the right spelling for your word.
       budget-title: Manage your personal finance
-      budget-text: Manage your finance by creating accounts and transactions. Please connect to access this tool !
+      budget-text: Manage your finance by creating accounts and transactions.
       title: About this web site
       resources: Resources used
       stack: Stack used

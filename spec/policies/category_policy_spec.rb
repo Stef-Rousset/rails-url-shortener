@@ -5,7 +5,7 @@ RSpec.describe CategoryPolicy, type: :policy do
     @user = create(:user, :full_spell_count)
     @user2 = create(:user, :normal)
     @user2.admin = true
-    @cate = create(:category, user: @user)
+    @cate = create(:category1, user: @user)
   end
 
   subject { described_class }
