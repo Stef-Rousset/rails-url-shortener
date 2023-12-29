@@ -6,7 +6,8 @@
       <%= form_with url: account_path, method: :get, class: 'flex flex-col w-10/12 mx-auto' do |f| %>
         <div class="flex justify-between items-center w-full mb-4">
           <%= f.label :checked, t('.checked'), class: "font-semibold mr-2" %>
-          <%= f.check_box :checked, checked: params[:checked] != "0" && params[:checked].present? %>
+          <%= f.check_box :checked, class: 'filter-checked', checked: params[:checked] != "0" && params[:checked].present? %>
+          <!-- class added to checkbox for system tests-->
         </div>
         <div class="flex justify-between items-center w-full">
           <%= f.label :category_id, t('.category'), class: "font-semibold mb-2" %>
@@ -66,14 +67,16 @@
             <%= render @transactions %>
           <% end %>
         <% end %>
-        <%= form_with url: account_path, method: :get, class: 'self-center font-semibold hover:text-gray-500 my-2' do |f| %>
-          <%= f.hidden_field  'count', value: @count %>
-          <%= f.hidden_field  'checked', value: params[:checked] %>
-          <%= f.hidden_field  'category_id', value: params[:category_id] %>
-          <%= f.hidden_field  'begin_date', value: params[:begin_date] %>
-          <%= f.hidden_field  'end_date', value: params[:end_date] %>
-          <%= f.button nil do %>
-            <i class="fa-solid fa-chevron-down"></i>
+        <% if @size > 5 %>
+          <%= form_with url: account_path, method: :get, class: 'self-center font-semibold hover:text-gray-500 my-2' do |f| %>
+            <%= f.hidden_field  'count', value: @count %>
+            <%= f.hidden_field  'checked', value: params[:checked] %>
+            <%= f.hidden_field  'category_id', value: params[:category_id] %>
+            <%= f.hidden_field  'begin_date', value: params[:begin_date] %>
+            <%= f.hidden_field  'end_date', value: params[:end_date] %>
+            <%= f.button nil do %>
+              <i class="fa-solid fa-chevron-down"></i>
+            <% end %>
           <% end %>
         <% end %>
       </div>

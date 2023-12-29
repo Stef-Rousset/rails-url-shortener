@@ -4,7 +4,7 @@ require 'debug'
 RSpec.describe 'Categories', type: :system do
   before(:each) do
     @user = create(:user, :normal)
-    @category = create(:category)
+    @category = create(:category1)
     sign_in @user
   end
 

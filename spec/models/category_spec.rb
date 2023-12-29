@@ -32,13 +32,13 @@ RSpec.describe Category, type: :model do
   end
 
   it 'is invalid if name not unique for the user' do
-    cate1 = create(:category, user: @user)
+    cate1 = create(:category1, user: @user)
     cate2 = Category.new(name: cate1.name, user_id: @user.id)
     expect(cate2).not_to be_valid
   end
 
   it 'updates category_id to nil when category is destroyed' do
-    cate = create(:category, user: @user)
+    cate = create(:category1, user: @user)
     acc = create(:account, user: @user)
     tr = create(:transaction1, category: cate, account: acc)
     expect(tr.category_id).to eq(cate.id)

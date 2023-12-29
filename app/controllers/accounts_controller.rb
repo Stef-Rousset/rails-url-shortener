@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
 
   def show
     @transactions = @account.transactions.order(date: :desc, created_at: :desc)
+    @size = @transactions.size
     if params[:count].nil?
       @count = 10
       @transactions = @transactions.limit(5)
