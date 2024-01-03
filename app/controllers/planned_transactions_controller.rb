@@ -1,5 +1,6 @@
 class PlannedTransactionsController < ApplicationController
   before_action :set_planned_transaction, only: %i[edit update destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
     @planned_transactions = policy_scope(PlannedTransaction)
@@ -48,6 +49,10 @@ class PlannedTransactionsController < ApplicationController
   def set_planned_transaction
     @planned_transaction = PlannedTransaction.find(params[:id])
     authorize @planned_transaction
+  end
+
+  def not_found
+    redirect_to accounts_path, alert: t('record_not_found', my_object: PlannedTransaction.model_name.name, params: (params[:id]))
   end
 
   def planned_transaction_params

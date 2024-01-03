@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
     #@categories = Category.where(user_id: current_user.id).or(Category.where(user_id: nil))
@@ -28,6 +29,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def not_found
+    redirect_to accounts_path, alert: t('record_not_found', my_object: Category.model_name.name, params: (params[:id]))
+  end
 
   def category_params
     params.require(:category).permit(:name, :user_id)
