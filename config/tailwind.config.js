@@ -41,6 +41,9 @@ module.exports = {
       gridTemplateRows: {
         'cards': '2fr 1fr',
       },
+      gridTemplateColumns: {
+        'cards': '1fr 1fr',
+      },
       scale: {
         '101': '1.01',
       },
@@ -76,6 +79,14 @@ module.exports = {
           '0%': { transform: 'rotate(-45deg) scale(0.9)' },
           '100%': { transform: 'translateY(0) rotate(0) scale(1)' },
         },
+        animatediv: {
+          '0%': { transform: 'translateX(-100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        animatep: {
+          '0%': { transform: 'translateX(100%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
       },
       animation: {
         burgerin: 'burgerin 1s ease-in-out',
@@ -85,6 +96,8 @@ module.exports = {
         diagtwo: 'diagtwo 150ms ease-in-out both',
         diagoneout: 'diagoneout 150ms ease-in-out both',
         diagtwoout: 'diagtwoout 150ms ease-in-out both',
+        animatediv: 'animatediv 1000ms ease-in-out both',
+        animatep: 'animatep 1000ms ease-in-out both',
       },
     },
   },
