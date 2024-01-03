@@ -40,15 +40,15 @@ fr:
       paragraph_html: "Voici les différents outils que vous pourrez utiliser gratuitement ! <span class='font-semibold italic'>Pour cela, il vous suffit juste de créer un compte.</span>"
       paragraph_signed_in: Voici les différents outils que vous pouvez utiliser gratuitement :)
       short-url-title: Raccourcir des urls
-      short-url-text: Obtenez une url plus courte qui redirige sur la page d'origine.
+      short-url-text: Entrez votre url longue et obtenez une nouvelle url plus courte qui redirige vers l'url d'origine.
       news-feed-title: News feed par mail
-      news-feed-text: "Recevez par mail tous les matins les nouvelles de 3 quotidiens français : Le Monde, Libération et/ou l'Équipe."
+      news-feed-text: "Recevez par mail tous les matins les nouvelles des quotidiens français que vous avez sélectionné (au choix Le Monde, Libération et/ou L'Équipe)."
       weather-title: Prévisions méteo quotidiennes
       weather-text: Visualisez les prévisions méteo de la journée pour la ville de votre choix.
       checker-title: Vérifiez l'ortographe d'un mot
-      checker-text: Grâce à l'IA, obtenez la bonne ortographe du mot français ou anglais que vous renseignez.
+      checker-text: Grâce à l'Intelligence Articficielle, obtenez la bonne ortographe du mot français ou anglais que vous renseignez.
       budget-title: Gérer ses finances personnelles
-      budget-text: Gérer vos finances en créant vos comptes, en ajoutant vos opérations quotidiennes ou répétées.
+      budget-text: "Gérer vos finances personnelles : créez vos comptes, ajouter vos opérations quotidiennes ou répétées (tous les jours, semaines, mois..), pointez vos transactions une fois votre relevé reçu ..."
     about:
       title: À propos de ce site
       resources: Ressources utilisées
@@ -115,8 +115,8 @@ fr:
     index:
       meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
       title: Gestionnaire de finances personnelles
-      paragraph: Créez vos comptes, ajoutez-y des opérations que vous pourrez ensuite pointer avec votre relevé bancaire. Suivez votre solde global et par compte.
-                 Planifiez des opérations en choisissant leur fréquence de répétition (tous les jours, mois..).
+      paragraph: Vous pouvez créer vos comptes, y ajouter des opérations que vous pourrez ensuite pointer avec votre relevé bancaire. Vous pouvez également suivre votre solde global et votre solde par compte,
+                 planifier des opérations en choisissant leur fréquence de répétition (tous les jours, mois..), trier vos opérations, les télécharger sous forme de fichier excel...
       my_accounts: Mes comptes
       accounts_number: Nombre de comptes
       total_balance: Solde Total

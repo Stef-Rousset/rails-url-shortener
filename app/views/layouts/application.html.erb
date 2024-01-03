@@ -24,7 +24,7 @@
   <body data-controller="back-to-top" data-action="scroll->back-to-top#showButton" data-back-to-top-target="body" class="w-screen h-screen overflow-scroll bg-gradient-to-br from-white to-lightgray">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <main  class="main-container w-full min-h-80 h-fit">
+    <main class="main-container w-full min-h-80 h-fit">
       <%= yield %>
       <button data-action="click->back-to-top#upToTop" data-back-to-top-target="button" class="bg-beige p-2 sticky bottom-8 left-[95%] hidden"><i class="fas fa-chevron-up"></i></button>
     </main>

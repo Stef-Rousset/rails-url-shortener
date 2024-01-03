@@ -71,15 +71,15 @@ en:
       paragraph_html: "Here are the different tools you will be able to use freely ! <span class='font-semibold italic'>You just need to create an account.</span>"
       paragraph_signed_in: Here are the different tools you can use freely :)
       short-url-title: Urls shortener
-      short-url-text: Get a shorter url that redirect to the original page.
+      short-url-text: Enter your long url and get a new shorter url that redirect to the original url.
       news-feed-title: News feed
-      news-feed-text: "Receive by mail every morning the news from 3 french newspapers : Le Monde, Libération and/or l'Équipe."
+      news-feed-text: "Receive by mail every morning the news from  the french newspapers you have selected (choice Le Monde, Libération and/or l'Équipe)."
       weather-title: Daily weather forecast
       weather-text: See the daily forecast for your chosen city.
       checker-title: Check spelling of your word
-      checker-text: Thanks to AI, get the right spelling for the french or english word you provide.
+      checker-text: Thanks to Artificial Intelligence, get the right spelling for the french or english word you provide.
       budget-title: Manage your personal finance
-      budget-text: Manage your finance by creating accounts, and adding daily or planned transactions.
+      budget-text: "Manage your personal finance : create your accounts, add daily or planned transactions (every day, week, month..), check your transactions once you receive your bank statement..."
       title: About this web site
       resources: Resources used
       stack: Stack used
@@ -146,8 +146,8 @@ en:
     index:
       meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
       title: Personal finance handler
-      paragraph: Create your accounts, add transactions that you can then check with your bank statement. Track your overall balance, and by account.
-                  Plan transactions by choosing their repetition frequency (every day, month, etc.).
+      paragraph: You can create your accounts, add transactions that you can then check with your bank statement. You can also track your overall balance and your account's balance,
+                  plan transactions by choosing their repetition frequency (every day, month, etc.), sort your transactions, get an excel file with your transactions...
       my_accounts: My accounts
       accounts_number: Accounts number
       total_balance: Total balance

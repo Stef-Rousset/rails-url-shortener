@@ -1,4 +1,4 @@
-<navbar class="grid grid-cols-2 sm:grid-cols-3 items-start justify-center w-screen h-h10 sm:h-h20 md:h-h10 bg-darkblue sticky top-0">
+<navbar class="grid grid-cols-2 sm:grid-cols-3 items-start justify-center w-screen h-h10 sm:h-h20 md:h-h10 bg-darkblue sticky top-0 z-10">
   <div class="flex justify-start items-start">
     <%= image_tag 'logo.png', class: "w-12 object-fit m-4 invert" %>
     <% if user_signed_in? && controller.action_name != 'home'%>
