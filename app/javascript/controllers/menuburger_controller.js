@@ -40,15 +40,5 @@ export default class extends Controller {
       three.classList.remove('animate-diagtwo')
       three.classList.add('animate-diagtwoout')
     }
-
-    //spans.forEach(span => {
-    //  if (span.classList.contains("bg-white")) {
-    //    span.classList.remove("bg-white")
-    //    span.classList.add("bg-beige")
-    //  } else if (span.classList.contains("bg-beige")) {
-    //    span.classList.remove("bg-beige")
-    //    span.classList.add("bg-white")
-    //  }
-    //})
   }
 }

@@ -9,29 +9,32 @@ export default class extends Controller {
     //console.log(this.bodyTarget)
   }
 
-  showButton(){
+  showElements(){
     const body = this.bodyTarget
-    const scrolledPixs = body.scrollTop
+    const scrolledPixs = body.scrollTop //scrollTop returns the nb of px dwhose element is scrolled
     const button = this.buttonTarget
-    if (scrolledPixs >= 150){  //scrollTop renvoit le nb de px dont l'élement est scrollé
+    if (scrolledPixs >= 150){
       button.classList.remove('hidden')
     } else if (scrolledPixs <= 150){
       button.classList.add('hidden')
     }
-    // depending on scroll, make home page divs appear
-    if (scrolledPixs > 900){
-      document.getElementById("fifthdiv").classList.add("animate-animatediv")
-      document.getElementById("fifthp").classList.add("animate-animatep")
-    }else if (scrolledPixs > 600){
-      document.getElementById("fourthdiv").classList.add("animate-animatediv")
-      document.getElementById("fourthp").classList.add("animate-animatep")
-    }else if (scrolledPixs > 300) {
-      document.getElementById("thirddiv").classList.add("animate-animatediv")
-      document.getElementById("thirdp").classList.add("animate-animatep")
+    // depending on scroll, make home page divs from 3 to 5 appear
+    if (document.getElementById("thirdp")){
+        if (scrolledPixs > 900){
+          document.getElementById("fifthdiv").classList.add("animate-animatediv")
+          document.getElementById("fifthp").classList.add("animate-animatep")
+        }else if (scrolledPixs > 600){
+          document.getElementById("fourthdiv").classList.add("animate-animatediv")
+          document.getElementById("fourthp").classList.add("animate-animatep")
+        }else if (scrolledPixs > 300) {
+          document.getElementById("thirddiv").classList.add("animate-animatediv")
+          document.getElementById("thirdp").classList.add("animate-animatep")
+        }
     }
   }
 
   upToTop(){
+    // go back to top of page
     const body = this.bodyTarget
     body.scrollTo({
       top: 0,

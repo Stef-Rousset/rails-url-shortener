@@ -242,6 +242,12 @@ fr:
         unconfirmed_email: Email non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
+      planned_transaction:
+        every:
+          day: jour
+          week: semaine
+          month: mois
+          year: année
     models:
       user:
         one: Utilisateur

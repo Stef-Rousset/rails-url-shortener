@@ -12,4 +12,8 @@ module PlannedTransactionsHelper
         I18n.locale == :fr ? "année" : "year"
     end
   end
+
+  def every_array_translated
+    PlannedTransaction.everies.keys.map{ |key| [t("activerecord.attributes.planned_transaction.every.#{key}"), key] }
+  end
 end

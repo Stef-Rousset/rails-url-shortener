@@ -19,7 +19,7 @@
     </div>
     <div class="flex flex-col w-5/12">
       <%= f.label :every, t('.every'), class: "font-semibold mb-2" %>
-      <%= f.select :every, PlannedTransaction.everies.keys , {}, class: "bg-beige rounded mb-4" %>
+      <%= f.select :every, every_array_translated, {}, class: "bg-beige rounded mb-4" %>
     </div>
   </div>
   <div class="flex justify-between items-start">

@@ -279,6 +279,12 @@ en:
         unconfirmed_email: Unconfirmed email
         unlock_token: Unlock token
         updated_at: Updated at
+      planned_transaction:
+        every:
+          day: day
+          week: week
+          month: month
+          year: year
     models:
       user:
         one: User
