@@ -6,6 +6,7 @@ export default class extends Controller {
 
   connect() {
     //console.log(this.element)
+    // manage appearance of the first 2 cards in homepage (see back_to_top for oser divs)
     const firstdiv = this.firstdivTarget
     const firstp = this.firstpTarget
     const seconddiv = this.seconddivTarget

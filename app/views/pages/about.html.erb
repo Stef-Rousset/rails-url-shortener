@@ -1,36 +1,39 @@
-<section class="about-container flex justify-between items-start w-10/12 lg:w-8/12 lg:h-3/4 mx-auto py-10">
-  <div class="flex flex-col">
-  <h1 class="font-bold"><%= t '.title' %></h1>
-  <h2 class="my-4 underline"><%= t '.resources' %></h2>
-  <ul class="list-disc list-inside p-2">
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/www" title="www icônes">Www icônes créées par phatplus - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/installation" title="installation icônes">Installation icônes créées par Freepik - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/maintenance" title="maintenance icônes">Maintenance icônes créées par Freepik - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/rss" title="rss icônes">Rss icônes créées par Freepik - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by Good Ware - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/preuve" title="preuve icônes">Preuve icônes créées par juicy_fish - Flaticon</a></li>
-  <li><a href="https://www.flaticon.com/fr/icones-gratuites/cout" title="coût icônes">Coût icônes créées par Freepik - Flaticon</a></li>
-  <li><a href="https://open-meteo.com/">Open-meteo.com API</a></li>
-  <li><a href="https://openai.com/product" >OpenAI API</a>
-  </ul>
-  <h2 class="my-4 underline"><%= t '.stack' %></h2>
-  <ul class="list-disc list-inside p-2">
-    <li>Ruby 3.2.1</li>
-    <li>Rails 7.0.8</li>
-    <li>Sidekiq et Sidekiq-scheduler</li>
-    <li>Redis</li>
-    <li>Rspec</li>
-    <li>Factory Bot</li>
-    <li>Stimulus</li>
-    <li>Turbo</li>
-    <li>Tailwind</li>
-    <li>Github (<a href="https://github.com/Stef-Rousset/rails-url-shortener" class="hover:text-gray-500"><%= t '.github_link' %></a>)</li>
-    <li>Heroku</li>
-  </ul>
+<section data-controller="animate-about-page" class="about-container flex flex-col justify-between items-start w-10/12 lg:w-8/12 lg:h-3/4 mx-auto py-10">
+  <div data-animate-about-page-target="ressource" class="flex justify-between items-start w-full opacity-0 transition-all">
+    <div class="flex flex-col">
+      <h1 class="font-bold"><%= t '.title' %></h1>
+      <h2 class="my-4 underline"><%= t '.resources' %></h2>
+      <ul class="list-disc list-inside p-2">
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/www" title="www icônes">Www icônes créées par phatplus - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/installation" title="installation icônes">Installation icônes créées par Freepik - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/maintenance" title="maintenance icônes">Maintenance icônes créées par Freepik - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/rss" title="rss icônes">Rss icônes créées par Freepik - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by Good Ware - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/preuve" title="preuve icônes">Preuve icônes créées par juicy_fish - Flaticon</a></li>
+        <li><a href="https://www.flaticon.com/fr/icones-gratuites/cout" title="coût icônes">Coût icônes créées par Freepik - Flaticon</a></li>
+        <li><a href="https://open-meteo.com/">Open-meteo.com API</a></li>
+        <li><a href="https://openai.com/product" >OpenAI API</a>
+      </ul>
+    </div>
+    <% if !user_signed_in? %>
+      <%= link_to t('pages.about.back'), root_path, class:"btn-beige mb-2" %>
+    <% end %>
   </div>
-  <% if !user_signed_in? %>
-    <%= link_to t('pages.about.back'), root_path, class:"btn-beige mb-2" %>
-  <% end %>
-
+  <div data-animate-about-page-target="stack" class="flex flex-col opacity-0 transition-all">
+    <h2 class="my-4 underline"><%= t '.stack' %></h2>
+    <ul class="list-disc list-inside p-2">
+      <li>Ruby 3.2.1</li>
+      <li>Rails 7.0.8</li>
+      <li>Sidekiq et Sidekiq-scheduler</li>
+      <li>Redis</li>
+      <li>Rspec</li>
+      <li>Factory Bot</li>
+      <li>Stimulus</li>
+      <li>Turbo</li>
+      <li>Tailwind</li>
+      <li>Github (<a href="https://github.com/Stef-Rousset/rails-url-shortener" class="hover:text-gray-500"><%= t '.github_link' %></a>)</li>
+      <li>Heroku</li>
+    </ul>
+  </div>
 </section>
 

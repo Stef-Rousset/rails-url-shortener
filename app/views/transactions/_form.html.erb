@@ -25,7 +25,7 @@
   <div class="flex justify-between items-start">
     <div class="flex flex-col w-5/12">
       <%= f.label :transaction_type, t('.transaction_type'), required: true, class: "font-semibold mb-2" %>
-      <%= f.select :transaction_type, Transaction.transaction_types.keys, {}, class: "bg-beige rounded mb-4" %>
+      <%= f.select :transaction_type, transaction_type_translated, {}, class: "bg-beige rounded mb-4" %>
     </div>
     <div class="flex flex-col w-5/12">
       <%= f.label :amount, t('.amount'), required: true, class: "font-semibold mb-2"%>

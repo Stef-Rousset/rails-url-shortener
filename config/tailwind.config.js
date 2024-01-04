@@ -59,10 +59,6 @@ module.exports = {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-300%)' },
         },
-        slide: {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
-        },
         diagone: {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(10px) rotate(45deg) scale(0.9)' },
@@ -87,17 +83,23 @@ module.exports = {
           '0%': { transform: 'translateX(100%)', opacity: 0 },
           '100%': { transform: 'translateX(0)', opacity: 1 },
         },
+        aboutpagediv: {
+          '0%': { transform: 'translateY(10%)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
       },
       animation: {
+        // menu burger animation
         burgerin: 'burgerin 1s ease-in-out',
         burgerout: 'burgerout 1s ease-in-out forwards',
-        slide: 'slide 150ms ease-in-out',
         diagone: 'diagone 150ms ease-in-out both',
         diagtwo: 'diagtwo 150ms ease-in-out both',
         diagoneout: 'diagoneout 150ms ease-in-out both',
         diagtwoout: 'diagtwoout 150ms ease-in-out both',
+        // card animation on homepage
         animatediv: 'animatediv 1000ms ease-in-out both',
         animatep: 'animatep 1000ms ease-in-out both',
+        aboutpagediv: 'aboutpagediv 500ms ease-in-out both',
       },
     },
   },
