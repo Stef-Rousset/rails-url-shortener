@@ -51,6 +51,7 @@ fr:
       budget-text: "Gérer vos finances personnelles : créez vos comptes, ajouter vos opérations quotidiennes ou répétées (tous les jours, semaines, mois..), pointez vos transactions une fois votre relevé reçu ..."
     about:
       title: À propos de ce site
+      paragraph: Mes outils partagés est développé par
       resources: Ressources utilisées
       stack: Stack utilisée
       back: Retour à l'accueil
