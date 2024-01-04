@@ -242,6 +242,10 @@ fr:
         unconfirmed_email: Email non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
+      transaction:
+        transaction_type:
+          debit: débit
+          credit: crédit
       planned_transaction:
         every:
           day: jour

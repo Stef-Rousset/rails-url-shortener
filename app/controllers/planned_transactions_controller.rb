@@ -3,7 +3,7 @@ class PlannedTransactionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
-    @planned_transactions = policy_scope(PlannedTransaction)
+    @planned_transactions = policy_scope(PlannedTransaction).order(start_date: :desc)
   end
 
   def new
