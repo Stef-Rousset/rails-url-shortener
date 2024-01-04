@@ -79,6 +79,8 @@ GET `/accounts`
 GET `/accounts/new`
 - Show an account, and handle its transactions<br>
 GET `/accounts/:id`
+- See planned transactions<br>
+GET `/planned_transactions`
 
 ### Testing ###
 
