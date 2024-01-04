@@ -98,7 +98,7 @@ fr:
       cancel: Annuler
   sources:
     index:
-      meta_description: Choisissez vos sources d'information parmi 3 grand quotidiens français et recevez les nouvelles par mail tous les jours
+      meta_description: Choisissez vos sources d'information parmi 3 grands quotidiens français et recevez les nouvelles par mail tous les jours
       title: Mes sources d'information
       paragraph: Vous recevez par mail tous les matins les informations à la une des sources suivantes
       modify_sources: Modifier les sources
@@ -114,7 +114,7 @@ fr:
       end_string: C'est tout pour aujourd'hui, bonne journée !
   accounts:
     index:
-      meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations puis en les validant une fois pointées
+      meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations quotidiennes ou planifiées, puis en les validant une fois pointées
       title: Gestionnaire de finances personnelles
       paragraph: Vous pouvez créer vos comptes, y ajouter des opérations que vous pourrez ensuite pointer avec votre relevé bancaire. Vous pouvez également suivre votre solde global et votre solde par compte,
                  planifier des opérations en choisissant leur fréquence de répétition (tous les jours, mois..), trier vos opérations, les télécharger sous forme de fichier excel...
