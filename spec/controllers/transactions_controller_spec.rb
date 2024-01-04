@@ -42,7 +42,7 @@ RSpec.describe TransactionsController, type: :controller do
 
     it 'renders new if create fails' do
       post :create, params: { account_id: @account.id,
-                              transaction: { payee: "courses", amount: 19.99, date: "2023-11-30", account: @account.id  }
+                              transaction: { payee: "courses", amount: 19.99, transaction_type: "debit", date: "", account: @account.id  }
                             }
       assert_response :unprocessable_entity
     end

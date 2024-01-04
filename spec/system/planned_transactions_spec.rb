@@ -18,10 +18,10 @@ RSpec.describe 'PlannedTransactions', type: :system do
     visit new_planned_transaction_path
     expect(page).to have_content('Nouvelle opération planifiée')
     fill_in 'planned_transaction[start_date]', with: Date.today + 1.day
-    select('month', from: 'planned_transaction_every')
+    select('mois', from: 'planned_transaction_every')
     fill_in 'planned_transaction[payee]', with: 'taxe'
     select("#{@account.name}", from: 'planned_transaction_account_id')
-    select('debit', from: 'planned_transaction_transaction_type')
+    select('débit', from: 'planned_transaction_transaction_type')
     fill_in 'planned_transaction[amount]', with: 10.0
     click_on('Valider')
     expect(page).to have_content('Opérations planifiées')
