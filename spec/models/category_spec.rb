@@ -26,8 +26,8 @@ RSpec.describe Category, type: :model do
     expect(cate).to be_valid
   end
 
-  it 'capitalizes the name' do
-    cate = Category.create(name: 'travail du jour')
+  it 'capitalizes the name and supress spaces' do
+    cate = Category.create(name: ' travail du jour ')
     expect(cate.name).to eq('Travail du jour')
   end
 

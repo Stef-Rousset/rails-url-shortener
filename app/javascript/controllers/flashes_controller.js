@@ -7,6 +7,9 @@ export default class extends Controller {
   connect() {
     //console.log(this.element)
     //console.log(this.flashTarget)
+    setTimeout(() => {
+      this.flashTarget.classList.add('animate-flashdisappear')
+    }, 2000);
   }
   close(){
     this.flashTarget.style.display = "none"
