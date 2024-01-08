@@ -16,6 +16,10 @@
     <input type="submit" value="<%= t :validate %>" class='btn-beige mt-4 mr-2 '
       <% if user_sources %>data-turbo-frame="_top"<% end %>
     /><!-- turbo-frame=_top to reload the page -->
+    <% if controller.action_name == 'choose_sources' %>
       <%= link_to t(:cancel), choose_sources_path, class: 'btn-beige mt-4 '%>
+    <% else %>
+      <%= link_to t(:cancel), sources_path, class: 'btn-beige mt-4 '%>
+      <% end %>
    </div>
 </form>
