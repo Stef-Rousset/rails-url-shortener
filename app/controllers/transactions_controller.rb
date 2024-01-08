@@ -40,7 +40,7 @@ class TransactionsController < ApplicationController
   def update_checked
     @transaction.update(checked: params[:checked])
     @account = @transaction.account
-    redirect_to account_path(@account) # for the transaction.checked to be updated in transaction partial
+    redirect_to account_path(@account, format: :html)  # for the transaction.checked to be updated in transaction partial and use html format
   end
 
   def destroy
