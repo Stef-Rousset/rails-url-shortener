@@ -49,7 +49,7 @@ RSpec.describe TransactionsController, type: :controller do
 
     it 'updates checked' do
       put :update_checked, params: { id: @transaction.id, checked: true }
-      assert_redirected_to account_path(@account)
+      assert_redirected_to account_path(@account, format: :html)
     end
 
     it 'deletes transaction' do

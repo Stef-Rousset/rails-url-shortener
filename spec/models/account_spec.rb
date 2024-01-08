@@ -36,8 +36,8 @@ RSpec.describe Account, type: :model do
     expect(account).to be_valid
   end
 
-  it 'capitalize name account' do
-    account = Account.create(name: 'bank', balance: -100.15, user_id: @user.id)
+  it 'capitalize name account and suppress spaces' do
+    account = Account.create(name: ' bank ', balance: -100.15, user_id: @user.id)
     expect(account.name).to eq('Bank')
   end
 
