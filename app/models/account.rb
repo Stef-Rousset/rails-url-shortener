@@ -11,6 +11,6 @@ class Account < ApplicationRecord
   private
 
   def capitalize
-    self.name = name[0].capitalize + name[1..]
+    self.name = name.strip.capitalize
   end
 end

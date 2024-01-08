@@ -19,11 +19,15 @@
         <legend class="font-semibold mb-2"><%= t'.legend' %></legend>
         <div class="flex justify-between items-center w-full">
           <label for="french" class="mb-2"><%= t '.french_label' %></label>
-          <input name="language" id="french" type="radio" value="fr" />
+          <input name="language" id="french" type="radio" value="fr"
+            <% if @locale == 'fr'%>checked<% end %>
+          />
         </div>
         <div class="flex justify-between items-center w-full">
           <label for="english" class="mb-2"><%= t '.english_label' %></label>
-          <input name="language" id="english" type="radio" value="en" />
+          <input name="language" id="english" type="radio" value="en"
+            <% if @locale == 'en'%>checked<% end %>
+          />
         </div>
       </fieldset>
     </div>

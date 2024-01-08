@@ -88,6 +88,10 @@ module.exports = {
           '0%': { transform: 'translateY(10%)', opacity: 0 },
           '100%': { transform: 'translateY(0)', opacity: 1 },
         },
+        flashdisappear: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        }
       },
       animation: {
         // menu burger animation
@@ -101,6 +105,7 @@ module.exports = {
         animatediv: 'animatediv 1000ms ease-in-out both',
         animatep: 'animatep 1000ms ease-in-out both',
         aboutpagediv: 'aboutpagediv 500ms ease-in-out both',
+        flashdisappear: 'flashdisappear 500ms ease-in-out both'
       },
     },
   },
