@@ -193,6 +193,7 @@ en:
       meta_description: Manage the categories for transactions
       title: List of categories
       new_url_link: Create a catégory
+      link_to_accounts_index: Accounts list
     new:
       title: New category
       cancel: Cancel
