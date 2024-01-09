@@ -4,14 +4,14 @@ require 'debug'
 RSpec.describe 'Categories', type: :system do
   before(:each) do
     @user = create(:user, :normal)
-    @category = create(:category1)
     sign_in @user
   end
 
   it 'displays shared categories' do
+    cate = create(:category3, user: @user)
     visit categories_path
     expect(page).to have_content("Liste des catégories")
-    expect(page).to have_content(@category.name)
+    expect(page).to have_content(cate.name)
   end
 
   it 'adds category' do

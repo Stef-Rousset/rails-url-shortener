@@ -4,8 +4,8 @@ RSpec.describe 'Accounts', type: :system do
   before(:example) do
     @user = create(:user, :normal)
     @account = create(:account, user: @user)
-    @category1 = create(:category1)
-    @category2 = create(:category2)
+    @category1 = create(:category3, user: @user)
+    @category2 = create(:category4, user: @user)
     @transaction1 = create(:transaction1, account: @account, category: @category1)
     @transaction2 = create(:transaction2, account: @account, category: @category2)
 
@@ -91,7 +91,7 @@ RSpec.describe 'Accounts', type: :system do
       expect(page).to have_content("Détails du compte #{@account.name}")
       fill_in 'begin_date', with: '01/01/2023' # dates matches both transactions
       fill_in 'end_date', with: '31/12/2023'
-      select('Alimentation', from: 'category_id') # category match only transaction2
+      select('Cadeaux', from: 'category_id') # category match only transaction2
       click_on 'Valider'
       expect(page).not_to have_content(@transaction1.payee)
       expect(page).to have_content(@transaction2.payee)

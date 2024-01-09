@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe CategoriesController, type: :controller do
   before(:example) do
     @user = create(:user, :normal)
-    @category = create(:category1, user: @user)
   end
 
   context 'not signed in' do
@@ -52,7 +51,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     it 'destroys category' do
-      cate = Category.create(name: "bla", user: @user)
+      cate = create(:category3, user: @user)
       delete :destroy, params: { id: cate.id }
       assert_redirected_to categories_path
     end

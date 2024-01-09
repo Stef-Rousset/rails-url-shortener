@@ -10,13 +10,7 @@ class AccountsController < ApplicationController
   def show
     @transactions = @account.transactions.order(date: :desc, created_at: :desc)
     @size = @transactions.size
-    if params[:count].nil?
-      @count = 10
-      @transactions = @transactions.limit(5)
-    else
-      @count = params[:count].to_i + 5
-      @transactions = @transactions.limit(params[:count])
-    end
+    @count = 5
     @transactions = @transactions.where(checked: params[:checked]) if params[:checked] != '0' && params[:checked].present?
     @transactions = @transactions.where(category_id: params[:category_id]) if params[:category_id].present?
     if params[:begin_date].present? && params[:end_date].present?
@@ -26,6 +20,14 @@ class AccountsController < ApplicationController
     elsif params[:end_date].present?
       @transactions = @transactions.where('date <= ?', params[:end_date])
     end
+    if params[:count].present?
+      @count = @count * params[:count].to_i
+      @size = @transactions.size if params[:checked].present? || params[:category_id].present? || params[:begin_date].present? || params[:end_date].present?
+      @transactions = @transactions.limit(@count)
+    else
+      @transactions = @transactions.limit(@count)
+    end
+
     respond_to do |format|
       format.html
       format.xlsx { response.headers['Content-Disposition'] = 'attachment; filename="transactions.xlsx"' }

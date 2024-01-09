@@ -9,5 +9,15 @@ FactoryBot.define do
       name { 'Alimentation' }
       user { nil }
     end
+
+    factory :category3 do
+      name { 'Divers' }
+      user { nil }
+    end
+
+    factory :category4 do
+      name { 'Cadeaux' }
+      user { nil }
+    end
   end
 end

@@ -22,6 +22,7 @@
           <%= f.label :end_date, t('.end_date'), class: "mb-2" %>
           <%= f.date_field :end_date, value: params[:end_date], class: "bg-beige rounded mb-4" %>
         </div>
+        <%= f.hidden_field  'count', value: params[:count] || 1 %>
         <%= f.submit t(:validate), class: "btn-beige self-center" %>
       <% end %>
     </div>
@@ -67,17 +68,19 @@
             <%= render @transactions %>
           <% end %>
         <% end %>
-        <% if @size > (params[:count].to_i || 5) %>
-          <%= form_with url: account_path, method: :get, class: 'self-center font-semibold hover:text-gray-500 my-2' do |f| %>
-            <%= f.hidden_field  'count', value: @count %>
-            <%= f.hidden_field  'checked', value: params[:checked] %>
-            <%= f.hidden_field  'category_id', value: params[:category_id] %>
-            <%= f.hidden_field  'begin_date', value: params[:begin_date] %>
-            <%= f.hidden_field  'end_date', value: params[:end_date] %>
-            <%= f.button nil do %>
-              <i class="fa-solid fa-chevron-down"></i>
+        <% if @size > @count %>
+          <div data-controller='show-more-transactions' class="self-center">
+            <%= form_with url: account_path, method: :get, class: 'font-semibold hover:text-gray-500 my-2' do |f| %>
+              <%= f.hidden_field  'count', value: params[:count] || 1, data: {show_more_transactions_target: "input"} %>
+              <%= f.hidden_field  'checked', value: params[:checked] %>
+              <%= f.hidden_field  'category_id', value: params[:category_id] %>
+              <%= f.hidden_field  'begin_date', value: params[:begin_date] %>
+              <%= f.hidden_field  'end_date', value: params[:end_date] %>
+              <%= f.button nil, data: { action: "click->show-more-transactions#update"} do %>
+                <i class="fa-solid fa-chevron-down"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>

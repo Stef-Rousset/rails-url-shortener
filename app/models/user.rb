@@ -21,6 +21,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   before_save :email_normalization
+  after_create :create_categories
 
   has_many :short_urls, dependent: :destroy
   has_many :accounts, dependent: :destroy
@@ -45,5 +46,11 @@ class User < ApplicationRecord
 
   def email_normalization
     self.email = email.downcase
+  end
+
+  def create_categories
+    ['Salaire', 'Alimentation', 'Impots', 'Santé', 'Loisirs', 'Transports', 'Habillement', 'Loyer', 'Charges'].each do |category|
+      Category.create!(name: category, user_id: self.id)
+    end
   end
 end
