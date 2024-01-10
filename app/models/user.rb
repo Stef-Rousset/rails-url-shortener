@@ -31,8 +31,8 @@ class User < ApplicationRecord
   def user_news
     hash = sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
     if hash.keys.include?('lequipe')
-      hash.each do |key, value|
-        value.map { |item| item[:description] = item[:description].gsub!(/<.*>/, '') } if key == 'lequipe'
+      hash['lequipe'].each do |item|
+        item[:description] = item[:description].gsub!(/<.*>/, '')
       end
     end
     hash
