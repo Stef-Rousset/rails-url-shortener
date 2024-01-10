@@ -19,7 +19,9 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
     <div class='flex justify-evenly items-center'>
       <%= f.submit t('.submit'), class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
-      <%= link_to t('.cancel'), :back, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+      <!-- if form is submitted with error, and we don't want to create a category anymore,
+           back will correspond to categories/new so we redirect to acccounts index -->
+      <%= link_to t('.cancel'), request.referer.include?('new') ? accounts_path : :back, class: "bg-beige border rounded border-black font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
     </div>
   <% end %>
   <%= image_tag 'budget.png', class: "max-h-36 mx-auto mt-12 opacity-30" %>
