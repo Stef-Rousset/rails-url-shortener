@@ -28,8 +28,9 @@ class ShortUrl < ApplicationRecord
 
   def self.generate_tiny_url
     # generate a random base62 (cad 0-9 , a-z , A-Z) string of 7 characters
-    array = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
-    array.sample(7).join('')
+    #array = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
+    #array.sample(7).join('')
+    SecureRandom.hex(4).first(7)
   end
   # define class methods as private
   # class << self
