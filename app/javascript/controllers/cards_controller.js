@@ -6,16 +6,18 @@ export default class extends Controller {
 
   connect() {
     //console.log(this.element)
-    // manage appearance of the first 2 cards in homepage (see back_to_top for oser divs)
-    const firstdiv = this.firstdivTarget
-    const firstp = this.firstpTarget
-    const seconddiv = this.seconddivTarget
-    const secondp = this.secondpTarget
-    firstdiv.classList.add("animate-animatediv")
-    firstp.classList.add("animate-animatep")
-    setTimeout(() => {
-      seconddiv.classList.add("animate-animatediv")
-      secondp.classList.add("animate-animatep")
-    }, 500);
+    // manage appearance of the first 2 cards in homepage (see back_to_top for other divs)
+    if (this.firstdivTarget) {
+        const firstdiv = this.firstdivTarget
+        const firstp = this.firstpTarget
+        const seconddiv = this.seconddivTarget
+        const secondp = this.secondpTarget
+        firstdiv.classList.add("animate-animatediv")
+        firstp.classList.add("animate-animatep")
+        setTimeout(() => {
+          seconddiv.classList.add("animate-animatediv")
+          secondp.classList.add("animate-animatep")
+        }, 500);
+    }
   }
 }
