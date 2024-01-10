@@ -1,10 +1,10 @@
 class Category < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :transactions
   has_many :planned_transactions
 
   before_validation :capitalize
-  before_destroy :update_transactions
+  before_destroy :update_transactions_and_planned_transactions
 
   validates :name, presence: true, uniqueness: { scope: :user_id }
 
@@ -14,7 +14,12 @@ class Category < ApplicationRecord
     self.name = name.strip.capitalize
   end
 
-  def update_transactions
-    Transaction.where(category_id: self.id).update_all(category_id: nil)
+  def update_transactions_and_planned_transactions
+    if Transaction.where(category_id: self.id).present?
+      Transaction.where(category_id: self.id).update_all(category_id: nil)
+    end
+    if PlannedTransaction.where(category_id: self.id).present?
+      PlannedTransaction.where(category_id: self.id).update_all(category_id: nil)
+    end
   end
 end

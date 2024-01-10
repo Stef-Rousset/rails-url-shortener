@@ -16,13 +16,13 @@ RSpec.describe Category, type: :model do
     end
   end
 
-  it 'is valid if name and user_id are present' do
-    cate = Category.new(name: 'Santé', user_id: @user.id)
-    expect(cate).to be_valid
+  it 'is invalid if user_id is absent' do
+    cate = Category.new(name: 'Santé', user_id: nil)
+    expect(cate).not_to be_valid
   end
 
-  it 'is valid if user_id is absent' do
-    cate = Category.new(name: 'Santé')
+  it 'is valid if name and user_id are present' do
+    cate = Category.new(name: 'Vacances', user_id: @user.id)
     expect(cate).to be_valid
   end
 
@@ -32,18 +32,22 @@ RSpec.describe Category, type: :model do
   end
 
   it 'is invalid if name not unique for the user' do
-    cate1 = create(:category1, user: @user)
-    cate2 = Category.new(name: cate1.name, user_id: @user.id)
+    cate = Category.create(name: 'Vacances', user_id: @user.id)
+    cate2 = Category.new(name: cate.name, user_id: @user.id)
     expect(cate2).not_to be_valid
   end
 
   it 'updates category_id to nil when category is destroyed' do
-    cate = create(:category1, user: @user)
+    cate = Category.create(name: 'Vacances', user_id: @user.id)
     acc = create(:account, user: @user)
     tr = create(:transaction1, category: cate, account: acc)
+    pl = create(:planned_transaction, :every_month, category: cate, account: acc)
     expect(tr.category_id).to eq(cate.id)
+    expect(pl.category_id).to eq(cate.id)
     cate.destroy
     tr.reload
     expect(tr.category_id).to eq(nil)
+    pl.reload
+    expect(pl.category_id).to eq(nil)
   end
  end

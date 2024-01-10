@@ -13,17 +13,3 @@ source_two = Source.create!(name: "lemonde", url: 'https://www.lemonde.fr/rss/un
 source_three =  Source.create!(name: 'lequipe', url: 'https://dwh.lequipe.fr/api/edito/rss?path=/')
 
 p 'Sources created'
-
-p 'Deleting Categories'
-Category.destroy_all
-p 'Creating categories'
-cate_one = Category.create!(name: 'Salaire')
-cate_two = Category.create!(name: 'Alimentation')
-cate_three = Category.create!(name: 'Impots')
-cate_four = Category.create!(name: 'Santé')
-cate_five = Category.create!(name: 'Loisirs')
-cate_six = Category.create!(name: 'Transports')
-cate_seven = Category.create!(name: 'Habillement')
-cate_eight = Category.create!(name: 'Loyer')
-cate_nine = Category.create!(name: 'Charges')
-p 'Categories created'
