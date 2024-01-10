@@ -1,3 +1,21 @@
+# frozen_string_literal: true
+
+# == Schema Information
+#
+# Table name: transactions
+#
+#  id               :bigint           not null, primary key
+#  payee            :string           not null
+#  amount           :decimal(11, 2)   default(0.0)
+#  date             :date             not null
+#  transaction_type :integer          not null
+#  description      :text
+#  checked          :boolean          default(FALSE)
+#  account_id       :bigint           not null
+#  category_id      :bigint
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 class Transaction < ApplicationRecord
   belongs_to :account
   belongs_to :category, optional: true

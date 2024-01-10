@@ -3,17 +3,18 @@
 # == Schema Information
 #
 # Table name: users
-#  id                     :bigint          not null, primary key
-#  email                  :string          default: "", not null
-#  encrypted_password     :string          default: "", not null
+#
+#  id                     :bigint           not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  admin                 :boolean          default: false, not null
-
-# Indexes
-#  index_users_on_email                 (email)                 unique
-#  index_users_on_reset_password_token  (reset_password_token)  unique
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  admin                  :boolean          default(FALSE), not null
+#  spell_count            :integer          default(0), not null
+#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
