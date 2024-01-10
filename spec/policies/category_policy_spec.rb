@@ -5,7 +5,7 @@ RSpec.describe CategoryPolicy, type: :policy do
     @user = create(:user, :full_spell_count)
     @user2 = create(:user, :normal)
     @user2.admin = true
-    @cate = create(:category1, user: @user)
+    @cate = create(:category3, user: @user)
   end
 
   subject { described_class }
@@ -16,9 +16,9 @@ RSpec.describe CategoryPolicy, type: :policy do
     context 'for normal user' do
       permissions ".scope" do
         let(:user) { @user }
-        let(:category) { Category.create(name: 'test', user_id: nil) }
+        let(:category) { Category.create(name: 'test', user_id: @user.id) }
 
-        it "gives user's categories plus categories with user_id nil" do
+        it "gives user's categories" do
           expect(policy_scope).to eq(user.categories << category)
         end
       end
@@ -27,7 +27,7 @@ RSpec.describe CategoryPolicy, type: :policy do
     context 'for admin user' do
       permissions ".scope" do
         let(:user) { @user2 }
-        let(:category) { Category.create(name: 'test', user_id: nil) }
+        let(:category) { Category.create(name: 'test', user_id: @user.id) }
 
         it "gives all categories" do
           expect(policy_scope).to eq(Category.all)
@@ -45,7 +45,7 @@ RSpec.describe CategoryPolicy, type: :policy do
 
   permissions :destroy? do
     it "denies access if category doesn't belong to user" do
-      expect(subject).not_to permit(@user, Category.new(name: 'voiture', user_id: nil))
+      expect(subject).not_to permit(@user2, @cate)
     end
     it 'grants access if category belongs to user' do
       expect(subject).to permit(@user, @cate)
