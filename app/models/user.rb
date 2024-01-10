@@ -30,6 +30,7 @@ class User < ApplicationRecord
 
   def user_news
     hash = sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
+    # remove the <img> present in description when source is lequipe
     if hash.keys.include?('lequipe')
       hash['lequipe'].each do |item|
         item[:description] = item[:description].gsub!(/<.*>/, '')
@@ -49,7 +50,8 @@ class User < ApplicationRecord
   end
 
   def create_categories
-    ['Salaire', 'Alimentation', 'Impots', 'Santé', 'Loisirs', 'Transports', 'Habillement', 'Loyer', 'Charges'].each do |category|
+    # after creating a user, create its categories
+    %w[Salaire Alimentation Impots Santé Loisirs Transports Habillement Loyer Charges].each do |category|
       Category.create!(name: category, user_id: self.id)
     end
   end
