@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   update(){
+    // on each click on arrow, increment by 1 the value of input count
     let number = parseInt(this.inputTarget.value, 10)
     number += 1
     this.inputTarget.value = number.toString()

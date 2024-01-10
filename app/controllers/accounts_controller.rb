@@ -21,10 +21,14 @@ class AccountsController < ApplicationController
       @transactions = @transactions.where('date <= ?', params[:end_date])
     end
     if params[:count].present?
+      # if filters or show_more arrow have been used
+      # redefine @count with the incremented value of  params[:count]
       @count = @count * params[:count].to_i
+      # redefine @size with transactions filtered if filters are used
       @size = @transactions.size if params[:checked].present? || params[:category_id].present? || params[:begin_date].present? || params[:end_date].present?
       @transactions = @transactions.limit(@count)
     else
+      # arriving on show, display only 5 transactions
       @transactions = @transactions.limit(@count)
     end
 
