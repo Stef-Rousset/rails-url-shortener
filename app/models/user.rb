@@ -3,17 +3,18 @@
 # == Schema Information
 #
 # Table name: users
-#  id                     :bigint          not null, primary key
-#  email                  :string          default: "", not null
-#  encrypted_password     :string          default: "", not null
+#
+#  id                     :bigint           not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  admin                 :boolean          default: false, not null
-
-# Indexes
-#  index_users_on_email                 (email)                 unique
-#  index_users_on_reset_password_token  (reset_password_token)  unique
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  admin                  :boolean          default(FALSE), not null
+#  spell_count            :integer          default(0), not null
+#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -30,6 +31,7 @@ class User < ApplicationRecord
 
   def user_news
     hash = sources.map { |source| [source.name, HandleRss.new(source.url).get_news] }.to_h
+    # remove the <img> present in description when source is lequipe
     if hash.keys.include?('lequipe')
       hash['lequipe'].each do |item|
         item[:description] = item[:description].gsub!(/<.*>/, '')
@@ -49,7 +51,8 @@ class User < ApplicationRecord
   end
 
   def create_categories
-    ['Salaire', 'Alimentation', 'Impots', 'Santé', 'Loisirs', 'Transports', 'Habillement', 'Loyer', 'Charges'].each do |category|
+    # after creating a user, create its categories
+    %w[Salaire Alimentation Impots Santé Loisirs Transports Habillement Loyer Charges].each do |category|
       Category.create!(name: category, user_id: self.id)
     end
   end
