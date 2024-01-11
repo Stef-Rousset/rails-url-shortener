@@ -1,0 +1,8 @@
+<section class="accounts-import-container flex flex-col items-start w-11/12 lg:w-8/12 mx-auto pt-12">
+  <h1 class="font-bold text-lg mb-4"><%= t('.title', name: @account.name) %></h1>
+  <%= t '.paragraph_html' %>
+  <%= form_with url: "upload_data", multipart: true, class: 'flex flex-col items-start' do |f| %>
+    <%= file_field_tag :excel_file %>
+    <%= submit_tag t(:validate), class: 'btn-beige mt-8'%>
+  <% end %>
+</section>

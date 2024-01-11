@@ -19,6 +19,8 @@ fr:
   no_category: pas de catégorie
   confirm: Êtes-vous sûr(e) ?
   user_not_authorized: Vous n'êtes pas autorisé à réaliser cette action
+  existing_rows: "Les rangs %{rows} n'ont pas été importés car les données sosnt incomplètes, ou des transactions du même montant à la même date existent déjà pour ce compte"
+  imported_rows: "%{rows} rangs importés"
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -156,6 +158,18 @@ fr:
       balance: Solde
       submit: Valider
       cancel: Annuler
+    import:
+      title: "Importer des transactions dans %{name}"
+      paragraph_html: "<div class='mb-8 text-justify'>Vous pouvez importer vos transactions directement dans ce compte en téléchargeant un fichier excel. Attention, votre
+      fichier devra respecter les paramètres suivants: <br>
+        <ul class='list-disc list-inside'>
+          <li>un 1er rang d'en-têtes, avec des colonnes dans l'ordre date/bénéficiaire/debit/credit/description/categorie/vérifiée</li>
+          <li>la date doit être au format jj/mm/yyyy (ex: 25/01/2023)
+          <li>si votre transaction est un débit, son montant devra figurer dans la colonne débit (ex: -15,25)</li>
+          <li>si votre transaction est un crédit, son montant devra figurer dans la colonne crédit (ex: 20,3)</li>
+        </ul><br>
+      Si une transaction du même montant et à la même date existe déjà pour ce compte, le rang ne sera pas intégré.
+       </div>"
   categories:
     index:
       meta_description: Gérer les catégories d'opérations
