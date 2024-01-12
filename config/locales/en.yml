@@ -50,8 +50,8 @@ en:
   no_category: No category
   confirm: Are you sure ?
   user_not_authorized: You are not authorized to perform this action
-  existing_rows: "Rows %{rows} have not been imported because data is incomplete, or transactions of same amount and date already exists for this account"
-  imported_rows: "%{rows} rows imported"
+  existing_rows: "Rows %{rows} have not been imported because data is incomplete, or transactions of same amount and date already exist for this account"
+  imported_rows: "%{rows} transactions imported in this account"
   shared:
     login: LOG IN
     logout: LOG OUT
@@ -150,7 +150,7 @@ en:
       meta_description: Manage your finances by creating your accounts, adding your transactions then validating them once completed
       title: Personal finance handler
       paragraph: You can create your accounts, add transactions that you can then check with your bank statement. You can also track your overall balance and your account's balance,
-                  plan transactions by choosing their repetition frequency (every day, month, etc.), sort your transactions, get an excel file with your transactions...
+                  plan transactions by choosing their repetition frequency (every day, month, etc.), sort your transactions, import your transactions or load them...
       my_accounts: My accounts
       accounts_number: Accounts number
       total_balance: Total balance
@@ -176,8 +176,9 @@ en:
       categories: Categories
       create_category: Create new category
       show_categories: See categories
-      load: Load
+      data: Data
       load_transactions: Load transactions for this account
+      import_transactions: Import transactions for this account
     balance:
       balance: Balance
     new:
@@ -197,11 +198,13 @@ en:
         <ul class='list-disc list-inside'>
           <li>a first row for headers, with columns in this order date/payee/debit/credit/description/category/checked</li>
           <li>date's format must be yyyy/mm/dd (ex: 2023/01/25)
-          <li>if your transaction is a debit, its amount must be in column debit (ex: -15,25)</li>
-          <li>if your transaction is a credit, its amount must be in column credit (ex: 20,3)</li>
+          <li>if your transaction is a debit, its amount must be in column debit (ex: -15.25)</li>
+          <li>if your transaction is a credit, its amount must be in column credit (ex: 20.3)</li>
+          <li>if your transaction is checked, enter 'yes' in the checked column</li>
         </ul><br>
       If a transaction of same amount and date already exists for this account, the corresponding row will not be imported.
        </div>"
+      back_to_show: Back to account
   categories:
     index:
       meta_description: Manage the categories for transactions
