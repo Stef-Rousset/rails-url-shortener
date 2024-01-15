@@ -23,4 +23,13 @@ class AccountPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def import?
+    record.user == user
+  end
+
+
+  def upload_data?
+    record.user == user
+  end
 end

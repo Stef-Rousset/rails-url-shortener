@@ -34,7 +34,7 @@ RSpec.describe AccountPolicy, type: :policy do
     end
   end
 
-  permissions :show?, :update?, :destroy? do
+  permissions :show?, :update?, :destroy?, :import?, :upload_data? do
     it "denies access if account doesn't belong to user" do
       expect(subject).not_to permit(@user2, @account)
     end

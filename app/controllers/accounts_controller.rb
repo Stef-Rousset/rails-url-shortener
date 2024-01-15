@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  before_action :set_account, only: %i[show edit update destroy]
+  before_action :set_account, only: %i[show edit update destroy import upload_data]
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
@@ -68,6 +68,34 @@ class AccountsController < ApplicationController
   def destroy
     @account.destroy
     redirect_to accounts_path, notice: t(:destroyed, name: t(:account))
+  end
+
+  def import
+  end
+
+  def upload_data
+    @rows = []
+    file = params[:excel_file]
+    hash = HandleImportRow.new(@account, file).get_attributes
+    hash.each { |k, v| if v.present?
+                         Transaction.create!(account_id: @account.id,
+                                             date: v[0],
+                                             payee: v[1],
+                                             amount: v[2],
+                                             transaction_type: v[3],
+                                             description: v[4],
+                                             category_id: v[5],
+                                             checked: v[6]
+                                            )
+                       else
+                         @rows << k
+                       end
+             }
+    if @rows.present?
+      redirect_to import_account_path(@account), alert: t(:existing_rows, rows: "#{@rows.join(', ')}")
+    else
+      redirect_to account_path(@account, format: :html), notice: t(:imported_rows, rows: "#{hash.keys.size}")
+    end
   end
 
   private

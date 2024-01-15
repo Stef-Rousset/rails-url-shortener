@@ -19,6 +19,8 @@ fr:
   no_category: pas de catégorie
   confirm: Êtes-vous sûr(e) ?
   user_not_authorized: Vous n'êtes pas autorisé à réaliser cette action
+  existing_rows: "La(les) ligne(s) %{rows} n'ont pas été importées car les données sont incomplètes, ou des opérations du même montant à une date proche existent déjà pour ce compte"
+  imported_rows: "%{rows} opérations importés dans ce compte"
   shared:
     login: CONNEXION
     logout: DECONNEXION
@@ -117,7 +119,7 @@ fr:
       meta_description: Gérer vos finances en créant vos comptes, en ajoutant vos opérations quotidiennes ou planifiées, puis en les validant une fois pointées
       title: Gestionnaire de finances personnelles
       paragraph: Vous pouvez créer vos comptes, y ajouter des opérations que vous pourrez ensuite pointer avec votre relevé bancaire. Vous pouvez également suivre votre solde global et votre solde par compte,
-                 planifier des opérations en choisissant leur fréquence de répétition (tous les jours, mois..), trier vos opérations, les télécharger sous forme de fichier excel...
+                 planifier des opérations en choisissant leur fréquence de répétition (tous les jours, mois..), trier vos opérations, les importer ou les télécharger sous forme de fichier excel...
       my_accounts: Mes comptes
       accounts_number: Nombre de comptes
       total_balance: Solde Total
@@ -142,8 +144,9 @@ fr:
       categories: Catégories
       create_category: Créer une nouvelle catégorie
       show_categories: Voir les catégories
-      load: Téléchargement
+      data: Données
       load_transactions: Télécharger les opérations de ce compte
+      import_transactions: Importer des opérations pour ce compte
     balance:
       balance: Solde
     new:
@@ -156,6 +159,21 @@ fr:
       balance: Solde
       submit: Valider
       cancel: Annuler
+    import:
+      title: "Importer des transactions dans %{name}"
+      paragraph_html: "<div class='mb-8 text-justify'>Vous pouvez importer vos transactions directement dans ce compte en téléchargeant un fichier excel. Attention, votre
+      fichier devra respecter les paramètres suivants: <br>
+        <ul class='list-disc list-inside'>
+          <li>un 1er rang d'en-têtes, avec des colonnes dans l'ordre date/bénéficiaire/débit/crédit/description/catégorie/vérifiée</li>
+          <li>les colonnes date/bénéficiaire/débit ou crédit doivent obligatorirement être remplies</li>
+          <li>la date doit être au format jj/mm/yyyy (ex: 25/01/2023)
+          <li>si votre transaction est un débit, son montant devra figurer dans la colonne débit (ex: -15,25)</li>
+          <li>si votre transaction est un crédit, son montant devra figurer dans la colonne crédit (ex: 20,3)</li>
+          <li>si votre transaction est vérifiée, mettre 'oui' dans la colonne vérifiée</li>
+        </ul><br>
+      Si une transaction du même montant et à une date égale ou inférieure de 7 jours existe déjà pour ce compte, le rang ne sera pas intégré.
+       </div>"
+      back_to_show: Retour au compte
   categories:
     index:
       meta_description: Gérer les catégories d'opérations

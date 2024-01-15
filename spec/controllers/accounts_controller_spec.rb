@@ -16,6 +16,11 @@ RSpec.describe AccountsController, type: :controller do
       get :show, params: { id: @account }
       assert_redirected_to '/users/sign_in'
     end
+
+    it 'cannot access import' do
+      get :import, params: { id: @account }
+      assert_redirected_to '/users/sign_in'
+    end
   end
 
   context 'signed in' do
@@ -81,9 +86,14 @@ RSpec.describe AccountsController, type: :controller do
     end
 
     it 'deletes account' do
-      delete :destroy, params: { id: @account.id }
+      delete :destroy, params: { id: @account }
       assert_redirected_to accounts_path
       expect(flash[:notice]).to be_present
+    end
+
+    it 'gets access to import' do
+      get :import, params: { id: @account }
+      assert_response :success
     end
   end
 end

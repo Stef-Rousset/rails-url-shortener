@@ -1,0 +1,12 @@
+<section class="accounts-import-container flex flex-col items-start w-11/12 lg:w-8/12 mx-auto pt-12">
+  <div class="flex w-full justify-between items-center mb-8">
+    <h1 class="font-bold text-lg mb-4"><%= t('.title', name: @account.name) %></h1>
+    <%= link_to t('.back_to_show'), account_path(@account), class: 'btn-beige'%>
+  </div>
+  <%= t '.paragraph_html' %>
+  <%= form_with url: "upload_data", multipart: true, class: 'flex flex-col items-start' do |f| %>
+    <%= file_field_tag :excel_file %>
+    <%= submit_tag t(:validate), class: 'btn-beige mt-8'%>
+  <% end %>
+</section>
+<%= image_tag 'budget.png', class: "max-h-36 mx-auto mt-12 opacity-30 mb-2" %>
