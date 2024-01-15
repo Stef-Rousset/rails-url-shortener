@@ -15,7 +15,9 @@ RSpec.describe 'Categories', type: :system do
   end
 
   it 'adds category' do
-    visit new_category_path
+    visit categories_path # for cancel back link to be defined
+    expect(page).to have_content("Liste des catégories")
+    click_on('Créer une catégorie')
     expect(page).to have_content("Nouvelle catégorie")
     fill_in 'category[name]', with: 'Vacances'
     click_on('Valider')
@@ -24,7 +26,7 @@ RSpec.describe 'Categories', type: :system do
   end
 
   it 'cancels adding category' do
-    visit categories_path # for cancel back link to work
+    visit categories_path
     click_on('Créer une catégorie')
     expect(page).to have_content("Nouvelle catégorie")
     fill_in 'category[name]', with: 'Vacances'
