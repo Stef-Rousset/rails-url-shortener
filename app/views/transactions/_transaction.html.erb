@@ -30,8 +30,7 @@
             <%= link_to edit_account_transaction_path(@account, transaction), data: { turbo_frame: 'edit-modal' }, class: "mr-4" do %>
               <i class="fa-solid fa-pen-to-square"></i>
             <% end %>
-          <% end %>
-          <% if policy(transaction).destroy? %>
+            <!-- same policy for edit and destroy -->
             <%= link_to account_transaction_path(@account, transaction), data: { turbo_method: 'delete', turbo_confirm: t(:confirm) } do %>
               <i class="fa-solid fa-trash-can"></i>
             <% end %>
