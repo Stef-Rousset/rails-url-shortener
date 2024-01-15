@@ -3,9 +3,14 @@
     <div class="flex justify-between items-center w-full">
       <h3 class="font-semibold mb-2"><%= l transaction.date %></h3>
       <%= form_with url: "/update_checked", method: :put, class: 'flex justify-between items-center' do |f| %>
-        <%= f.label :checked, t('transactions.transaction.checked'), class: "mr-2" %>
-        <%= f.check_box :checked, onchange: "this.form.requestSubmit();", checked: transaction.checked %>
+        <%= f.label :update_checked, t('transactions.transaction.checked'), class: "mr-2" %>
+        <%= f.check_box :update_checked, onchange: "this.form.requestSubmit();", checked: transaction.checked %>
         <%= f.hidden_field :id, value: transaction.id %>
+        <%= f.hidden_field :count, value: params[:count] %>
+        <%= f.hidden_field :checked, value: params[:checked] %>
+        <%= f.hidden_field :category_id, value: params[:category_id] %>
+        <%= f.hidden_field :begin_date, value: params[:begon_date] %>
+        <%= f.hidden_field :end_date, value: params[:end_date] %>
       <% end %>
     </div>
     <div class="flex justify-between items-center w-full">
