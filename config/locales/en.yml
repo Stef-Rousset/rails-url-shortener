@@ -50,7 +50,7 @@ en:
   no_category: No category
   confirm: Are you sure ?
   user_not_authorized: You are not authorized to perform this action
-  existing_rows: "Rows %{rows} have not been imported because data is incomplete, or transactions of same amount and date already exist for this account"
+  existing_rows: "Rows %{rows} have not been imported because data is incomplete, or transactions of same amount and close date already exist for this account"
   imported_rows: "%{rows} transactions imported in this account"
   shared:
     login: LOG IN
@@ -197,12 +197,13 @@ en:
       file must respect the parameters below: <br>
         <ul class='list-disc list-inside'>
           <li>a first row for headers, with columns in this order date/payee/debit/credit/description/category/checked</li>
+          <li>columns date/payee/debit or credit must be filled with data</li>
           <li>date's format must be yyyy/mm/dd (ex: 2023/01/25)
           <li>if your transaction is a debit, its amount must be in column debit (ex: -15.25)</li>
           <li>if your transaction is a credit, its amount must be in column credit (ex: 20.3)</li>
           <li>if your transaction is checked, enter 'yes' in the checked column</li>
         </ul><br>
-      If a transaction of same amount and date already exists for this account, the corresponding row will not be imported.
+      If a transaction of same amount and with a date equal to or less than 7 days already exists for this account, the corresponding row will not be imported.
        </div>"
       back_to_show: Back to account
   categories:

@@ -76,28 +76,25 @@ class AccountsController < ApplicationController
   def upload_data
     @rows = []
     file = params[:excel_file]
-    xlsx = Roo::Spreadsheet.open(file, extension: :xlsx)
-    count = xlsx.count
-    for i in 2..count # we don't want first headers row
-      array = HandleImportRow.new(@account, xlsx.row(i)).get_attributes
-      if array.present?
-        Transaction.create!(account_id: @account.id,
-                            date: array[0],
-                            payee: array[1],
-                            amount: array[2],
-                            transaction_type: array[3],
-                            description: array[4],
-                            category_id: array[5],
-                            checked: array[6]
-                            )
-      else
-        @rows << i
-      end
-    end
+    hash = HandleImportRow.new(@account, file).get_attributes
+    hash.each { |k, v| if v.present?
+                         Transaction.create!(account_id: @account.id,
+                                             date: v[0],
+                                             payee: v[1],
+                                             amount: v[2],
+                                             transaction_type: v[3],
+                                             description: v[4],
+                                             category_id: v[5],
+                                             checked: v[6]
+                                            )
+                       else
+                         @rows << k
+                       end
+             }
     if @rows.present?
       redirect_to import_account_path(@account), alert: t(:existing_rows, rows: "#{@rows.join(', ')}")
     else
-      redirect_to account_path(@account, format: :html), notice: t(:imported_rows, rows: "#{count}")
+      redirect_to account_path(@account, format: :html), notice: t(:imported_rows, rows: "#{hash.keys.size}")
     end
   end
 
