@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HandleImportRow, type: :model do
+RSpec.describe HandleImport, type: :model do
   before(:example) do
     @user = create(:user, :normal)
     @account = create(:account, user: @user)
@@ -8,7 +8,7 @@ RSpec.describe HandleImportRow, type: :model do
   end
 
   it 'returns a hash of 2 k/v pairs containing file data' do
-    hash = HandleImportRow.new(@account, @file).get_attributes
+    hash = HandleImport.new(@account, @file).get_attributes
     expect(hash.keys.size).to eq(2)
     # testing data of row 2 which has all mandatory fields
     expect(hash[2][0]).to eq(Date.new(2023, 11, 29))
@@ -21,7 +21,7 @@ RSpec.describe HandleImportRow, type: :model do
   end
 
   it 'returns an empty array if one mandatory field is absent' do
-    hash = HandleImportRow.new(@account, @file).get_attributes
+    hash = HandleImport.new(@account, @file).get_attributes
     # testing data of row 3 where date is missing
     expect(hash.keys.size).to eq(2)
     expect(hash[3]).to eq([])

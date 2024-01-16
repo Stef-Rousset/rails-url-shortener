@@ -76,7 +76,7 @@ class AccountsController < ApplicationController
   def upload_data
     @rows = []
     file = params[:excel_file]
-    hash = HandleImportRow.new(@account, file).get_attributes
+    hash = HandleImport.new(@account, file).get_attributes
     hash.each { |k, v| if v.present?
                          Transaction.create!(account_id: @account.id,
                                              date: v[0],

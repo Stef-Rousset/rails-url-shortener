@@ -1,4 +1,4 @@
-class HandleImportRow
+class HandleImport
   def initialize(account, file)
     @account = account
     @file = file
