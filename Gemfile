@@ -92,8 +92,11 @@ group :development do
   # Annotate models, routes and tests [https://github.com/ctran/annotate_models]
   gem 'annotate'
 
+  # deal with n + 1 queries [https://github.com/flyerhzm/bullet]
+  gem 'bullet'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+   gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

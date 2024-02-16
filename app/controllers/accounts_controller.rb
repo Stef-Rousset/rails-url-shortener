@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @transactions = @account.transactions.order(date: :desc, created_at: :desc)
+    @transactions = @account.transactions.order(date: :desc, created_at: :desc).includes(:category)
     @size = @transactions.size
     @count = 5
     @transactions = @transactions.where(checked: params[:checked]) if params[:checked] != '0' && params[:checked].present?
