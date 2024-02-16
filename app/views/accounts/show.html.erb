@@ -33,7 +33,7 @@
       <%= link_to t('accounts.show.show_categories'), categories_path, class: 'text-base hover:underline' %>
     </div>
     <!-- data -->
-    <div class="flex flex-col w-full bg-lightblue border p-2">
+    <div class="flex flex-col w-full bg-lightblue border mb-4 p-2">
       <h2 class="font-bold text-lg"><%= t '.data' %></h2>
       <%= link_to t('accounts.show.load_transactions'), account_path(@account, checked: params[:checked], category_id: params[:category_id], begin_date: params[:begin_date], end_date: params[:end_date], format: :xlsx), class: 'text-base hover:underline my-4' %>
       <%= link_to t('accounts.show.import_transactions'), import_account_path(@account), class: 'text-base hover:underline' %>

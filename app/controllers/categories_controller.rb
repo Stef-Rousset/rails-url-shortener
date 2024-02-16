@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     #@categories = Category.where(user_id: current_user.id).or(Category.where(user_id: nil))
-    @categories = policy_scope(Category)
+    @categories = policy_scope(Category).includes(:user)
   end
 
   def new
