@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
   before(:each) do
-    @user = create(:user1)
+    @user = create(:user, :normal)
     @mail = UserMailer.with(user: @user).news_email
   end
 
