@@ -39,10 +39,12 @@ RSpec.describe SourcesController, type: :controller do
       expect(@user.sources).to include @source
     end
 
-    it 'redirects to choose_sources if no sources selected' do
+    it 'deletes sources for user and redirects to choose_sources' do
+      @user.sources << @source
+      expect(@user.sources).to include @source
       post :update_sources_for_user, params: { source_ids: [] }
       assert_redirected_to choose_sources_path
-      expect(@user.sources).to be_empty
+      expect(@user.sources.reload).to be_empty
     end
   end
 end

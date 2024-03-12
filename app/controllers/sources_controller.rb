@@ -24,9 +24,9 @@ class SourcesController < ApplicationController
   end
 
   def edit_sources_for_user
-    @sources = Source.all
     authorize Source
-    @user_sources = policy_scope(Source)
+    @sources = Source.all
+    @user_sources = current_user.sources
     @locale = params[:locale]
   end
 end
