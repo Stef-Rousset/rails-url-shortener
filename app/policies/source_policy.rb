@@ -6,15 +6,15 @@ class SourcePolicy < ApplicationPolicy
     end
   end
 
-  def chosen_sources?
+  def chosen?
     user.sources.present?
   end
 
-  def update_sources_for_user?
+  def update?
     true
   end
 
-  def edit_sources_for_user?
+  def edit?
     user.sources.present?
   end
 end

@@ -18,12 +18,14 @@ Rails.application.routes.draw do
     get '/weather', to: 'pages#weather'
     get '/spell_checker', to: 'pages#spell_checker'
     post '/spell_checked', to: 'pages#spell_checked'
-
     resources :short_urls, only: %i[index show new create destroy]
-    resources :sources, only: %i[index]
-    get '/chosen_sources', to: 'sources#chosen_sources'
-    post '/update_sources_for_user', to: 'sources#update_sources_for_user'
-    get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
+    resources :sources, only: %i[index] do
+      collection do
+        get :chosen
+        post :update
+        get :edit
+      end
+    end
     resources :accounts do
       resources :transactions, except: %i[show]
       member do

@@ -12,7 +12,7 @@
     <% end %>
   </ul>
   <%= turbo_frame_tag 'edit_sources', class: "mb-8 md:m-0" do %>
-    <%= link_to t('.modify_sources'), edit_sources_for_user_path, class: 'btn-beige' %>
+    <%= link_to t('.modify_sources'), edit_sources_path, class: 'btn-beige' %>
   <% end %>
   <%= image_tag 'rss.png', class: "max-h-24 md:max-h-32 mx-auto mt-12 mb-2 opacity-30" %>
 </section>

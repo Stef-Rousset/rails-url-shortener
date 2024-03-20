@@ -1,7 +1,7 @@
 <form <% if locale.nil? %>
-        action="/update_sources_for_user"
+        action="/sources"
       <% else %>
-        action="/<%= locale %>/update_sources_for_user"
+        action="/<%= locale %>/sources"
       <% end %>
       method="post" class="flex flex-col items-start w-full">
   <% sources.each do |source| %>

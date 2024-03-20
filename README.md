@@ -61,8 +61,8 @@ GET `/:url_shortened`<br>
 For the news feed :
 - First selection of sources <br>
 GET `/sources`
-- Modify selection of sources <br>
-GET `/edit_sources_for_user`
+- See selected sources <br>
+GET `/sources/chosen`
 
 For the weather forecast :
 - Get the weather forecast for a city <br>
