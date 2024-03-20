@@ -60,7 +60,7 @@ GET `/:url_shortened`<br>
 
 For the news feed :
 - First selection of sources <br>
-GET `/choose_sources`
+GET `/sources`
 - Modify selection of sources <br>
 GET `/edit_sources_for_user`
 
