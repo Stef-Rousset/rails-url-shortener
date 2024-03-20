@@ -12,8 +12,9 @@ RSpec.describe SourcesController, type: :controller do
       assert_redirected_to '/users/sign_in'
     end
 
-    it 'does not access choose_sources' do
-      get :choose_sources
+    it 'does not access chosen_sources' do
+      @user.sources << @source
+      get :chosen_sources
       assert_redirected_to '/users/sign_in'
     end
   end
@@ -28,22 +29,23 @@ RSpec.describe SourcesController, type: :controller do
       assert_response :success
     end
 
-    it 'accesses choose_sources' do
-      get :choose_sources
+    it 'accesses chosen_sources' do
+      @user.sources << @source
+      get :chosen_sources
       assert_response :success
     end
 
     it 'adds a new source' do
       post :update_sources_for_user, params: { source_ids: [@source.id] }
-      assert_redirected_to sources_path
+      assert_redirected_to chosen_sources_path
       expect(@user.sources).to include @source
     end
 
-    it 'deletes sources for user and redirects to choose_sources' do
+    it 'deletes sources for user and redirects to index' do
       @user.sources << @source
       expect(@user.sources).to include @source
       post :update_sources_for_user, params: { source_ids: [] }
-      assert_redirected_to choose_sources_path
+      assert_redirected_to sources_path
       expect(@user.sources.reload).to be_empty
     end
   end

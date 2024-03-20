@@ -2,12 +2,12 @@ class SourcePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      Source.joins(:users).where(sources_users: { user_id: user.id })
+      Source.all
     end
   end
 
-  def choose_sources?
-    user.sources.empty?
+  def chosen_sources?
+    user.sources.present?
   end
 
   def update_sources_for_user?

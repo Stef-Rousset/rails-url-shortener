@@ -8,8 +8,8 @@ RSpec.describe 'Sources', type: :system do
     sign_in @user
   end
 
-  it 'adds source to user and redirects to index' do
-    visit choose_sources_path
+  it 'adds source to user and redirects to chosen_sources' do
+    visit sources_path
     expect(page).to have_content("Les sources d'information disponibles")
     find('#lemonde').click
     click_on('Valider')
@@ -18,16 +18,16 @@ RSpec.describe 'Sources', type: :system do
   end
 
   it 'cancels adding source to user' do
-    visit choose_sources_path
+    visit sources_path
     expect(page).to have_content("Les sources d'information disponibles")
     find('#lemonde').click
     click_on('Annuler')
     expect(page).to have_content("Les sources d'information disponibles")
   end
 
-  it 'modifies source for user' do
+  it 'deletes source for user and redirects to index' do
     @user.sources << @source
-    visit sources_path
+    visit chosen_sources_path
     expect(page).to have_content("Mes sources d'information")
     expect(page).to have_content("Le Monde")
     click_on('Modifier les sources')
@@ -38,7 +38,7 @@ RSpec.describe 'Sources', type: :system do
 
   it 'cancels the modification of source for user' do
     @user.sources << @source
-    visit sources_path
+    visit chosen_sources_path
     expect(page).to have_content("Mes sources d'information")
     expect(page).to have_content("Le Monde")
     click_on('Modifier les sources')
