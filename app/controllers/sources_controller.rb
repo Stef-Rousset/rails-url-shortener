@@ -3,11 +3,11 @@ class SourcesController < ApplicationController
 
   def index
     @sources = policy_scope(Source)
+    @locale = params[:locale]
   end
 
-  def choose_sources
-    @sources = Source.all
-    @locale = params[:locale]
+  def chosen_sources
+    @sources = Source.joins(:users).where(sources_users: { user_id: current_user.id })
     authorize Source
   end
 
@@ -17,9 +17,9 @@ class SourcesController < ApplicationController
     if params[:source_ids].present?
       ids = params[:source_ids].map(&:to_i)
       ids.map { |id| current_user.sources << Source.find(id) }
-      redirect_to sources_path
+      redirect_to chosen_sources_path
     else
-      redirect_to choose_sources_path
+      redirect_to sources_path
     end
   end
 

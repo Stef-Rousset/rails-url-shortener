@@ -1,0 +1,19 @@
+<% content_for :meta_description do %>
+  <%= t '.meta_description' %>
+<% end %>
+<section class="sources-container w-10/12 lg:w-8/12 mx-auto pt-4 md:pt-12">
+  <div class="flex flex-col justify-between items-start">
+    <h1 class="font-bold text-lg my-8"><%= t '.title' %></h1>
+    <p><%= t '.paragraph' %> :</p>
+  </div>
+  <ul class="flex justify-evenly items-center w-full mb-8 md:mb-12">
+    <% @sources.each do |source| %>
+      <li class="text-center font-semibold bg-beige w-3/4 sm:w-1/4 border rounded p-4 my-4 md:my-8"><%= display_name(source.name) %></li>
+    <% end %>
+  </ul>
+  <%= turbo_frame_tag 'edit_sources', class: "mb-8 md:m-0" do %>
+    <%= link_to t('.modify_sources'), edit_sources_for_user_path, class: 'btn-beige' %>
+  <% end %>
+  <%= image_tag 'rss.png', class: "max-h-24 md:max-h-32 mx-auto mt-12 mb-2 opacity-30" %>
+</section>
+

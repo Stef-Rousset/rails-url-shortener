@@ -20,9 +20,9 @@
             </li>
             <li>
               <% if current_user && current_user.sources.present? %>
-                <%= link_to t('shared.navbar.news_link'), sources_path, class: "block py-2 pl-3 pr-4 italic text-sm lg:text-lg text-white hover:text-beige hover:font-semibold"%>
+                <%= link_to t('shared.navbar.news_link'), chosen_sources_path, class: "block py-2 pl-3 pr-4 italic text-sm lg:text-lg text-white hover:text-beige hover:font-semibold"%>
               <% else %>
-                <%= link_to t('shared.navbar.news_link'), choose_sources_path, class: "block py-2 pl-3 pr-4 italic text-sm lg:text-lg text-white hover:text-beige hover:font-semibold"%>
+                <%= link_to t('shared.navbar.news_link'), sources_path, class: "block py-2 pl-3 pr-4 italic text-sm lg:text-lg text-white hover:text-beige hover:font-semibold"%>
               <% end %>
             </li>
             <li>

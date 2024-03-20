@@ -18,12 +18,12 @@
         <p class="font-bold text-center"><%= t '.checker-title' %></p>
       <% end %>
       <% if @user.sources.present? %>
-        <%= link_to sources_path, class: "border border-beige w-full h-full grid grid-rows-cards justify-center items-center bg-beige p-10 hover:scale-101 hover:brightness-95 z-0" do %>
+        <%= link_to chosen_sources_path, class: "border border-beige w-full h-full grid grid-rows-cards justify-center items-center bg-beige p-10 hover:scale-101 hover:brightness-95 z-0" do %>
           <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
           <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
         <% end %>
       <% else %>
-        <%= link_to choose_sources_path, class: "border border-beige w-full h-full grid grid-rows-cards justify-center items-center bg-beige p-10 hover:scale-101 hover:brightness-95 z-0" do %>
+        <%= link_to sources_path, class: "border border-beige w-full h-full grid grid-rows-cards justify-center items-center bg-beige p-10 hover:scale-101 hover:brightness-95 z-0" do %>
           <%= image_tag 'rss.png', class: "w-1/2 justify-self-center"%>
           <p class="font-bold text-center"><%= t '.news-feed-title' %></p>
         <% end %>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
     resources :short_urls, only: %i[index show new create destroy]
     resources :sources, only: %i[index]
-    get '/choose_sources', to: 'sources#choose_sources'
+    get '/chosen_sources', to: 'sources#chosen_sources'
     post '/update_sources_for_user', to: 'sources#update_sources_for_user'
     get '/edit_sources_for_user', to: 'sources#edit_sources_for_user'
     resources :accounts do
