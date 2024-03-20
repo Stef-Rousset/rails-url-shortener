@@ -8,7 +8,7 @@ RSpec.describe 'Sources', type: :system do
     sign_in @user
   end
 
-  it 'adds source to user and redirects to chosen_sources' do
+  it 'adds source to user and redirects to chosen' do
     visit sources_path
     expect(page).to have_content("Les sources d'information disponibles")
     find('#lemonde').click

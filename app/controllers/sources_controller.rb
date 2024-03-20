@@ -6,12 +6,13 @@ class SourcesController < ApplicationController
     @locale = params[:locale]
   end
 
-  def chosen_sources
+  def chosen
     @sources = Source.joins(:users).where(sources_users: { user_id: current_user.id })
     authorize Source
   end
 
-  def update_sources_for_user
+  #update sources for user in join table
+  def update
     authorize Source
     current_user.sources.delete_all
     if params[:source_ids].present?
@@ -23,7 +24,8 @@ class SourcesController < ApplicationController
     end
   end
 
-  def edit_sources_for_user
+  #edit sources for user
+  def edit
     authorize Source
     @sources = Source.all
     @user_sources = current_user.sources

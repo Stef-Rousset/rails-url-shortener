@@ -104,7 +104,7 @@ fr:
       title: Les sources d'information disponibles
       paragraph: Accédez aux informations à la une des sources référencées ci-dessous, envoyées tous les jours dans votre boite mail !
       title_form: Je souhaite recevoir par mail tous les jours les informations des sources suivantes
-    chosen_sources:
+    chosen:
       meta_description: Choisissez vos sources d'information parmi 3 grands quotidiens français et recevez les nouvelles par mail tous les jours
       title: Mes sources d'information
       paragraph: Vous recevez par mail tous les matins les informations à la une des sources suivantes
