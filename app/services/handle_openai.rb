@@ -10,7 +10,7 @@ class HandleOpenai
   def get_word_checked
     begin
       response = client.chat(
-        parameters: { model: 'gpt-3.5-turbo',
+        parameters: { model: 'gpt-4o-mini-2024-07-18',
                       messages: [{ role: 'user', content: sentence_to_send }],
                       temperature: 0.7 }
       )
