@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.1"
+ruby "3.3.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.0", ">= 7.1.6"
+gem "rails", "~> 7.2.0", ">= 7.2.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -13,7 +13,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", ">= 6.3.1"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -59,7 +59,7 @@ gem "bootsnap", require: false
 gem 'rss'
 
 # deal with jobs [https://github.com/sidekiq/sidekiq]
-gem 'sidekiq', "< 7"
+gem 'sidekiq', "~> 6.5.12"
 # see errors in jobs [https://github.com/mhfs/sidekiq-failures]
 gem "sidekiq-failures", "~> 1.0"
 # schedule jobs [https://github.com/sidekiq-scheduler/sidekiq-scheduler]
@@ -79,9 +79,25 @@ gem "roo", "~> 2.10.0"
 #added after github securtity alert [https://github.com/advisories/GHSA-592j-995h-p23j]
 gem "rdoc", "6.5.1.1"
 
+## gems updated after bundler-audit
+# [https://github.com/ruby/rexml]
+gem "rexml", '>= 3.3.9'
+
+# [https://github.com/rails/rails-html-sanitizer]
+gem 'rails-html-sanitizer', '>= 1.6.1'
+
+# [https://github.com/rack/rack]
+gem 'rack', '~> 2.2', '>= 2.2.8.1'
+
+# [https://github.com/rails/thor]
+gem 'thor', '1.4.0'
+
+# [https://github.com/floraison/fugit]
+gem 'fugit', '1.11.1'
+
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Debug [https://github.com/deivid-rodriguez/byebug]
+  gem "byebug", "~> 11.0", platform: :mri
   #tests with rspec [https://github.com/rspec/rspec-rails]
   gem 'rspec-rails', '~> 6.0.0'
   # data for tests [https://github.com/thoughtbot/factory_bot_rails]
@@ -96,7 +112,7 @@ group :development do
   gem 'annotate'
 
   # deal with n + 1 queries [https://github.com/flyerhzm/bullet]
-  gem 'bullet'
+  gem 'bullet', '~> 7.2'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
    gem "rack-mini-profiler"
