@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'debug'
+require 'byebug'
 
 RSpec.describe 'Categories', type: :system do
   before(:each) do

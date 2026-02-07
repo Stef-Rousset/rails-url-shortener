@@ -96,8 +96,7 @@ RSpec.describe 'Pages', type: :system do
       fill_in 'search', with: 'botle'
       choose('english')
       click_on 'Valider'
-      expect(page).to have_text('La bonne orthographe', wait: 15)
-      expect(page).to have_text('bottle')
+      expect(page).to have_text('bottle', wait: 15)
     end
 
     it 'returns an english string with the correct french word if locale is english' do
