@@ -95,6 +95,12 @@ gem 'thor', '1.4.0'
 # [https://github.com/floraison/fugit]
 gem 'fugit', '1.11.1'
 
+# google omniauth [https://github.com/zquestz/omniauth-google-oauth2]
+gem 'omniauth-google-oauth2'
+
+# csrf protection for omniauth [https://github.com/cookpad/omniauth-rails_csrf_protection]
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
 group :development, :test do
   # Debug [https://github.com/deivid-rodriguez/byebug]
   gem "byebug", "~> 11.0", platform: :mri
