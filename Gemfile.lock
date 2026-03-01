@@ -130,13 +130,14 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (2.7.11)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
+    faraday (2.14.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (3.0.2)
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -159,6 +160,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.18.1)
     jwt (3.1.2)
       base64
     logger (1.7.0)
@@ -179,6 +181,8 @@ GEM
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     multipart-post (2.3.0)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-imap (0.6.2)
       date
       net-protocol
@@ -189,9 +193,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.19.0-x86_64-darwin)
+    nokogiri (1.19.1-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.0-x86_64-linux-gnu)
+    nokogiri (1.19.1-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth2 (2.0.18)
       faraday (>= 0.17.3, < 4.0)
@@ -231,7 +235,7 @@ GEM
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.7.2)
-    rack (2.2.21)
+    rack (2.2.22)
     rack-mini-profiler (3.3.1)
       rack (>= 1.2.0)
     rack-protection (3.2.0)
@@ -316,7 +320,6 @@ GEM
       event_stream_parser (>= 0.3.0, < 1.0.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     rufus-scheduler (3.9.1)
       fugit (~> 1.1, >= 1.1.6)
@@ -362,6 +365,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uniform_notifier (1.18.0)
+    uri (1.1.1)
     useragent (0.16.11)
     version_gem (1.1.9)
     warden (1.2.9)
@@ -397,15 +401,17 @@ DEPENDENCIES
   caxlsx_rails
   devise
   factory_bot_rails
+  faraday (~> 2.14, >= 2.14.1)
   fugit (= 1.11.1)
   importmap-rails
   jbuilder
+  nokogiri (~> 1.19, >= 1.19.1)
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.1)
   puma (>= 6.3.1)
   pundit
-  rack (~> 2.2, >= 2.2.8.1)
+  rack (~> 2.2, >= 2.2.22)
   rack-mini-profiler
   rails (~> 7.2.0, >= 7.2.3)
   rails-controller-testing
