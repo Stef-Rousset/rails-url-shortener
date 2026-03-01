@@ -87,13 +87,27 @@ gem "rexml", '>= 3.3.9'
 gem 'rails-html-sanitizer', '>= 1.6.1'
 
 # [https://github.com/rack/rack]
-gem 'rack', '~> 2.2', '>= 2.2.8.1'
+gem 'rack', '~> 2.2', '>= 2.2.22'
 
 # [https://github.com/rails/thor]
 gem 'thor', '1.4.0'
 
 # [https://github.com/floraison/fugit]
 gem 'fugit', '1.11.1'
+
+# google omniauth [https://github.com/zquestz/omniauth-google-oauth2]
+gem 'omniauth-google-oauth2'
+
+# csrf protection for omniauth [https://github.com/cookpad/omniauth-rails_csrf_protection]
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+#### gems updated with bundler-audit
+
+# [https://github.com/lostisland/faraday]
+gem "faraday", '~> 2.14', '>= 2.14.1'
+
+# [https://github.com/sparklemotion/nokogiri]
+gem 'nokogiri', '~> 1.19', '>= 1.19.1'
 
 group :development, :test do
   # Debug [https://github.com/deivid-rodriguez/byebug]

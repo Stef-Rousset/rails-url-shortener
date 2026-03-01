@@ -19,7 +19,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
 
   before_save :email_normalization
   after_create :create_categories
@@ -42,6 +43,14 @@ class User < ApplicationRecord
 
   def accounts_total_sum
     accounts.map(&:balance).sum
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
+      user.email = auth.info.email
+      user.full_name = auth.info.name
+      user.password = Devise.friendly_token[0, 20]
+    end
   end
 
   private
