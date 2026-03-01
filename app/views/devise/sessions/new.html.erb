@@ -20,10 +20,10 @@
     <% end %>
 
     <div class="actions my-4">
-      <%= f.submit "Connexion", class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
+      <%= f.submit t("shared.login"), class: "bg-beige border rounded border-beige font-semibold w-fit p-2 hover:bg-darkblue hover:text-white" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
-  <%= link_to "Back", root_path, class: "bg-beige border rounded border-beige font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white" %>
+  <%= link_to t("shared.back"), root_path, class: "bg-beige border rounded border-beige font-semibold w-fit mt-4 p-2 hover:bg-darkblue hover:text-white" %>
 </div>

@@ -25,6 +25,8 @@ fr:
     login: CONNEXION
     logout: DECONNEXION
     signup: S'INSCRIRE
+    forgot_password: Mot de passe oublié ?
+    back: Retour
     navbar:
       title: MES OUTILS PARTAGÉS
       home_link: ACCUEIL
