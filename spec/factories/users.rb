@@ -29,5 +29,13 @@ FactoryBot.define do
     trait :normal do
       password { 'motdepasse' }
     end
+
+    trait :omniauth_user do
+      email { "existing_user@gmail.com"}
+      password { 'motdepasse123' }
+      provider { "google_auth2" }
+      uid { "123456789"}
+      full_name { "omniauth user"}
+    end
   end
 end
